@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang='zh-CN'>
+
+<head>
+  <meta name="generator" content="Hexo 6.3.0">
+  <meta name="hexo-theme" content="https://github.com/xaoxuu/hexo-theme-stellar/tree/1.16.0">
+  <meta charset="utf-8">
+  
+
+  <meta http-equiv='x-dns-prefetch-control' content='on' />
+  <link rel='dns-prefetch' href='https://fastly.jsdelivr.net'>
+  <link rel="preconnect" href="https://fastly.jsdelivr.net" crossorigin>
+  <link rel='dns-prefetch' href='//unpkg.com'>
+
+  <meta name="renderer" content="webkit">
+  <meta name="force-rendering" content="webkit">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+  <meta name="HandheldFriendly" content="True" >
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="theme-color" content="#f8f8f8">
+  
+  <title>ubuntu搭建饥荒专用服务器 - SkyReeves</title>
+
+  
+    <meta name="description" content="前言 为方便各位小伙伴挨饿，弄了一个dst-admin的开源项目，方便小伙伴搭建服务器。 本教程主要介绍的是如何安装dst-admin饥荒管理平台，使用他来快速的部署和管理饥荒。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="ubuntu搭建饥荒专用服务器">
+<meta property="og:url" content="http://skyreeves.cn/post/18ff0cb2.html">
+<meta property="og:site_name" content="SkyReeves">
+<meta property="og:description" content="前言 为方便各位小伙伴挨饿，弄了一个dst-admin的开源项目，方便小伙伴搭建服务器。 本教程主要介绍的是如何安装dst-admin饥荒管理平台，使用他来快速的部署和管理饥荒。">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://img.skyreeves.cn/hexo/20201015234810308.png">
+<meta property="article:published_time" content="2022-09-28T01:54:36.000Z">
+<meta property="article:modified_time" content="2022-12-01T13:33:03.369Z">
+<meta property="article:author" content="SkyReeves">
+<meta property="article:tag" content="ubuntu">
+<meta property="article:tag" content="饥荒">
+<meta property="article:tag" content="don&#39;t starve">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://img.skyreeves.cn/hexo/20201015234810308.png">
+  
+  
+
+  <!-- feed -->
+  
+    <link rel="alternate" href="/atom.xml" title="SkyReeves" type="application/atom+xml">
+  
+
+  
+    
+<link rel="stylesheet" href="/css/main.css">
+
+  
+
+  
+
+  
+
+  
+
+
+  
+    
+      <link rel="apple-touch-icon" sizes="180x180" href="https://img.skyreeves.cn/main/apple-touch-icon.png">
+    
+      <link rel="icon" type="image/png" sizes="32x32" href="https://img.skyreeves.cn/main/favicon-32x32.png">
+    
+      <link rel="icon" type="image/png" sizes="16x16" href="!https://img.skyreeves.cn/main/favicon-16x16.png">
+    
+      <link rel="manifest" href="https://img.skyreeves.cn/main/site.webmanifest">
+    
+      <link rel="shortcut icon" href="https://img.skyreeves.cn/main/favicon-32x32.png">
+    
+      <meta name="theme-color" content="#f8f8f8">
+    
+      <link rel="stylesheet" href="/css/scrollbar.css">
+    
+  
+</head>
+
+<body>
+  
+
+
+
+
+  <div class='l_body' id='start'>
+    <aside class='l_left' layout='post'>
+    
+
+  
+
+<header class="header"><div class="logo-wrap"><a class="avatar" href="/about/"><div class="bg" style="opacity:0;background-image:url(https://fastly.jsdelivr.net/gh/cdn-x/placeholder@1.0.2/avatar/round/rainbow64@3x.webp);"></div><img no-lazy class="avatar" src="https://img.skyreeves.cn/main/avatar01b.gif" onerror="javascript:this.classList.add('error');this.src='https://fastly.jsdelivr.net/gh/cdn-x/placeholder@1.0.1/image/2659360.svg';"></a><a class="title" href="/"><div class="main" ff="title">SkyReeves</div><div class="sub normal cap">🏁be a racer</div><div class="sub hover cap" style="opacity:0">不要把鼠标放在这里 🤪</div></a></div>
+
+<nav class="menu dis-select"><a class="nav-item active" href="/">主页</a><a class="nav-item" href="/notes/">便笺</a><a class="nav-item" href="/friends/">友链</a><a class="nav-item" href="/about/">关于</a></nav>
+</header>
+
+
+<div class="widgets">
+
+<div class="widget-wrap single" id="toc"><div class="widget-header cap dis-select"><span class="name">ubuntu搭建饥荒专用服务器</span></div><div class="widget-body fs14"><div class="doc-tree active"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%89%8D%E8%A8%80"><span class="toc-text">前言</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#docker%E7%89%88%E6%9C%AC%E9%83%A8%E7%BD%B2%E8%AF%B7%E5%8F%82%E8%80%83%EF%BC%9A%5B%E7%82%B9%E5%87%BB%E6%9F%A5%E7%9C%8B%5D(https://githubcom/qinming99/dst-admin/blob/master/file/readme.md)"><span class="toc-text">docker版本部署请参考：点击查看</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%8E%AF%E5%A2%83%E8%A6%81%E6%B1%82"><span class="toc-text">环境要求</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1ubuntu%E6%9C%8D%E5%8A%A1%E5%99%A8%E4%B8%80%E5%8F%B0%EF%BC%8C**ubuntu-16.04%2018.04**%E5%B7%B2%E7%BB%8F%E6%B5%8B%E8%AF%95%EF%BC%8C**20**%E7%89%88%E6%9C%AC%E7%9A%84%E4%B8%8D%E8%A1%8C%E6%B3%A8%E6%84%8F%EF%BC%8C%E5%85%B6%E4%BB%96%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E8%AF%B7%E4%BD%BF%E7%94%A8**docker**%E7%89%88%E6%9C%AC"><span class="toc-text">1.Ubuntu服务器一台，Ubuntu 16.04 18.04已经测试，20版本的不行注意，其他操作系统请使用docker版本</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2java%E7%8E%AF%E5%A2%83**jdk1.8**"><span class="toc-text">2.Java环境jdk1.8</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3%E9%9C%80%E8%A6%81%E7%94%A8%E5%88%B0%E7%9A%84%E5%B7%A5%E5%85%B7-**dst-admin.jar**%20%E5%AE%89%E8%A3%85%E5%8C%85%EF%BC%8Cshell%E8%BF%9E%E6%8E%A5%E5%B7%A5%E5%85%B7%EF%BC%8C%E6%8E%A8%E8%8D%90%E4%BD%BF%E7%94%A8%E5%9B%BD%E4%BA%A7%E7%9A%84%20**finalshell**%20%5B%E4%B8%8B%E8%BD%BD%E5%9C%B0%E5%9D%80%5D(http://www.hostbuf.com/t/988.html)"><span class="toc-text">3.需要用到的工具 dst-admin.jar 安装包，shell连接工具，推荐使用国产的 FinalShell 下载地址</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%89%E8%A3%85%E6%AD%A5%E9%AA%A4%EF%BC%9A"><span class="toc-text">安装步骤：</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1%E5%9C%A8%E8%85%BE%E8%AE%AF%E4%BA%91%E6%8E%A7%E5%88%B6%E5%8F%B0%E4%BF%AE%E6%94%B9%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%98%B2%E7%81%AB%E5%A2%99%EF%BC%8C%E5%BC%80%E6%94%BE%E7%AB%AF%E5%8F%A3"><span class="toc-text">1.在腾讯云控制台修改服务器防火墙，开放端口</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2ubuntu%E5%AE%89%E8%A3%85jdk1.8"><span class="toc-text">2.Ubuntu安装jdk1.8</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3%E4%B8%8B%E8%BD%BD%E6%9C%80%E6%96%B0%E7%89%88%E7%9A%84dst-admin.jar%E5%AE%89%E8%A3%85%E5%8C%85-%5B%E4%B8%8B%E8%BD%BD%E5%9C%B0%E5%9D%80%5D(https://github.com/qinming99/dst-admin/releases)"><span class="toc-text">3.下载最新版的dst-admin.jar安装包 下载地址</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4%E5%90%AF%E5%8A%A8dst-admin"><span class="toc-text">4.启动dst-admin</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5%E5%AE%89%E8%A3%85%E9%A5%A5%E8%8D%92%E5%AE%A2%E6%88%B7%E7%AB%AF"><span class="toc-text">5.安装饥荒客户端</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#6%E9%87%8D%E5%90%AFdst-admin"><span class="toc-text">6.重启dst-admin</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%AE%A1%E7%90%86"><span class="toc-text">服务器管理</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BF%9E%E6%8E%A5%E6%9C%8D%E5%8A%A1%E5%99%A8"><span class="toc-text">连接服务器</span></a></li></ol></li></ol></div></div></div>
+
+
+
+
+</div>
+
+
+    </aside>
+    <div class='l_main'>
+      
+
+      
+
+
+<div class="bread-nav fs12"><div id="breadcrumb"><a class="cap breadcrumb" href="/">主页</a><span class="sep"></span><a class="cap breadcrumb" href="/">文章</a></div><div id="post-meta">发布于&nbsp;<time datetime="2022-09-28T01:54:36.000Z">2022-09-28</time></div></div>
+
+<article class='content md post'>
+<h1 class="article-title"><span>ubuntu搭建饥荒专用服务器</span></h1>
+<h2 id="前言">前言</h2>
+<p>为方便各位小伙伴挨饿，弄了一个<strong>dst-admin</strong>的开源项目，方便小伙伴搭建服务器。 本教程主要介绍的是如何安装<strong>dst-admin</strong>饥荒管理平台，使用他来快速的部署和管理饥荒。</p>
+<span id="more"></span>
+<p>参考地址：<a target="_blank" rel="noopener" href="https://github.com/qinming99/dst-admin%EF%BC%9B">https://github.com/qinming99/dst-admin；</a></p>
+<h2 id="docker版本部署请参考：[点击查看](https://githubcom/qinming99/dst-admin/blob/master/file/readme.md)">docker版本部署请参考：<a target="_blank" rel="noopener" href="https://github.com/qinming99/dst-admin/blob/master/file/README.md">点击查看</a></h2>
+<h3 id="环境要求">环境要求</h3>
+<h4 id="1ubuntu服务器一台，**ubuntu-16.04 18.04**已经测试，**20**版本的不行注意，其他操作系统请使用**docker**版本">1.Ubuntu服务器一台，<strong>Ubuntu 16.04 18.04</strong>已经测试，<strong>20</strong>版本的不行注意，其他操作系统请使用<strong>docker</strong>版本</h4>
+<h4 id="2java环境**jdk1.8**">2.Java环境<strong>jdk1.8</strong></h4>
+<h4 id="3需要用到的工具-**dst-admin.jar** 安装包，shell连接工具，推荐使用国产的 **finalshell** [下载地址](http://www.hostbuf.com/t/988.html)">3.需要用到的工具 <strong>dst-admin.jar</strong> 安装包，shell连接工具，推荐使用国产的 <strong>FinalShell</strong> <a target="_blank" rel="noopener" href="http://www.hostbuf.com/t/988.html">下载地址</a></h4>
+<h3 id="安装步骤：">安装步骤：</h3>
+<h4 id="1在腾讯云控制台修改服务器防火墙，开放端口">1.在腾讯云控制台修改服务器防火墙，开放端口</h4>
+<blockquote>
+<p>为减少一些不必要的麻烦，建议开放所有端口，包括了入站和出站<br>
+腾讯<a target="_blank" rel="noopener" href="https://so.csdn.net/so/search?q=%E4%BA%91%E6%9C%8D%E5%8A%A1&amp;spm=1001.2101.3001.7020">云服务</a>器安全组开放端口教程：<a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_33505611/article/details/109232479">点击查看</a><br>
+阿里云服务器安全组开放端口教程：<a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_33505611/article/details/113852901">点击查看</a></p>
+</blockquote>
+<h4 id="2ubuntu安装jdk1.8">2.Ubuntu安装jdk1.8</h4>
+<p>先使用shell连接工具连接到服务器，执行以下命令，安装openjdk</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#更新软件源</span></span><br><span class="line">sudo apt-get update</span><br><span class="line"><span class="comment">#安装openJDK1.8</span></span><br><span class="line">sudo apt-get install -y openjdk-8-jdk</span><br><span class="line"><span class="comment">#查看版本</span></span><br><span class="line">java -version</span><br><span class="line">显示 <span class="string">&quot;openjdk version &quot;</span>1.8.0_252<span class="string">&quot;就表示安装完成</span></span><br></pre></td></tr></table></figure>
+<h4 id="3下载最新版的dst-admin.jar安装包-[下载地址](https://github.com/qinming99/dst-admin/releases)">3.下载最新版的dst-admin.jar安装包 <a target="_blank" rel="noopener" href="https://github.com/qinming99/dst-admin/releases">下载地址</a></h4>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#进入到home目录</span></span><br><span class="line"><span class="built_in">cd</span> ~</span><br><span class="line"><span class="comment">#下载安装包</span></span><br><span class="line">wget http://clouddn.tugos.cn/release/dst-admin-1.4.0.jar -O dst-admin.jar</span><br></pre></td></tr></table></figure>
+<h4 id="4启动dst-admin">4.启动dst-admin</h4>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">java -jar dst-admin.jar</span><br></pre></td></tr></table></figure>
+<p>出现了<em>Completed initialization</em>表示启动成功，按<kbd>⌘</kbd> + <kbd>C</kbd>键结束进程</p>
+<h4 id="5安装饥荒客户端">5.安装饥荒客户端</h4>
+<p>启动完成的dst-admin将释放两个脚本：<a target="_blank" rel="noopener" href="http://install.sh">install.sh</a> 用于安装客户端 ,<a target="_blank" rel="noopener" href="http://dstStart.sh">dstStart.sh</a> 用于管理饥荒管理平台</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#执行安装饥荒客户端安装程序,期间可能需要输入密码，这一步必须执行成功</span></span><br><span class="line"> ./install.sh</span><br></pre></td></tr></table></figure>
+<h4 id="6重启dst-admin">6.重启dst-admin</h4>
+<p><a target="_blank" rel="noopener" href="http://xn--dstStart-1e8ps59a8n8asctoiqzxx.sh">执行管理脚本dstStart.sh</a>，注意jar包的名称必须为dst-admin.jar不然找到文件</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#执行管理脚本</span></span><br><span class="line">./dstStart.sh</span><br></pre></td></tr></table></figure>
+<p>输入3重启服务<br>
+<img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://img.skyreeves.cn/hexo/20201015234810308.png" alt=""></p>
+<p><strong>安装完成此时我们就可以登陆到我们的饥荒管理平台对服务器进行管理了</strong></p>
+<h3 id="服务器管理">服务器管理</h3>
+<p>1.登陆饥荒管理后台设置自己的服务器</p>
+<p>在浏览器输入我们的访问地址登陆管理后台，地址为服务器的公网IP（云服务都有提供），加端口号，即：<a target="_blank" rel="noopener" href="http://xx.xx.xx.xx:8080">http://xx.xx.xx.xx:8080</a>，输入用户名admin 密码123456 即可登陆，登陆成功开始设置服务器</p>
+<p>2.点击平台的向导菜单，查看教程</p>
+<p>3.设置房间</p>
+<p>拿到自己的Token，地面设置，洞穴设置，MOD设置，一步步往下，点击生成新世界按钮，我们的服务器创建成功了</p>
+<blockquote>
+<p>在首页我们可以更新服务器，开启关闭服务器，还可以备份一下游戏进度，可以用于下次来玩，我们可以选择一个备份的存档恢复</p>
+</blockquote>
+<h3 id="连接服务器">连接服务器</h3>
+<p>在我们搜索不到服务器时，可以使用IP直接连接服务器，在饥荒联机版调出控制台 按 ~ 键调出控制台，</p>
+<p>输入c_connect(“xx.xx.xx.xx”)</p>
+<p>xx.xx.xx.xx表示IP地址，就可以直连我们的服务器了！</p>
+<p>直连命令c_connect(“ip”,端口,“密码”)，这里的端口是10999或者10998，密码为空就填写空串</p>
+<blockquote>
+<p>内存小的服务器可以<strong>开启swap</strong>虚拟内存<a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_33505611/article/details/110501166">点击查看教程</a></p>
+</blockquote>
+<div class="tag-plugin note" color="red"><div class="title"><strong>版权声明：本文为CSDN博主「debug的秦明」的原创文章，遵循CC 4.0 BY-SA版权协议，转载请附上原文出处链接及本声明。</strong></div><div class="body"><p>原文链接：<a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_33505611/article/details/109107216">https://blog.csdn.net/qq_33505611/article/details/109107216</a></p></div></div>
+
+
+<div class="article-footer reveal fs14"><section id="license"><div class="header"><span>许可协议</span></div><div class="body"><p>本文采用<a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">署名-非商业性使用-相同方式共享 4.0 国际</a>许可协议，转载请注明出处。</p>
+</div></section></div>
+
+</article>
+
+<div class="related-wrap reveal" id="read-next"><section class="body"><div class="item" id="prev"><div class="note">较新文章</div><a href="/post/45c5bddd.html">ubuntu搭建僵尸毁灭工程专用服务器</a></div><div class="item" id="next"><div class="note">较早文章</div><a href="/post/53f02396.html">Mac使用hexo+github搭建个人博客</a></div></section></div>
+
+
+
+
+
+
+  <div class='related-wrap md reveal' id="comments">
+    <div class='cmt-title cap theme'>
+      快来参与讨论吧
+    </div>
+    <div class='cmt-body waline'>
+      
+
+<div id="waline_container" class="waline_thread"><svg class="loading" style="vertical-align: middle;fill: currentColor;overflow: hidden;" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="2709"><path d="M832 512c0-176-144-320-320-320V128c211.2 0 384 172.8 384 384h-64zM192 512c0 176 144 320 320 320v64C300.8 896 128 723.2 128 512h64z" p-id="2710"></path></svg></div>
+
+    </div>
+  </div>
+
+
+
+      
+<footer class="page-footer reveal fs12"><hr><div class="text"><center>©2022 <a target="_blank" rel="noopener" href="https://beian.miit.gov.cn/#/Integrated/index">渝ICP备2022011696号-1</a> | Build By SkyReeves | Powered By Hexo <a target="_blank" rel="noopener" href="https://github.com/xaoxuu/hexo-theme-stellar">Stellar</a></center>
+<center>本站由 <a target="_blank" rel="noopener" href="https://www.upyun.com/?utm_source=lianmeng&utm_medium=referral"><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://img.skyreeves.cn/sites/又拍云.svg" width="5.5%" align="absmiddle" ></a> 提供CDN加速 | <span id="span"></span><script type="text/javascript">function runtime(){X = new Date("9/27/2022 18:00:00");Y = new Date();T = (Y.getTime()-X.getTime());M = 24*60*60*1000;a = T/M;A = Math.floor(a);b = (a-A)*24;B = Math.floor(b);c = (b-B)*60;C = Math.floor((b-B)*60);D = Math.floor((c-C)*60);span.innerHTML = "🛰️已在宇宙深处飘了"+A+"天"+B+"小时"+C+"分"+D+"秒"}setInterval(runtime, 1000);</script></center>
+</div></footer>
+
+      <div class='float-panel mobile-only blur' style='display:none'>
+  <button type='button' class='sidebar-toggle mobile' onclick='sidebar.toggle()'>
+    <svg class="icon" style="width: 1em; height: 1em;vertical-align: middle;fill: currentColor;overflow: hidden;" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="15301"><path d="M566.407 808.3c26.9-0.1 49.3-20.8 51.6-47.6-1.9-27.7-23.9-49.7-51.6-51.6h-412.6c-28.2-1.4-52.6 19.5-55.5 47.6 2.3 26.8 24.6 47.5 51.6 47.6h416.5v4z m309.3-249.9c26.9-0.1 49.3-20.8 51.6-47.6-2.2-26.8-24.6-47.5-51.6-47.6h-721.9c-27.7-2.8-52.5 17.4-55.3 45.1-0.1 0.8-0.1 1.7-0.2 2.5 0.9 27.2 23.6 48.5 50.7 47.6H875.707z m-103.1-245.9c26.9-0.1 49.3-20.8 51.6-47.6-0.4-28.3-23.2-51.1-51.5-51.6h-618.9c-29.5-1.1-54.3 21.9-55.5 51.4v0.2c1.4 27.8 25.2 49.2 53 47.8 0.8 0 1.7-0.1 2.5-0.2h618.8z" p-id="15302"></path><path d="M566.407 808.3c26.9-0.1 49.3-20.8 51.6-47.6-1.9-27.7-23.9-49.7-51.6-51.6h-412.6c-28.2-1.4-52.6 19.5-55.5 47.6 1.9 27.7 23.9 49.7 51.6 51.6h416.5z m309.3-249.9c26.9-0.1 49.3-20.8 51.6-47.6-2.2-26.8-24.6-47.5-51.6-47.6h-721.9c-27.7-2.8-52.5 17.4-55.3 45.1-0.1 0.8-0.1 1.7-0.2 2.5 0.9 27.2 23.6 48.5 50.7 47.6H875.707z m-103.1-245.9c26.9-0.1 49.3-20.8 51.6-47.6-0.4-28.3-23.2-51.1-51.5-51.6h-618.9c-29.5-1.1-54.3 21.9-55.5 51.4v0.2c1.4 27.8 25.2 49.2 53 47.8 0.8 0 1.7-0.1 2.5-0.2h618.8z" p-id="15303"></path></svg>
+  </button>
+</div>
+
+    </div>
+  </div>
+  <div class='scripts'>
+    <script type="text/javascript">
+  stellar = {
+    // 懒加载 css https://github.com/filamentgroup/loadCSS
+    loadCSS: (href, before, media, attributes) => {
+      var doc = window.document;
+      var ss = doc.createElement("link");
+      var ref;
+      if (before) {
+        ref = before;
+      } else {
+        var refs = (doc.body || doc.getElementsByTagName("head")[0]).childNodes;
+        ref = refs[refs.length - 1];
+      }
+      var sheets = doc.styleSheets;
+      if (attributes) {
+        for (var attributeName in attributes) {
+          if (attributes.hasOwnProperty(attributeName)) {
+            ss.setAttribute(attributeName, attributes[attributeName]);
+          }
+        }
+      }
+      ss.rel = "stylesheet";
+      ss.href = href;
+      ss.media = "only x";
+      function ready(cb) {
+        if (doc.body) {
+          return cb();
+        }
+        setTimeout(function () {
+          ready(cb);
+        });
+      }
+      ready(function () {
+        ref.parentNode.insertBefore(ss, before ? ref : ref.nextSibling);
+      });
+      var onloadcssdefined = function (cb) {
+        var resolvedHref = ss.href;
+        var i = sheets.length;
+        while (i--) {
+          if (sheets[i].href === resolvedHref) {
+            return cb();
+          }
+        }
+        setTimeout(function () {
+          onloadcssdefined(cb);
+        });
+      };
+      function loadCB() {
+        if (ss.addEventListener) {
+          ss.removeEventListener("load", loadCB);
+        }
+        ss.media = media || "all";
+      }
+      if (ss.addEventListener) {
+        ss.addEventListener("load", loadCB);
+      }
+      ss.onloadcssdefined = onloadcssdefined;
+      onloadcssdefined(loadCB);
+      return ss;
+    },
+
+    // 从 butterfly 和 volantis 获得灵感
+    loadScript: (src, opt) => new Promise((resolve, reject) => {
+      var script = document.createElement('script');
+      script.src = src;
+      if (opt) {
+        for (let key of Object.keys(opt)) {
+          script[key] = opt[key]
+        }
+      } else {
+        // 默认异步，如果需要同步，第二个参数传入 {} 即可
+        script.async = true
+      }
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    }),
+
+    // https://github.com/jerryc127/hexo-theme-butterfly
+    jQuery: (fn) => {
+      if (typeof jQuery === 'undefined') {
+        stellar.loadScript(stellar.plugins.jQuery).then(fn)
+      } else {
+        fn()
+      }
+    }
+  };
+  stellar.version = '1.16.0';
+  stellar.github = 'https://github.com/xaoxuu/hexo-theme-stellar/tree/1.16.0';
+  stellar.config = {
+    date_suffix: {
+      just: '刚刚',
+      min: '分钟前',
+      hour: '小时前',
+      day: '天前',
+      month: '个月前',
+    },
+  };
+
+  // required plugins (only load if needs)
+  stellar.plugins = {
+    jQuery: 'https://fastly.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js'
+  };
+
+  // stellar js
+  stellar.plugins.stellar = Object.assign({"sites":"/js/plugins/sites.js","friends":"/js/plugins/friends.js","ghinfo":"/js/plugins/ghinfo.js","timeline":"/js/plugins/timeline.js","linkcard":"/js/plugins/linkcard.js","fcircle":"/js/plugins/fcircle.js"});
+
+  stellar.plugins.marked = Object.assign("https://cdn.bootcdn.net/ajax/libs/marked/4.0.18/marked.min.js");
+  // optional plugins
+  if ('true' == 'true') {
+    stellar.plugins.lazyload = Object.assign({"enable":true,"js":"https://fastly.jsdelivr.net/npm/vanilla-lazyload@17.3.1/dist/lazyload.min.js","transition":"blur"});
+  }
+  if ('true' == 'true') {
+    stellar.plugins.swiper = Object.assign({"enable":true,"css":"https://unpkg.com/swiper@6/swiper-bundle.min.css","js":"https://unpkg.com/swiper@6/swiper-bundle.min.js"});
+  }
+  if ('' == 'true') {
+    stellar.plugins.scrollreveal = Object.assign({"enable":null,"js":"https://fastly.jsdelivr.net/npm/scrollreveal@4.0.9/dist/scrollreveal.min.js","distance":"8px","duration":500,"interval":100,"scale":1});
+  }
+  if ('true' == 'true') {
+    stellar.plugins.preload = Object.assign({"enable":true,"service":"flying_pages","instant_page":"https://fastly.jsdelivr.net/gh/volantis-x/cdn-volantis@4.1.2/js/instant_page.js","flying_pages":"https://fastly.jsdelivr.net/gh/gijo-varghese/flying-pages@2.1.2/flying-pages.min.js"});
+  }
+  if ('true' == 'true') {
+    stellar.plugins.fancybox = Object.assign({"enable":true,"js":"https://fastly.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.umd.js","css":"https://fastly.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.css","selector":".swiper-slide img"});
+  }
+  if ('false' == 'true') {
+    stellar.plugins.heti = Object.assign({"enable":false,"css":"https://unpkg.com/heti/umd/heti.min.css","js":"https://unpkg.com/heti/umd/heti-addon.min.js"});
+  }
+</script>
+
+<!-- required -->
+
+  
+<script src="/js/main.js" async></script>
+
+
+
+<!-- optional -->
+
+  <script>
+  function load_comment(){
+    if(!document.getElementById("waline_container"))return;
+    stellar.loadCSS('https://unpkg.com/@waline/client@v2/dist/waline.css');
+    stellar.loadScript('https://unpkg.com/@waline/client@v2/dist/waline.js', {defer:true}).then(function () {
+      const el = document.getElementById("waline_container");
+      var path = el.getAttribute('comment_id');
+      if (!path) {
+        path = decodeURI(window.location.pathname);
+      }
+      Waline.init(Object.assign({"js":"https://unpkg.com/@waline/client@v2/dist/waline.js","css":"https://unpkg.com/@waline/client@v2/dist/waline.css","serverURL":"https://waline.skyreeves.cn","commentCount":true,"pageview":false,"locale":{"placeholder":"评论时填写邮箱，或者注册并登录后评论，即可在第一时间收到消息提醒。","reactionTitle":null},"emoji":["https://img.skyreeves.cn/emojis/blobs","https://img.skyreeves.cn/emojis/wsm","https://img.skyreeves.cn/emojis/bmoji"],"meta":["nick","mail","link"],"reaction":["https://img.skyreeves.cn/emojis/blobs/ablobcatheart.png","https://img.skyreeves.cn/emojis/blobs/ablobcatattentionreverse.png","https://img.skyreeves.cn/emojis/blobs/ablobcatrainbow.png","https://img.skyreeves.cn/emojis/blobs/blobcatsaitama.png","https://img.skyreeves.cn/emojis/blobs/blobcatflip.png"]}, {
+        el: '#waline_container',
+        path: path,
+      }));
+    });
+  }
+  window.addEventListener('DOMContentLoaded', (event) => {
+    console.log('DOM fully loaded and parsed');
+    load_comment();
+  });
+
+</script>
+
+
+
+
+<!-- inject -->
+
+
+  </div>
+  <!--动态线条背景-->
+  <script type="text/javascript"
+    color="220,220,220" opacity='0.7' zIndex="-2" count="200" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js">
+  </script>
+</body>
+</html>

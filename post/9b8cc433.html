@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang='zh-CN'>
+
+<head>
+  <meta name="generator" content="Hexo 6.3.0">
+  <meta name="hexo-theme" content="https://github.com/xaoxuu/hexo-theme-stellar/tree/1.16.0">
+  <meta charset="utf-8">
+  
+
+  <meta http-equiv='x-dns-prefetch-control' content='on' />
+  <link rel='dns-prefetch' href='https://fastly.jsdelivr.net'>
+  <link rel="preconnect" href="https://fastly.jsdelivr.net" crossorigin>
+  <link rel='dns-prefetch' href='//unpkg.com'>
+
+  <meta name="renderer" content="webkit">
+  <meta name="force-rendering" content="webkit">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+  <meta name="HandheldFriendly" content="True" >
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="theme-color" content="#f8f8f8">
+  
+  <title>Stellar主题自定义侧边栏教程「萌新向」 - SkyReeves</title>
+
+  
+    <meta name="description" content="开篇废话 在使用大佬@xaoxuu  开发的Stellar Hexo博客主题时，发现大佬的侧边栏不仅简介美观，还巨特娘的实用有木有！  原本Stellar使用文档里也有设置教程 但是对于本萌来说还是犹如天书  不过在本萌的不懈努力下还是攻克了这道难题，记录成了这篇文章">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Stellar主题自定义侧边栏教程「萌新向」">
+<meta property="og:url" content="http://skyreeves.cn/post/9b8cc433.html">
+<meta property="og:site_name" content="SkyReeves">
+<meta property="og:description" content="开篇废话 在使用大佬@xaoxuu  开发的Stellar Hexo博客主题时，发现大佬的侧边栏不仅简介美观，还巨特娘的实用有木有！  原本Stellar使用文档里也有设置教程 但是对于本萌来说还是犹如天书  不过在本萌的不懈努力下还是攻克了这道难题，记录成了这篇文章">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://img.skyreeves.cn/emojis/sd/1593486522799.gif">
+<meta property="og:image" content="https://img.skyreeves.cn/emojis/sd/1538453253097.jpg">
+<meta property="og:image" content="https://img.skyreeves.cn/emojis/sd/1540175839730.jpg">
+<meta property="og:image" content="https://img.skyreeves.cn/hexo/%E6%88%AA%E5%B1%8F2022-10-28-12.36.19.png">
+<meta property="og:image" content="https://img.skyreeves.cn/emojis/sd/1540175920048.jpg">
+<meta property="og:image" content="https://img.skyreeves.cn/hexo/%E6%88%AA%E5%B1%8F2022-10-28-13.57.46.png">
+<meta property="og:image" content="https://img.skyreeves.cn/hexo/%E6%88%AA%E5%B1%8F2022-10-28-14.17.55.png">
+<meta property="og:image" content="https://img.skyreeves.cn/emojis/sd/1540175732121.jpg">
+<meta property="og:image" content="https://img.skyreeves.cn/emojis/sd/1593771103408.jpg">
+<meta property="og:image" content="https://img.skyreeves.cn/hexo/%E6%88%AA%E5%B1%8F2022-10-28-15.16.09.png">
+<meta property="og:image" content="https://img.skyreeves.cn/emojis/sd/1609683066515.jpg">
+<meta property="article:published_time" content="2022-10-28T06:12:56.000Z">
+<meta property="article:modified_time" content="2022-12-01T13:33:03.369Z">
+<meta property="article:author" content="SkyReeves">
+<meta property="article:tag" content="Stellar">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://img.skyreeves.cn/emojis/sd/1593486522799.gif">
+  
+  
+
+  <!-- feed -->
+  
+    <link rel="alternate" href="/atom.xml" title="SkyReeves" type="application/atom+xml">
+  
+
+  
+    
+<link rel="stylesheet" href="/css/main.css">
+
+  
+
+  
+
+  
+
+  
+
+
+  
+    
+      <link rel="apple-touch-icon" sizes="180x180" href="https://img.skyreeves.cn/main/apple-touch-icon.png">
+    
+      <link rel="icon" type="image/png" sizes="32x32" href="https://img.skyreeves.cn/main/favicon-32x32.png">
+    
+      <link rel="icon" type="image/png" sizes="16x16" href="!https://img.skyreeves.cn/main/favicon-16x16.png">
+    
+      <link rel="manifest" href="https://img.skyreeves.cn/main/site.webmanifest">
+    
+      <link rel="shortcut icon" href="https://img.skyreeves.cn/main/favicon-32x32.png">
+    
+      <meta name="theme-color" content="#f8f8f8">
+    
+      <link rel="stylesheet" href="/css/scrollbar.css">
+    
+  
+</head>
+
+<body>
+  
+
+
+
+
+  <div class='l_body' id='start'>
+    <aside class='l_left' layout='post'>
+    
+
+  
+
+<header class="header"><div class="logo-wrap"><a class="avatar" href="/about/"><div class="bg" style="opacity:0;background-image:url(https://fastly.jsdelivr.net/gh/cdn-x/placeholder@1.0.2/avatar/round/rainbow64@3x.webp);"></div><img no-lazy class="avatar" src="https://img.skyreeves.cn/main/avatar01b.gif" onerror="javascript:this.classList.add('error');this.src='https://fastly.jsdelivr.net/gh/cdn-x/placeholder@1.0.1/image/2659360.svg';"></a><a class="title" href="/"><div class="main" ff="title">SkyReeves</div><div class="sub normal cap">🏁be a racer</div><div class="sub hover cap" style="opacity:0">不要把鼠标放在这里 🤪</div></a></div>
+
+<nav class="menu dis-select"><a class="nav-item active" href="/">主页</a><a class="nav-item" href="/notes/">便笺</a><a class="nav-item" href="/friends/">友链</a><a class="nav-item" href="/about/">关于</a></nav>
+</header>
+
+
+<div class="widgets">
+
+<div class="widget-wrap single" id="toc"><div class="widget-header cap dis-select"><span class="name">Stellar主题自定义侧边栏教程「萌新向」</span></div><div class="widget-body fs14"><div class="doc-tree active"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%BC%80%E7%AF%87%E5%BA%9F%E8%AF%9D"><span class="toc-text">开篇废话</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%85%B7%E4%BD%93%E6%AD%A5%E9%AA%A4"><span class="toc-text">具体步骤</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A6%82%E4%BD%95%E8%AE%BE%E7%BD%AE%E5%88%86%E7%BB%84%E5%90%8D"><span class="toc-text">如何设置分组名</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%9B%E5%BB%BA%E5%88%86%E7%BB%84"><span class="toc-text">创建分组</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%9B%E5%BB%BA%E6%8A%98%E5%8F%A0%E6%A0%87%E7%AD%BE"><span class="toc-text">创建折叠标签</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%A0%87%E7%AD%BE%E5%BD%92%E7%BB%84"><span class="toc-text">标签归组</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%9B%E5%BB%BA%E5%A4%9A%E4%B8%AA%E5%88%86%E7%BB%84%E4%B8%8E%E5%A4%9A%E4%B8%AA%E6%8A%98%E5%8F%A0%E6%A0%87%E7%AD%BE%E7%BB%84"><span class="toc-text">创建多个分组与多个折叠标签组</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%A2%98%E5%A4%96%E8%AF%9D"><span class="toc-text">题外话</span></a></li></ol></div></div></div>
+
+
+
+
+</div>
+
+
+    </aside>
+    <div class='l_main'>
+      
+
+      
+
+
+<div class="bread-nav fs12"><div id="breadcrumb"><a class="cap breadcrumb" href="/">主页</a><span class="sep"></span><a class="cap breadcrumb" href="/">文章</a></div><div id="post-meta">发布于&nbsp;<time datetime="2022-10-28T06:12:56.000Z">2022-10-28</time></div></div>
+
+<article class='content md post'>
+<h1 class="article-title"><span>Stellar主题自定义侧边栏教程「萌新向」</span></h1>
+<h2 id="开篇废话">开篇废话</h2>
+<p>在使用大佬<a target="_blank" rel="noopener" href="https://xaoxuu.com/">@xaoxuu</a>  开发的Stellar Hexo博客主题时，发现大佬的侧边栏不仅简介美观，还巨特娘的实用有木有！</p>
+<p><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://img.skyreeves.cn/emojis/sd/1593486522799.gif" alt=""></p>
+<p>原本<a target="_blank" rel="noopener" href="https://xaoxuu.com/wiki/stellar/wiki-settings/">Stellar使用文档</a>里也有设置教程</p>
+<p>但是对于本萌来说还是犹如天书</p>
+<p><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://img.skyreeves.cn/emojis/sd/1538453253097.jpg" alt=""></p>
+<p>不过在本萌的不懈努力下还是攻克了这道难题，记录成了这篇文章</p>
+<p><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://img.skyreeves.cn/emojis/sd/1540175839730.jpg" alt=""></p>
+<span id="more"></span>
+<h2 id="具体步骤">具体步骤</h2>
+<p>先看一下大佬的侧边栏:</p>
+<p><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://img.skyreeves.cn/hexo/%E6%88%AA%E5%B1%8F2022-10-28-12.36.19.png" alt=""></p>
+<p>这里的侧边栏由3部分组成</p>
+<ul>
+<li>
+<mark class="tag-plugin mark" color="red">分组</mark>
+</li>
+<li>
+<mark class="tag-plugin mark" color="cyan">折叠标签组</mark>
+</li>
+<li>
+<mark class="tag-plugin mark" color="green">折叠标签</mark>
+</li>
+</ul>
+<p>我们遇到的第一个难题就是</p>
+<h3 id="如何设置分组名">如何设置分组名</h3>
+<p><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://img.skyreeves.cn/emojis/sd/1540175920048.jpg" alt=""></p>
+<p>为了方便展示，以下以本站的<mark class="tag-plugin mark" >便笺</mark>页面为例进行讲解</p>
+<h3 id="创建分组">创建分组</h3>
+<p>在<code>source/_data/projects.yml</code>中增加一个项目：</p>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">Notes:</span></span><br><span class="line">  <span class="attr">title:</span> <span class="string">便笺</span></span><br><span class="line">  <span class="attr">description:</span></span><br><span class="line">  <span class="attr">index:</span> <span class="literal">false</span> <span class="comment"># 不在wiki列表中索引这个项目</span></span><br><span class="line">  <span class="attr">sidebar:</span> [<span class="string">toc</span>]</span><br><span class="line">  <span class="attr">tags:</span> <span class="string">笔记</span></span><br><span class="line">  <span class="attr">sections:</span></span><br><span class="line">    <span class="string">&#x27;Hexo笔记&#x27;</span><span class="string">:</span> [<span class="number">100</span>, <span class="number">199</span>]</span><br><span class="line">    <span class="string">&#x27;游戏&#x27;</span><span class="string">:</span> [<span class="number">200</span>, <span class="number">299</span>]</span><br></pre></td></tr></table></figure>
+<p>最后<strong>sections</strong>下的<strong>Hexo笔记</strong>和<strong>游戏</strong>便是我创建的分组</p>
+<p>后面的区间值用于指定页面归属哪一个分区，在后面会讲</p>
+<p>你有多少分组就写多少条，后面给不同的区间就行</p>
+<blockquote>
+<p>注意：</p>
+<p>在本站主题配置文件<code>_config.yml</code>里，便笺页面是以notes表示的</p>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">sidebar:</span></span><br><span class="line"><span class="string">...</span></span><br><span class="line">  <span class="attr">menu:</span></span><br><span class="line">     <span class="attr">post:</span> <span class="string">&#x27;[主页](/)&#x27;</span></span><br><span class="line">     <span class="attr">notes:</span> <span class="string">&#x27;[便笺](/notes/)&#x27;</span></span><br><span class="line">     <span class="attr">about:</span> <span class="string">&#x27;[关于](/about/)&#x27;</span></span><br></pre></td></tr></table></figure>
+<p>所以上面增加的控制项是Notes</p>
+<p>如果你是在其他页面编辑侧边栏</p>
+<p>需要根据你自己的页面设置新增项的名称</p>
+</blockquote>
+<p>第二个问题</p>
+<h3 id="创建折叠标签">创建折叠标签</h3>
+<p>侧边栏里的折叠标签其实可以把他们理解为一篇文章</p>
+<p>折叠标签就是文章的标题</p>
+<p>标签展开后则是文章的分段目录</p>
+<p>所以创建一个折叠标签其实就是写一篇文章而已</p>
+<p>在<code>scurce/notes/</code>目录下新建一个文件夹，文件夹名称随意，只要你自己能分清楚就行</p>
+<blockquote>
+<p>与上一步创建分组时一样，根据你自己的页面在对应的文件夹下操作</p>
+</blockquote>
+<p>再在文件夹里创建一个<code>index.md</code>文件</p>
+<p>如下图所示：</p>
+<p><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://img.skyreeves.cn/hexo/%E6%88%AA%E5%B1%8F2022-10-28-13.57.46.png" alt=""></p>
+<p>我这里就是在<code>notes</code>下新建了一个<code>站点美化</code>文件夹</p>
+<p>再在里面创建<code>index.md</code></p>
+<p>我们可以看到这就是一篇md格式的文章</p>
+<p>关键在于编辑<code>index.md</code>文件：</p>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">---</span></span><br><span class="line"><span class="attr">menu_id:</span> <span class="string">notes</span></span><br><span class="line"><span class="attr">layout:</span> <span class="string">wiki</span></span><br><span class="line"><span class="attr">wiki:</span> <span class="string">Notes</span></span><br><span class="line"><span class="attr">breadcrumb:</span> <span class="literal">false</span></span><br><span class="line"><span class="attr">title:</span> <span class="string">站点美化</span></span><br><span class="line"><span class="attr">order:</span> <span class="number">101</span></span><br><span class="line"><span class="attr">comments:</span> <span class="literal">false</span></span><br><span class="line"></span><br><span class="line"><span class="meta">---</span></span><br><span class="line"><span class="meta"></span></span><br><span class="line"><span class="comment">## </span></span><br></pre></td></tr></table></figure>
+<p>这里<strong>title</strong>的值就是页面最终呈现的折叠标签名，本例中即为<strong>站点美化</strong></p>
+<h3 id="标签归组">标签归组</h3>
+<p>接着说上面编辑的内容</p>
+<p><strong>order</strong>的值的作用就是将它定义到上个步骤里创建的分组里</p>
+<p>比如上一步我在<code>source/_data/projects.yml</code>将[100,199]这个区间赋予给了<strong>Hexo笔记</strong>，我这里的order的值是101，在100至199这个区间内，所以页面最终的效果就是把<strong>站点美化</strong>归类到<strong>Hexo笔记</strong>这个分组下，如下图：</p>
+<p><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://img.skyreeves.cn/hexo/%E6%88%AA%E5%B1%8F2022-10-28-14.17.55.png" alt=""></p>
+<p>至此一个折叠标签做好了</p>
+<p>至于<code>index.md</code>里除了title和order外的其他项</p>
+<ul>
+<li>
+<p><strong>layout</strong> 的值固定为wiki，与第二项一同作用于侧边栏，如果没有它们侧边栏也会消失</p>
+</li>
+<li>
+<p><strong>wiki</strong> 的值写你在<code>source/_data/projects.yml</code>中新增的项目名</p>
+</li>
+<li>
+<p><strong>breadcrumb: false</strong> 表示本页面不显示顶部导航，如果你需要显示的话，把这一行删除即可</p>
+</li>
+<li>
+<p><strong>comments: false</strong> 表示本页面不启用评论版块，需要启用评论板块的话把值改成<strong>true</strong></p>
+</li>
+</ul>
+<h3 id="创建多个分组与多个折叠标签组">创建多个分组与多个折叠标签组</h3>
+<p>当我们需要在侧边栏里写入多个折叠标签时</p>
+<p>则与上一步一样，在<code>scurce/notes/</code>目录下再新建一个文件夹</p>
+<blockquote>
+<p>再说一次，这是以本站的<mark class="tag-plugin mark" >便笺</mark>页为例在操作，实际需要根据你自己的页面在对应的文件夹下进行</p>
+</blockquote>
+<p>里面再新建一个<code>index.md</code>文件</p>
+<p>通过给<strong>title</strong>和<strong>order</strong>不同的值来实现不同的标签名和分组</p>
+<p>比如我在另一个文件夹里创建了一个新的<code>index.md</code>文件，title我定为<mark class="tag-plugin mark" >博主游玩推荐</mark>，order值定为<mark class="tag-plugin mark" >201</mark>，则最终在页面的效果就是一个名为<strong>博主游玩推荐</strong>的标签位于<strong>游戏</strong>分组下</p>
+<p><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://img.skyreeves.cn/emojis/sd/1540175732121.jpg" alt=""></p>
+<h2 id="题外话">题外话</h2>
+<p>这里我们讨论的是在<mark class="tag-plugin mark" >便笺</mark>页面里的侧边栏设置</p>
+<p>那要是我连<mark class="tag-plugin mark" >便笺</mark>页都没有怎么办</p>
+<p><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://img.skyreeves.cn/emojis/sd/1593771103408.jpg" alt=""></p>
+<p>在blog所在的文件夹终端里执行：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo new page  &quot;notes&quot;</span><br></pre></td></tr></table></figure>
+<p>这会在<code>scurce</code>目录下创建 <code>notes</code> 文件夹，页面内容可以在里面的的 <code>index.md</code> 里编辑</p>
+<p>然后在主题配置文件里将 <code>sidebar.menu.notes</code> 的注释取消掉，例如：</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">sidebar:</span></span><br><span class="line">  <span class="attr">menu:</span></span><br><span class="line">     <span class="attr">post:</span> <span class="string">&#x27;[主页](/)&#x27;</span></span><br><span class="line">     <span class="attr">notes:</span> <span class="string">&#x27;[便笺](/notes/)&#x27;</span></span><br></pre></td></tr></table></figure>
+<p>最终页面文件的构成如下：</p>
+<p><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://img.skyreeves.cn/hexo/%E6%88%AA%E5%B1%8F2022-10-28-15.16.09.png" alt=""></p>
+<p>在<mark class="tag-plugin mark" color="red">红框的index.md文件</mark>里编辑<mark class="tag-plugin mark" >便笺</mark>主页内容</p>
+<p>在<mark class="tag-plugin mark" color="cyan">蓝框的index.md文件</mark>里编辑<strong>Hexo笔记</strong>分组下的<strong>站点美化</strong>页</p>
+<p>在<mark class="tag-plugin mark" color="green">绿框的index.md文件</mark>里编辑<strong>游戏</strong>分组里的<strong>博主游玩推荐</strong>页</p>
+<p><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://img.skyreeves.cn/emojis/sd/1609683066515.jpg" alt=""></p>
+
+
+<div class="article-footer reveal fs14"><section id="license"><div class="header"><span>许可协议</span></div><div class="body"><p>本文采用<a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">署名-非商业性使用-相同方式共享 4.0 国际</a>许可协议，转载请注明出处。</p>
+</div></section></div>
+
+</article>
+
+<div class="related-wrap reveal" id="read-next"><section class="body"><div class="item" id="prev"><div class="note">较新文章</div><a href="/post/8cd79de0.html">评论板块加载失败的问题</a></div><div class="item" id="next"><div class="note">较早文章</div><a href="/post/eefa4f8b.html">跳蛛饲养入门问答篇</a></div></section></div>
+
+
+
+
+
+
+  <div class='related-wrap md reveal' id="comments">
+    <div class='cmt-title cap theme'>
+      快来参与讨论吧
+    </div>
+    <div class='cmt-body waline'>
+      
+
+<div id="waline_container" class="waline_thread"><svg class="loading" style="vertical-align: middle;fill: currentColor;overflow: hidden;" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="2709"><path d="M832 512c0-176-144-320-320-320V128c211.2 0 384 172.8 384 384h-64zM192 512c0 176 144 320 320 320v64C300.8 896 128 723.2 128 512h64z" p-id="2710"></path></svg></div>
+
+    </div>
+  </div>
+
+
+
+      
+<footer class="page-footer reveal fs12"><hr><div class="text"><center>©2022 <a target="_blank" rel="noopener" href="https://beian.miit.gov.cn/#/Integrated/index">渝ICP备2022011696号-1</a> | Build By SkyReeves | Powered By Hexo <a target="_blank" rel="noopener" href="https://github.com/xaoxuu/hexo-theme-stellar">Stellar</a></center>
+<center>本站由 <a target="_blank" rel="noopener" href="https://www.upyun.com/?utm_source=lianmeng&utm_medium=referral"><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://img.skyreeves.cn/sites/又拍云.svg" width="5.5%" align="absmiddle" ></a> 提供CDN加速 | <span id="span"></span><script type="text/javascript">function runtime(){X = new Date("9/27/2022 18:00:00");Y = new Date();T = (Y.getTime()-X.getTime());M = 24*60*60*1000;a = T/M;A = Math.floor(a);b = (a-A)*24;B = Math.floor(b);c = (b-B)*60;C = Math.floor((b-B)*60);D = Math.floor((c-C)*60);span.innerHTML = "🛰️已在宇宙深处飘了"+A+"天"+B+"小时"+C+"分"+D+"秒"}setInterval(runtime, 1000);</script></center>
+</div></footer>
+
+      <div class='float-panel mobile-only blur' style='display:none'>
+  <button type='button' class='sidebar-toggle mobile' onclick='sidebar.toggle()'>
+    <svg class="icon" style="width: 1em; height: 1em;vertical-align: middle;fill: currentColor;overflow: hidden;" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="15301"><path d="M566.407 808.3c26.9-0.1 49.3-20.8 51.6-47.6-1.9-27.7-23.9-49.7-51.6-51.6h-412.6c-28.2-1.4-52.6 19.5-55.5 47.6 2.3 26.8 24.6 47.5 51.6 47.6h416.5v4z m309.3-249.9c26.9-0.1 49.3-20.8 51.6-47.6-2.2-26.8-24.6-47.5-51.6-47.6h-721.9c-27.7-2.8-52.5 17.4-55.3 45.1-0.1 0.8-0.1 1.7-0.2 2.5 0.9 27.2 23.6 48.5 50.7 47.6H875.707z m-103.1-245.9c26.9-0.1 49.3-20.8 51.6-47.6-0.4-28.3-23.2-51.1-51.5-51.6h-618.9c-29.5-1.1-54.3 21.9-55.5 51.4v0.2c1.4 27.8 25.2 49.2 53 47.8 0.8 0 1.7-0.1 2.5-0.2h618.8z" p-id="15302"></path><path d="M566.407 808.3c26.9-0.1 49.3-20.8 51.6-47.6-1.9-27.7-23.9-49.7-51.6-51.6h-412.6c-28.2-1.4-52.6 19.5-55.5 47.6 1.9 27.7 23.9 49.7 51.6 51.6h416.5z m309.3-249.9c26.9-0.1 49.3-20.8 51.6-47.6-2.2-26.8-24.6-47.5-51.6-47.6h-721.9c-27.7-2.8-52.5 17.4-55.3 45.1-0.1 0.8-0.1 1.7-0.2 2.5 0.9 27.2 23.6 48.5 50.7 47.6H875.707z m-103.1-245.9c26.9-0.1 49.3-20.8 51.6-47.6-0.4-28.3-23.2-51.1-51.5-51.6h-618.9c-29.5-1.1-54.3 21.9-55.5 51.4v0.2c1.4 27.8 25.2 49.2 53 47.8 0.8 0 1.7-0.1 2.5-0.2h618.8z" p-id="15303"></path></svg>
+  </button>
+</div>
+
+    </div>
+  </div>
+  <div class='scripts'>
+    <script type="text/javascript">
+  stellar = {
+    // 懒加载 css https://github.com/filamentgroup/loadCSS
+    loadCSS: (href, before, media, attributes) => {
+      var doc = window.document;
+      var ss = doc.createElement("link");
+      var ref;
+      if (before) {
+        ref = before;
+      } else {
+        var refs = (doc.body || doc.getElementsByTagName("head")[0]).childNodes;
+        ref = refs[refs.length - 1];
+      }
+      var sheets = doc.styleSheets;
+      if (attributes) {
+        for (var attributeName in attributes) {
+          if (attributes.hasOwnProperty(attributeName)) {
+            ss.setAttribute(attributeName, attributes[attributeName]);
+          }
+        }
+      }
+      ss.rel = "stylesheet";
+      ss.href = href;
+      ss.media = "only x";
+      function ready(cb) {
+        if (doc.body) {
+          return cb();
+        }
+        setTimeout(function () {
+          ready(cb);
+        });
+      }
+      ready(function () {
+        ref.parentNode.insertBefore(ss, before ? ref : ref.nextSibling);
+      });
+      var onloadcssdefined = function (cb) {
+        var resolvedHref = ss.href;
+        var i = sheets.length;
+        while (i--) {
+          if (sheets[i].href === resolvedHref) {
+            return cb();
+          }
+        }
+        setTimeout(function () {
+          onloadcssdefined(cb);
+        });
+      };
+      function loadCB() {
+        if (ss.addEventListener) {
+          ss.removeEventListener("load", loadCB);
+        }
+        ss.media = media || "all";
+      }
+      if (ss.addEventListener) {
+        ss.addEventListener("load", loadCB);
+      }
+      ss.onloadcssdefined = onloadcssdefined;
+      onloadcssdefined(loadCB);
+      return ss;
+    },
+
+    // 从 butterfly 和 volantis 获得灵感
+    loadScript: (src, opt) => new Promise((resolve, reject) => {
+      var script = document.createElement('script');
+      script.src = src;
+      if (opt) {
+        for (let key of Object.keys(opt)) {
+          script[key] = opt[key]
+        }
+      } else {
+        // 默认异步，如果需要同步，第二个参数传入 {} 即可
+        script.async = true
+      }
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    }),
+
+    // https://github.com/jerryc127/hexo-theme-butterfly
+    jQuery: (fn) => {
+      if (typeof jQuery === 'undefined') {
+        stellar.loadScript(stellar.plugins.jQuery).then(fn)
+      } else {
+        fn()
+      }
+    }
+  };
+  stellar.version = '1.16.0';
+  stellar.github = 'https://github.com/xaoxuu/hexo-theme-stellar/tree/1.16.0';
+  stellar.config = {
+    date_suffix: {
+      just: '刚刚',
+      min: '分钟前',
+      hour: '小时前',
+      day: '天前',
+      month: '个月前',
+    },
+  };
+
+  // required plugins (only load if needs)
+  stellar.plugins = {
+    jQuery: 'https://fastly.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js'
+  };
+
+  // stellar js
+  stellar.plugins.stellar = Object.assign({"sites":"/js/plugins/sites.js","friends":"/js/plugins/friends.js","ghinfo":"/js/plugins/ghinfo.js","timeline":"/js/plugins/timeline.js","linkcard":"/js/plugins/linkcard.js","fcircle":"/js/plugins/fcircle.js"});
+
+  stellar.plugins.marked = Object.assign("https://cdn.bootcdn.net/ajax/libs/marked/4.0.18/marked.min.js");
+  // optional plugins
+  if ('true' == 'true') {
+    stellar.plugins.lazyload = Object.assign({"enable":true,"js":"https://fastly.jsdelivr.net/npm/vanilla-lazyload@17.3.1/dist/lazyload.min.js","transition":"blur"});
+  }
+  if ('true' == 'true') {
+    stellar.plugins.swiper = Object.assign({"enable":true,"css":"https://unpkg.com/swiper@6/swiper-bundle.min.css","js":"https://unpkg.com/swiper@6/swiper-bundle.min.js"});
+  }
+  if ('' == 'true') {
+    stellar.plugins.scrollreveal = Object.assign({"enable":null,"js":"https://fastly.jsdelivr.net/npm/scrollreveal@4.0.9/dist/scrollreveal.min.js","distance":"8px","duration":500,"interval":100,"scale":1});
+  }
+  if ('true' == 'true') {
+    stellar.plugins.preload = Object.assign({"enable":true,"service":"flying_pages","instant_page":"https://fastly.jsdelivr.net/gh/volantis-x/cdn-volantis@4.1.2/js/instant_page.js","flying_pages":"https://fastly.jsdelivr.net/gh/gijo-varghese/flying-pages@2.1.2/flying-pages.min.js"});
+  }
+  if ('true' == 'true') {
+    stellar.plugins.fancybox = Object.assign({"enable":true,"js":"https://fastly.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.umd.js","css":"https://fastly.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.css","selector":".swiper-slide img"});
+  }
+  if ('false' == 'true') {
+    stellar.plugins.heti = Object.assign({"enable":false,"css":"https://unpkg.com/heti/umd/heti.min.css","js":"https://unpkg.com/heti/umd/heti-addon.min.js"});
+  }
+</script>
+
+<!-- required -->
+
+  
+<script src="/js/main.js" async></script>
+
+
+
+<!-- optional -->
+
+  <script>
+  function load_comment(){
+    if(!document.getElementById("waline_container"))return;
+    stellar.loadCSS('https://unpkg.com/@waline/client@v2/dist/waline.css');
+    stellar.loadScript('https://unpkg.com/@waline/client@v2/dist/waline.js', {defer:true}).then(function () {
+      const el = document.getElementById("waline_container");
+      var path = el.getAttribute('comment_id');
+      if (!path) {
+        path = decodeURI(window.location.pathname);
+      }
+      Waline.init(Object.assign({"js":"https://unpkg.com/@waline/client@v2/dist/waline.js","css":"https://unpkg.com/@waline/client@v2/dist/waline.css","serverURL":"https://waline.skyreeves.cn","commentCount":true,"pageview":false,"locale":{"placeholder":"评论时填写邮箱，或者注册并登录后评论，即可在第一时间收到消息提醒。","reactionTitle":null},"emoji":["https://img.skyreeves.cn/emojis/blobs","https://img.skyreeves.cn/emojis/wsm","https://img.skyreeves.cn/emojis/bmoji"],"meta":["nick","mail","link"],"reaction":["https://img.skyreeves.cn/emojis/blobs/ablobcatheart.png","https://img.skyreeves.cn/emojis/blobs/ablobcatattentionreverse.png","https://img.skyreeves.cn/emojis/blobs/ablobcatrainbow.png","https://img.skyreeves.cn/emojis/blobs/blobcatsaitama.png","https://img.skyreeves.cn/emojis/blobs/blobcatflip.png"]}, {
+        el: '#waline_container',
+        path: path,
+      }));
+    });
+  }
+  window.addEventListener('DOMContentLoaded', (event) => {
+    console.log('DOM fully loaded and parsed');
+    load_comment();
+  });
+
+</script>
+
+
+
+
+<!-- inject -->
+
+
+  </div>
+  <!--动态线条背景-->
+  <script type="text/javascript"
+    color="220,220,220" opacity='0.7' zIndex="-2" count="200" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js">
+  </script>
+</body>
+</html>

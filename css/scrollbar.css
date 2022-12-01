@@ -1,0 +1,27 @@
+/* 滚动条整体部分 */
+::-webkit-scrollbar {
+	width: 5px;
+	height: 8px;
+  }
+  
+/* 外层轨道 */
+  ::-webkit-scrollbar-track {
+	background-color: rgba(200,155,155,0);
+	border-radius: 2em;
+  }
+
+/* 滚动条可以拖动的那部分 */
+  ::-webkit-scrollbar-thumb {
+	background-color: #1ACDFC !important; //滚动条颜色设置
+	background-image: -webkit-linear-gradient(
+	  45deg,
+	  rgba(255, 255, 255, 0.4) 25%,
+	  transparent 25%,
+	  transparent 50%,
+	  rgba(255, 255, 255, 0.4) 50%,
+	  rgba(255, 255, 255, 0.4) 75%,
+	  transparent 75%,
+	  transparent
+	) !important;
+	border-radius: 2em;
+  }

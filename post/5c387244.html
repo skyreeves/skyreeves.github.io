@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang='zh-CN'>
+
+<head>
+  <meta name="generator" content="Hexo 6.3.0">
+  <meta name="hexo-theme" content="https://github.com/xaoxuu/hexo-theme-stellar/tree/1.16.0">
+  <meta charset="utf-8">
+  
+
+  <meta http-equiv='x-dns-prefetch-control' content='on' />
+  <link rel='dns-prefetch' href='https://fastly.jsdelivr.net'>
+  <link rel="preconnect" href="https://fastly.jsdelivr.net" crossorigin>
+  <link rel='dns-prefetch' href='//unpkg.com'>
+
+  <meta name="renderer" content="webkit">
+  <meta name="force-rendering" content="webkit">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+  <meta name="HandheldFriendly" content="True" >
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="theme-color" content="#f8f8f8">
+  
+  <title>Mac安装Homebrew - SkyReeves</title>
+
+  
+    <meta name="description" content="Homebrew 是什么 Homebrew是 mac的包管理器，仅需执行相应的命令,就能下载安装需要的软件包，可以省掉自己去下载、解压、拖拽(安装)等繁琐的步骤。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Mac安装Homebrew">
+<meta property="og:url" content="http://skyreeves.cn/post/5c387244.html">
+<meta property="og:site_name" content="SkyReeves">
+<meta property="og:description" content="Homebrew 是什么 Homebrew是 mac的包管理器，仅需执行相应的命令,就能下载安装需要的软件包，可以省掉自己去下载、解压、拖拽(安装)等繁琐的步骤。">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://img.skyreeves.cn/hexo/ac3d20912216335d5f63746748139a0c.png">
+<meta property="og:image" content="https://img.skyreeves.cn/hexo/51e9f5a8153c0412bf0440ff2353950f.png">
+<meta property="og:image" content="https://img.skyreeves.cn/hexo/148dffa10ae2df9a0a93fcac98bcd879.png">
+<meta property="article:published_time" content="2022-09-27T15:18:15.000Z">
+<meta property="article:modified_time" content="2022-12-01T13:33:03.369Z">
+<meta property="article:author" content="SkyReeves">
+<meta property="article:tag" content="Mac">
+<meta property="article:tag" content="brew">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://img.skyreeves.cn/hexo/ac3d20912216335d5f63746748139a0c.png">
+  
+  
+
+  <!-- feed -->
+  
+    <link rel="alternate" href="/atom.xml" title="SkyReeves" type="application/atom+xml">
+  
+
+  
+    
+<link rel="stylesheet" href="/css/main.css">
+
+  
+
+  
+
+  
+
+  
+
+
+  
+    
+      <link rel="apple-touch-icon" sizes="180x180" href="https://img.skyreeves.cn/main/apple-touch-icon.png">
+    
+      <link rel="icon" type="image/png" sizes="32x32" href="https://img.skyreeves.cn/main/favicon-32x32.png">
+    
+      <link rel="icon" type="image/png" sizes="16x16" href="!https://img.skyreeves.cn/main/favicon-16x16.png">
+    
+      <link rel="manifest" href="https://img.skyreeves.cn/main/site.webmanifest">
+    
+      <link rel="shortcut icon" href="https://img.skyreeves.cn/main/favicon-32x32.png">
+    
+      <meta name="theme-color" content="#f8f8f8">
+    
+      <link rel="stylesheet" href="/css/scrollbar.css">
+    
+  
+</head>
+
+<body>
+  
+
+
+
+
+  <div class='l_body' id='start'>
+    <aside class='l_left' layout='post'>
+    
+
+  
+
+<header class="header"><div class="logo-wrap"><a class="avatar" href="/about/"><div class="bg" style="opacity:0;background-image:url(https://fastly.jsdelivr.net/gh/cdn-x/placeholder@1.0.2/avatar/round/rainbow64@3x.webp);"></div><img no-lazy class="avatar" src="https://img.skyreeves.cn/main/avatar01b.gif" onerror="javascript:this.classList.add('error');this.src='https://fastly.jsdelivr.net/gh/cdn-x/placeholder@1.0.1/image/2659360.svg';"></a><a class="title" href="/"><div class="main" ff="title">SkyReeves</div><div class="sub normal cap">🏁be a racer</div><div class="sub hover cap" style="opacity:0">不要把鼠标放在这里 🤪</div></a></div>
+
+<nav class="menu dis-select"><a class="nav-item active" href="/">主页</a><a class="nav-item" href="/notes/">便笺</a><a class="nav-item" href="/friends/">友链</a><a class="nav-item" href="/about/">关于</a></nav>
+</header>
+
+
+<div class="widgets">
+
+<div class="widget-wrap single" id="toc"><div class="widget-header cap dis-select"><span class="name">Mac安装Homebrew</span></div><div class="widget-body fs14"><div class="doc-tree active"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#homebrew-%E6%98%AF%E4%BB%80%E4%B9%88"><span class="toc-text">Homebrew 是什么</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#homebrew-%E6%80%8E%E4%B9%88%E5%AE%89%E8%A3%85"><span class="toc-text">Homebrew 怎么安装</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%96%B9%E6%B3%95%E4%B8%80%EF%BC%9Abrew%E5%AE%98%E7%BD%91%E7%9A%84%E5%AE%89%E8%A3%85%E8%84%9A%E6%9C%AC"><span class="toc-text">方法一：brew官网的安装脚本</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%96%B9%E6%B3%95%E4%BA%8C%EF%BC%9Abrew-%E9%95%9C%E5%83%8F%E5%AE%89%E8%A3%85%E8%84%9A%E6%9C%AC%EF%BC%88%E4%BA%B2%E6%B5%8B%E6%9C%80%E5%BF%AB%E9%80%9F%E6%9C%80%E6%9C%89%E6%95%88%EF%BC%89"><span class="toc-text">方法二：brew 镜像安装脚本（亲测最快速最有效）</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#homebrew-%E5%AE%89%E8%A3%85%E6%97%B6%E5%A6%82%E4%BD%95%E9%81%BF%E5%9D%91"><span class="toc-text">Homebrew 安装时如何避坑</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1%E8%8B%A5%E5%87%BA%E7%8E%B0-error:%20checksum%20mismatch."><span class="toc-text">1.若出现 Error: Checksum mismatch.</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link"><span class="toc-text"></span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2%E8%8B%A5%E5%8D%A1%E5%9C%A8%E4%BA%86cloning-into..."><span class="toc-text">2.若卡在了Cloning into…</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#homebrew%E5%AE%89%E8%A3%85%E5%AE%8C%E4%B8%BA%E4%BD%95%E9%9C%80%E8%A6%81%E9%85%8D%E7%BD%AE"><span class="toc-text">Homebrew安装完为何需要配置</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1%E5%BF%85%E5%A4%87%E8%AE%BE%E7%BD%AE"><span class="toc-text">1.必备设置</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#-1"><span class="toc-text"></span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2%E6%8C%89%E9%9C%80%E8%AE%BE%E7%BD%AE"><span class="toc-text">2.按需设置</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#homebrew-%E5%9F%BA%E6%9C%AC%E7%94%A8%E6%B3%95%E6%9C%89%E5%93%AA%E4%BA%9B"><span class="toc-text">Homebrew 基本用法有哪些</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8F%82%E8%80%83%E6%96%87%E7%AB%A0"><span class="toc-text">参考文章</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%86%99%E5%9C%A8%E6%9C%80%E5%90%8E"><span class="toc-text">写在最后</span></a></li></ol></div></div></div>
+
+
+
+
+</div>
+
+
+    </aside>
+    <div class='l_main'>
+      
+
+      
+
+
+<div class="bread-nav fs12"><div id="breadcrumb"><a class="cap breadcrumb" href="/">主页</a><span class="sep"></span><a class="cap breadcrumb" href="/">文章</a></div><div id="post-meta">发布于&nbsp;<time datetime="2022-09-27T15:18:15.000Z">2022-09-27</time></div></div>
+
+<article class='content md post'>
+<h1 class="article-title"><span>Mac安装Homebrew</span></h1>
+<h2 id="homebrew-是什么">Homebrew 是什么</h2>
+<p>Homebrew是 mac的包管理器，仅需执行相应的命令,就能下载安装需要的软件包，可以省掉自己去下载、解压、拖拽(安装)等繁琐的步骤。</p>
+<span id="more"></span>
+<p>比如安装<a target="_blank" rel="noopener" href="https://cloud.tencent.com/product/cvm?from=10680">服务器</a> nginx，打开终端执行以下命令即可安装:</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">brew install nginx</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>Homebrew 官方文档 <a target="_blank" rel="noopener" href="https://www.oschina.net/action/GoToLink?url=https%3A%2F%2Fbrew.sh%2F">https://brew.sh/</a></p>
+</blockquote>
+<h2 id="homebrew-怎么安装">Homebrew 怎么安装</h2>
+<h3 id="方法一：brew官网的安装脚本">方法一：brew官网的安装脚本</h3>
+<p>执行命令：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/bin/bash -c <span class="string">&quot;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)&quot;</span></span><br></pre></td></tr></table></figure>
+<p>这时很可能会出现一个问题: 要么下载极其龟速，要么直接出现如下提示</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">curl</span>: (<span class="number">7</span>) <span class="title class_">Failed</span> to connect to raw.<span class="property">githubusercontent</span>.<span class="property">com</span> port <span class="number">443</span>: <span class="title class_">Connection</span> refused</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>原因：这是 <a target="_blank" rel="noopener" href="https://www.oschina.net/action/GoToLink?url=http%3A%2F%2Fraw.githubusercontent.com%2F">http://raw.githubusercontent.com</a> 访问不稳定引起的。</p>
+</blockquote>
+<p>此时需要换一种科学高效的安装方法，即方法二。</p>
+<h3 id="方法二：brew-镜像安装脚本（亲测最快速最有效）">方法二：brew 镜像安装脚本（亲测最快速最有效）</h3>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/usr/bin/ruby -e <span class="string">&quot;$(curl -fsSL https://cdn.jsdelivr.net/gh/ineo6/homebrew-install/install)&quot;</span></span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>该脚本用了中科大镜像加速访问，仅修改仓库地址部分，不会产生安全隐患。 关于中科大所提供的 Homebrew 镜像服务 <a target="_blank" rel="noopener" href="https://www.oschina.net/action/GoToLink?url=https%3A%2F%2Flug.ustc.edu.cn%2Fwiki%2Fmirrors%2Fhelp%2Fbrew.git">https://lug.ustc.edu.cn/wiki/mirrors/help/brew.git</a></p>
+</blockquote>
+<p>注：注意这里的速度，几百kib/s或几m/s才是正常的。若只有几kib/s，通常为无效的安装方法，一般加载了百分之几十后就会报错。</p>
+<p><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://img.skyreeves.cn/hexo/ac3d20912216335d5f63746748139a0c.png" alt=""></p>
+<h2 id="homebrew-安装时如何避坑">Homebrew 安装时如何避坑</h2>
+<h3 id="1若出现-error: checksum mismatch.">1.若出现 Error: Checksum mismatch.</h3>
+<p>报错代码如下：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">curl</span>: (<span class="number">56</span>) <span class="title class_">LibreSSL</span> <span class="attr">SSL_read</span>: <span class="variable constant_">SSL_ERROR_SYSCALL</span>, errno <span class="number">54</span></span><br><span class="line"><span class="title class_">Error</span>: <span class="title class_">Checksum</span> mismatch.</span><br><span class="line"><span class="title class_">Expected</span>: b065e5e3783954f3e65d8d3a6377ca51649bfcfa21b356b0dd70490f74c6bd86</span><br><span class="line"><span class="title class_">Actual</span>: e8a348fe5d5c2b966bab84052062f0317944122dea5fdfdc84ac6d0bd513c137</span><br><span class="line"><span class="title class_">Archive</span>: <span class="regexp">/Users/</span>joyce/<span class="title class_">Library</span>/<span class="title class_">Caches</span>/<span class="title class_">Homebrew</span>/portable-ruby-<span class="number">2.6</span><span class="number">.3_2</span>.<span class="property">yosemite</span>.<span class="property">bottle</span>.<span class="property">tar</span>.<span class="property">gz</span></span><br><span class="line"><span class="title class_">To</span> retry an incomplete download, remove the file above.</span><br><span class="line"><span class="title class_">Error</span>: <span class="title class_">Failed</span> to install <span class="title class_">Homebrew</span> <span class="title class_">Portable</span> <span class="title class_">Ruby</span> (and your system version is too old)!</span><br><span class="line"><span class="title class_">Failed</span> <span class="attr">during</span>: <span class="regexp">/usr/</span>local/bin/brew update --force</span><br></pre></td></tr></table></figure>
+<p>这里是由Homebrew目录下的portable-ruby-2.6.3_2.yosemite.bottle.tar.gz文件引起的安装中断，只需要到上面对应的路径里，删掉这个文件，重新执行安装命令即可：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/usr/bin/ruby -e <span class="string">&quot;$(curl -fsSL https://cdn.jsdelivr.net/gh/ineo6/homebrew-install/install)&quot;</span></span><br></pre></td></tr></table></figure>
+<h4 id=""></h4>
+<h3 id="2若卡在了cloning-into...">2.若卡在了Cloning into…</h3>
+<p><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://img.skyreeves.cn/hexo/51e9f5a8153c0412bf0440ff2353950f.png" alt=""></p>
+<p>由这里的龟速可断定卡住了，立马用Control + C中断脚本，然后执行以下命令：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">cd <span class="string">&quot;$(brew --repo)/Library/Taps/&quot;</span></span><br><span class="line">mkdir homebrew &amp;&amp; cd homebrew</span><br><span class="line">git clone <span class="attr">git</span>:<span class="comment">//mirrors.ustc.edu.cn/homebrew-core.git</span></span><br></pre></td></tr></table></figure>
+<p>执行后可看到：</p>
+<p><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://img.skyreeves.cn/hexo/148dffa10ae2df9a0a93fcac98bcd879.png" alt=""></p>
+<p>速度立马快得飞起，一下子就能装好。</p>
+<p>注：最后出现 Installation successful! 或者 Checking out files: 100% (5392/5392), done. 说明安装成功。</p>
+<h2 id="homebrew安装完为何需要配置">Homebrew安装完为何需要配置</h2>
+<p>前面已经提到，Homebrew通常用来下载软件的，但它在安装软件时非常慢。为了提升安装速度，需要更改 Homebrew 的安装源，将其替换成国内镜像。</p>
+<p>这里用的是由中科大负责托管维护的 Homebrew 镜像。其中，前两个为必须配置的项目，后两个可按需配置。</p>
+<h3 id="1必备设置">1.必备设置</h3>
+<ul>
+<li>替换 brew.git：</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git -C <span class="string">&quot;$(brew --repo)&quot;</span> remote set-url origin <span class="attr">https</span>:<span class="comment">//mirrors.ustc.edu.cn/brew.git</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>替换 homebrew-core.git：</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git -C <span class="string">&quot;$(brew --repo homebrew/core)&quot;</span> remote set-url origin <span class="attr">https</span>:<span class="comment">//mirrors.ustc.edu.cn/homebrew-core.git</span></span><br></pre></td></tr></table></figure>
+<h4 id="-1"></h4>
+<h3 id="2按需设置">2.按需设置</h3>
+<ul>
+<li>替换 homebrew-cask.git：</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git -C <span class="string">&quot;$(brew --repo homebrew/cask)&quot;</span> remote set-url origin <span class="attr">https</span>:<span class="comment">//mirrors.ustc.edu.cn/homebrew-cask.git</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>替换homebrew-bottles：</li>
+</ul>
+<p>首先要先区分你的mac用哪种终端工具，如果是 bash，则执行：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">echo <span class="string">&#x27;export HOMEBREW_BOTTLE_DOMAIN=https://mirrors.ustc.edu.cn/homebrew-bottles&#x27;</span> &gt;&gt; ~/.<span class="property">bash_profile</span></span><br><span class="line">source ~/.<span class="property">bash_profile</span></span><br></pre></td></tr></table></figure>
+<p>若是 zsh，则执行：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">echo <span class="string">&#x27;export HOMEBREW_BOTTLE_DOMAIN=https://mirrors.ustc.edu.cn/homebrew-bottles&#x27;</span> &gt;&gt; ~/.<span class="property">zshrc</span></span><br><span class="line">source ~/.<span class="property">zshrc</span></span><br></pre></td></tr></table></figure>
+<p>注：Homebrew 主要由四个部分组成: brew、homebrew-core 、homebrew-cask、homebrew-bottles，它们对应的功能如下：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">组成</th>
+<th style="text-align:left">功能</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">Homebrew</td>
+<td style="text-align:left">源代码仓库</td>
+</tr>
+<tr>
+<td style="text-align:left">homebrew-core</td>
+<td style="text-align:left">Homebrew 核心源</td>
+</tr>
+<tr>
+<td style="text-align:left">homebrew-cask</td>
+<td style="text-align:left">提供macos应用和大型二进制文件的安装</td>
+</tr>
+<tr>
+<td style="text-align:left">homebrew-bottles</td>
+<td style="text-align:left">预编译二进制软件包</td>
+</tr>
+</tbody>
+</table>
+<h2 id="homebrew-基本用法有哪些">Homebrew 基本用法有哪些</h2>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 查询：</span></span><br><span class="line">brew search 软件名</span><br><span class="line"></span><br><span class="line"><span class="comment">// 安装：</span></span><br><span class="line">brew install 软件名</span><br><span class="line"></span><br><span class="line"><span class="comment">// 卸载：</span></span><br><span class="line">brew uninstall 软件名</span><br><span class="line"></span><br><span class="line"><span class="comment">// 更新 Homebrew：</span></span><br><span class="line">brew update </span><br><span class="line"></span><br><span class="line"><span class="comment">// 查看 Homebrew 配置信息：</span></span><br><span class="line">brew config </span><br></pre></td></tr></table></figure>
+<p>注：使用官方脚本同样会遇到uninstall地址无法访问问题，可以替换为下面脚本：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/usr/bin/ruby -e <span class="string">&quot;$(curl -fsSL https://cdn.jsdelivr.net/gh/ineo6/homebrew-install/uninstall)&quot;</span></span><br></pre></td></tr></table></figure>
+<blockquote>
+<h2 id="参考文章">参考文章</h2>
+<p><a target="_blank" rel="noopener" href="https://www.oschina.net/action/GoToLink?url=https%3A%2F%2Fzhuanlan.zhihu.com%2Fp%2F90508170">mac下镜像飞速安装Homebrew教程</a></p>
+<p><a target="_blank" rel="noopener" href="https://www.oschina.net/action/GoToLink?url=http%3A%2F%2Fmirrors.ustc.edu.cn%2Fhelp%2Fbrew.git.html%23">科大Homebrew源</a></p>
+<h2 id="写在最后">写在最后</h2>
+<p>在此之前试过了好几种安装方法，比如下载一个 brew_install.rb的文件，然后执行命令ruby brew_install.rb，一开始行得通，但下载到中途就会报错，而且出错的方法不一，也尝试过好几种相应的解决方法，最终都夭折了，只有这个镜像安装才能成功，而且下载速度非常快。</p>
+</blockquote>
+<div class="tag-plugin note" color="red"><div class="title"><strong>本文作者yiduwangkai</strong></div><div class="body"><p>原文链接：<a target="_blank" rel="noopener" href="https://cloud.tencent.com/developer/article/1853162">https://cloud.tencent.com/developer/article/1853162</a></p></div></div>
+
+
+<div class="article-footer reveal fs14"><section id="license"><div class="header"><span>许可协议</span></div><div class="body"><p>本文采用<a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">署名-非商业性使用-相同方式共享 4.0 国际</a>许可协议，转载请注明出处。</p>
+</div></section></div>
+
+</article>
+
+<div class="related-wrap reveal" id="read-next"><section class="body"><div class="item" id="prev"><div class="note">较新文章</div><a href="/post/53f02396.html">Mac使用hexo+github搭建个人博客</a></div><div class="item" id="next"></div></section></div>
+
+
+
+
+
+
+  <div class='related-wrap md reveal' id="comments">
+    <div class='cmt-title cap theme'>
+      快来参与讨论吧
+    </div>
+    <div class='cmt-body waline'>
+      
+
+<div id="waline_container" class="waline_thread"><svg class="loading" style="vertical-align: middle;fill: currentColor;overflow: hidden;" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="2709"><path d="M832 512c0-176-144-320-320-320V128c211.2 0 384 172.8 384 384h-64zM192 512c0 176 144 320 320 320v64C300.8 896 128 723.2 128 512h64z" p-id="2710"></path></svg></div>
+
+    </div>
+  </div>
+
+
+
+      
+<footer class="page-footer reveal fs12"><hr><div class="text"><center>©2022 <a target="_blank" rel="noopener" href="https://beian.miit.gov.cn/#/Integrated/index">渝ICP备2022011696号-1</a> | Build By SkyReeves | Powered By Hexo <a target="_blank" rel="noopener" href="https://github.com/xaoxuu/hexo-theme-stellar">Stellar</a></center>
+<center>本站由 <a target="_blank" rel="noopener" href="https://www.upyun.com/?utm_source=lianmeng&utm_medium=referral"><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://img.skyreeves.cn/sites/又拍云.svg" width="5.5%" align="absmiddle" ></a> 提供CDN加速 | <span id="span"></span><script type="text/javascript">function runtime(){X = new Date("9/27/2022 18:00:00");Y = new Date();T = (Y.getTime()-X.getTime());M = 24*60*60*1000;a = T/M;A = Math.floor(a);b = (a-A)*24;B = Math.floor(b);c = (b-B)*60;C = Math.floor((b-B)*60);D = Math.floor((c-C)*60);span.innerHTML = "🛰️已在宇宙深处飘了"+A+"天"+B+"小时"+C+"分"+D+"秒"}setInterval(runtime, 1000);</script></center>
+</div></footer>
+
+      <div class='float-panel mobile-only blur' style='display:none'>
+  <button type='button' class='sidebar-toggle mobile' onclick='sidebar.toggle()'>
+    <svg class="icon" style="width: 1em; height: 1em;vertical-align: middle;fill: currentColor;overflow: hidden;" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="15301"><path d="M566.407 808.3c26.9-0.1 49.3-20.8 51.6-47.6-1.9-27.7-23.9-49.7-51.6-51.6h-412.6c-28.2-1.4-52.6 19.5-55.5 47.6 2.3 26.8 24.6 47.5 51.6 47.6h416.5v4z m309.3-249.9c26.9-0.1 49.3-20.8 51.6-47.6-2.2-26.8-24.6-47.5-51.6-47.6h-721.9c-27.7-2.8-52.5 17.4-55.3 45.1-0.1 0.8-0.1 1.7-0.2 2.5 0.9 27.2 23.6 48.5 50.7 47.6H875.707z m-103.1-245.9c26.9-0.1 49.3-20.8 51.6-47.6-0.4-28.3-23.2-51.1-51.5-51.6h-618.9c-29.5-1.1-54.3 21.9-55.5 51.4v0.2c1.4 27.8 25.2 49.2 53 47.8 0.8 0 1.7-0.1 2.5-0.2h618.8z" p-id="15302"></path><path d="M566.407 808.3c26.9-0.1 49.3-20.8 51.6-47.6-1.9-27.7-23.9-49.7-51.6-51.6h-412.6c-28.2-1.4-52.6 19.5-55.5 47.6 1.9 27.7 23.9 49.7 51.6 51.6h416.5z m309.3-249.9c26.9-0.1 49.3-20.8 51.6-47.6-2.2-26.8-24.6-47.5-51.6-47.6h-721.9c-27.7-2.8-52.5 17.4-55.3 45.1-0.1 0.8-0.1 1.7-0.2 2.5 0.9 27.2 23.6 48.5 50.7 47.6H875.707z m-103.1-245.9c26.9-0.1 49.3-20.8 51.6-47.6-0.4-28.3-23.2-51.1-51.5-51.6h-618.9c-29.5-1.1-54.3 21.9-55.5 51.4v0.2c1.4 27.8 25.2 49.2 53 47.8 0.8 0 1.7-0.1 2.5-0.2h618.8z" p-id="15303"></path></svg>
+  </button>
+</div>
+
+    </div>
+  </div>
+  <div class='scripts'>
+    <script type="text/javascript">
+  stellar = {
+    // 懒加载 css https://github.com/filamentgroup/loadCSS
+    loadCSS: (href, before, media, attributes) => {
+      var doc = window.document;
+      var ss = doc.createElement("link");
+      var ref;
+      if (before) {
+        ref = before;
+      } else {
+        var refs = (doc.body || doc.getElementsByTagName("head")[0]).childNodes;
+        ref = refs[refs.length - 1];
+      }
+      var sheets = doc.styleSheets;
+      if (attributes) {
+        for (var attributeName in attributes) {
+          if (attributes.hasOwnProperty(attributeName)) {
+            ss.setAttribute(attributeName, attributes[attributeName]);
+          }
+        }
+      }
+      ss.rel = "stylesheet";
+      ss.href = href;
+      ss.media = "only x";
+      function ready(cb) {
+        if (doc.body) {
+          return cb();
+        }
+        setTimeout(function () {
+          ready(cb);
+        });
+      }
+      ready(function () {
+        ref.parentNode.insertBefore(ss, before ? ref : ref.nextSibling);
+      });
+      var onloadcssdefined = function (cb) {
+        var resolvedHref = ss.href;
+        var i = sheets.length;
+        while (i--) {
+          if (sheets[i].href === resolvedHref) {
+            return cb();
+          }
+        }
+        setTimeout(function () {
+          onloadcssdefined(cb);
+        });
+      };
+      function loadCB() {
+        if (ss.addEventListener) {
+          ss.removeEventListener("load", loadCB);
+        }
+        ss.media = media || "all";
+      }
+      if (ss.addEventListener) {
+        ss.addEventListener("load", loadCB);
+      }
+      ss.onloadcssdefined = onloadcssdefined;
+      onloadcssdefined(loadCB);
+      return ss;
+    },
+
+    // 从 butterfly 和 volantis 获得灵感
+    loadScript: (src, opt) => new Promise((resolve, reject) => {
+      var script = document.createElement('script');
+      script.src = src;
+      if (opt) {
+        for (let key of Object.keys(opt)) {
+          script[key] = opt[key]
+        }
+      } else {
+        // 默认异步，如果需要同步，第二个参数传入 {} 即可
+        script.async = true
+      }
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    }),
+
+    // https://github.com/jerryc127/hexo-theme-butterfly
+    jQuery: (fn) => {
+      if (typeof jQuery === 'undefined') {
+        stellar.loadScript(stellar.plugins.jQuery).then(fn)
+      } else {
+        fn()
+      }
+    }
+  };
+  stellar.version = '1.16.0';
+  stellar.github = 'https://github.com/xaoxuu/hexo-theme-stellar/tree/1.16.0';
+  stellar.config = {
+    date_suffix: {
+      just: '刚刚',
+      min: '分钟前',
+      hour: '小时前',
+      day: '天前',
+      month: '个月前',
+    },
+  };
+
+  // required plugins (only load if needs)
+  stellar.plugins = {
+    jQuery: 'https://fastly.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js'
+  };
+
+  // stellar js
+  stellar.plugins.stellar = Object.assign({"sites":"/js/plugins/sites.js","friends":"/js/plugins/friends.js","ghinfo":"/js/plugins/ghinfo.js","timeline":"/js/plugins/timeline.js","linkcard":"/js/plugins/linkcard.js","fcircle":"/js/plugins/fcircle.js"});
+
+  stellar.plugins.marked = Object.assign("https://cdn.bootcdn.net/ajax/libs/marked/4.0.18/marked.min.js");
+  // optional plugins
+  if ('true' == 'true') {
+    stellar.plugins.lazyload = Object.assign({"enable":true,"js":"https://fastly.jsdelivr.net/npm/vanilla-lazyload@17.3.1/dist/lazyload.min.js","transition":"blur"});
+  }
+  if ('true' == 'true') {
+    stellar.plugins.swiper = Object.assign({"enable":true,"css":"https://unpkg.com/swiper@6/swiper-bundle.min.css","js":"https://unpkg.com/swiper@6/swiper-bundle.min.js"});
+  }
+  if ('' == 'true') {
+    stellar.plugins.scrollreveal = Object.assign({"enable":null,"js":"https://fastly.jsdelivr.net/npm/scrollreveal@4.0.9/dist/scrollreveal.min.js","distance":"8px","duration":500,"interval":100,"scale":1});
+  }
+  if ('true' == 'true') {
+    stellar.plugins.preload = Object.assign({"enable":true,"service":"flying_pages","instant_page":"https://fastly.jsdelivr.net/gh/volantis-x/cdn-volantis@4.1.2/js/instant_page.js","flying_pages":"https://fastly.jsdelivr.net/gh/gijo-varghese/flying-pages@2.1.2/flying-pages.min.js"});
+  }
+  if ('true' == 'true') {
+    stellar.plugins.fancybox = Object.assign({"enable":true,"js":"https://fastly.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.umd.js","css":"https://fastly.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.css","selector":".swiper-slide img"});
+  }
+  if ('false' == 'true') {
+    stellar.plugins.heti = Object.assign({"enable":false,"css":"https://unpkg.com/heti/umd/heti.min.css","js":"https://unpkg.com/heti/umd/heti-addon.min.js"});
+  }
+</script>
+
+<!-- required -->
+
+  
+<script src="/js/main.js" async></script>
+
+
+
+<!-- optional -->
+
+  <script>
+  function load_comment(){
+    if(!document.getElementById("waline_container"))return;
+    stellar.loadCSS('https://unpkg.com/@waline/client@v2/dist/waline.css');
+    stellar.loadScript('https://unpkg.com/@waline/client@v2/dist/waline.js', {defer:true}).then(function () {
+      const el = document.getElementById("waline_container");
+      var path = el.getAttribute('comment_id');
+      if (!path) {
+        path = decodeURI(window.location.pathname);
+      }
+      Waline.init(Object.assign({"js":"https://unpkg.com/@waline/client@v2/dist/waline.js","css":"https://unpkg.com/@waline/client@v2/dist/waline.css","serverURL":"https://waline.skyreeves.cn","commentCount":true,"pageview":false,"locale":{"placeholder":"评论时填写邮箱，或者注册并登录后评论，即可在第一时间收到消息提醒。","reactionTitle":null},"emoji":["https://img.skyreeves.cn/emojis/blobs","https://img.skyreeves.cn/emojis/wsm","https://img.skyreeves.cn/emojis/bmoji"],"meta":["nick","mail","link"],"reaction":["https://img.skyreeves.cn/emojis/blobs/ablobcatheart.png","https://img.skyreeves.cn/emojis/blobs/ablobcatattentionreverse.png","https://img.skyreeves.cn/emojis/blobs/ablobcatrainbow.png","https://img.skyreeves.cn/emojis/blobs/blobcatsaitama.png","https://img.skyreeves.cn/emojis/blobs/blobcatflip.png"]}, {
+        el: '#waline_container',
+        path: path,
+      }));
+    });
+  }
+  window.addEventListener('DOMContentLoaded', (event) => {
+    console.log('DOM fully loaded and parsed');
+    load_comment();
+  });
+
+</script>
+
+
+
+
+<!-- inject -->
+
+
+  </div>
+  <!--动态线条背景-->
+  <script type="text/javascript"
+    color="220,220,220" opacity='0.7' zIndex="-2" count="200" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js">
+  </script>
+</body>
+</html>

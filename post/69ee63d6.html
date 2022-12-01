@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang='zh-CN'>
+
+<head>
+  <meta name="generator" content="Hexo 6.3.0">
+  <meta name="hexo-theme" content="https://github.com/xaoxuu/hexo-theme-stellar/tree/1.16.0">
+  <meta charset="utf-8">
+  
+
+  <meta http-equiv='x-dns-prefetch-control' content='on' />
+  <link rel='dns-prefetch' href='https://fastly.jsdelivr.net'>
+  <link rel="preconnect" href="https://fastly.jsdelivr.net" crossorigin>
+  <link rel='dns-prefetch' href='//unpkg.com'>
+
+  <meta name="renderer" content="webkit">
+  <meta name="force-rendering" content="webkit">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+  <meta name="HandheldFriendly" content="True" >
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="theme-color" content="#f8f8f8">
+  
+  <title>hexo博客引入Waline评论模块 - SkyReeves</title>
+
+  
+    <meta name="description" content="Waline 一款简洁、安全的评论系统。完全的 Markdown 支持，同时包含表情、数学公式、HTML 嵌入。支持账号注册，保持身份，同时支持匿名回复。最主要的是部署简单，并且可以免费部署在 Vercel 上。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="hexo博客引入Waline评论模块">
+<meta property="og:url" content="http://skyreeves.cn/post/69ee63d6.html">
+<meta property="og:site_name" content="SkyReeves">
+<meta property="og:description" content="Waline 一款简洁、安全的评论系统。完全的 Markdown 支持，同时包含表情、数学公式、HTML 嵌入。支持账号注册，保持身份，同时支持匿名回复。最主要的是部署简单，并且可以免费部署在 Vercel 上。">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://img.skyreeves.cn/hexo/image-20221002140107102.png">
+<meta property="og:image" content="https://img.skyreeves.cn/hexo/%E6%88%AA%E5%B1%8F2022-10-02-14.13.31.png">
+<meta property="og:image" content="https://img.skyreeves.cn/hexo/%E6%88%AA%E5%B1%8F2022-10-02-14.18.00.png">
+<meta property="og:image" content="https://img.skyreeves.cn/hexo/%E6%88%AA%E5%B1%8F2022-10-02-14.20.55.png">
+<meta property="og:image" content="https://img.skyreeves.cn/hexo/%E6%88%AA%E5%B1%8F2022-10-02-14.22.50.png">
+<meta property="og:image" content="https://img.skyreeves.cn/hexo/%E6%88%AA%E5%B1%8F2022-10-02-14.49.06.png">
+<meta property="og:image" content="https://img.skyreeves.cn/hexo/%E6%88%AA%E5%B1%8F2022-10-02-14.53.14.png">
+<meta property="og:image" content="https://img.skyreeves.cn/hexo/%E6%88%AA%E5%B1%8F2022-10-02-14.55.23.png">
+<meta property="og:image" content="https://img.skyreeves.cn/hexo/%E6%88%AA%E5%B1%8F2022-10-02-15.16.36.png">
+<meta property="og:image" content="https://img.skyreeves.cn/hexo/%E6%88%AA%E5%B1%8F2022-10-02-15.17.25.png">
+<meta property="og:image" content="https://img.skyreeves.cn/hexo/%E6%88%AA%E5%B1%8F2022-10-02-15.28.05.png">
+<meta property="og:image" content="https://img.skyreeves.cn/hexo/%E6%88%AA%E5%B1%8F2022-10-02-15.53.31.png">
+<meta property="og:image" content="https://img.skyreeves.cn/hexo/%E6%88%AA%E5%B1%8F2022-11-10-12.25.50.png">
+<meta property="article:published_time" content="2022-10-02T05:40:34.000Z">
+<meta property="article:modified_time" content="2022-12-01T13:33:03.369Z">
+<meta property="article:author" content="SkyReeves">
+<meta property="article:tag" content="hexo">
+<meta property="article:tag" content="Waline">
+<meta property="article:tag" content="Vercel">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://img.skyreeves.cn/hexo/image-20221002140107102.png">
+  
+  
+
+  <!-- feed -->
+  
+    <link rel="alternate" href="/atom.xml" title="SkyReeves" type="application/atom+xml">
+  
+
+  
+    
+<link rel="stylesheet" href="/css/main.css">
+
+  
+
+  
+
+  
+
+  
+
+
+  
+    
+      <link rel="apple-touch-icon" sizes="180x180" href="https://img.skyreeves.cn/main/apple-touch-icon.png">
+    
+      <link rel="icon" type="image/png" sizes="32x32" href="https://img.skyreeves.cn/main/favicon-32x32.png">
+    
+      <link rel="icon" type="image/png" sizes="16x16" href="!https://img.skyreeves.cn/main/favicon-16x16.png">
+    
+      <link rel="manifest" href="https://img.skyreeves.cn/main/site.webmanifest">
+    
+      <link rel="shortcut icon" href="https://img.skyreeves.cn/main/favicon-32x32.png">
+    
+      <meta name="theme-color" content="#f8f8f8">
+    
+      <link rel="stylesheet" href="/css/scrollbar.css">
+    
+  
+</head>
+
+<body>
+  
+
+
+
+
+  <div class='l_body' id='start'>
+    <aside class='l_left' layout='post'>
+    
+
+  
+
+<header class="header"><div class="logo-wrap"><a class="avatar" href="/about/"><div class="bg" style="opacity:0;background-image:url(https://fastly.jsdelivr.net/gh/cdn-x/placeholder@1.0.2/avatar/round/rainbow64@3x.webp);"></div><img no-lazy class="avatar" src="https://img.skyreeves.cn/main/avatar01b.gif" onerror="javascript:this.classList.add('error');this.src='https://fastly.jsdelivr.net/gh/cdn-x/placeholder@1.0.1/image/2659360.svg';"></a><a class="title" href="/"><div class="main" ff="title">SkyReeves</div><div class="sub normal cap">🏁be a racer</div><div class="sub hover cap" style="opacity:0">不要把鼠标放在这里 🤪</div></a></div>
+
+<nav class="menu dis-select"><a class="nav-item active" href="/">主页</a><a class="nav-item" href="/notes/">便笺</a><a class="nav-item" href="/friends/">友链</a><a class="nav-item" href="/about/">关于</a></nav>
+</header>
+
+
+<div class="widgets">
+
+<div class="widget-wrap single" id="toc"><div class="widget-header cap dis-select"><span class="name">hexo博客引入Waline评论模块</span></div><div class="widget-body fs14"><div class="doc-tree active"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#waline"><span class="toc-text">Waline</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%80%E3%80%81%E9%85%8D%E7%BD%AE%E6%95%B0%E6%8D%AE%E5%BA%93"><span class="toc-text">一、配置数据库</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1%E3%80%81%E6%B3%A8%E5%86%8Cleancloud"><span class="toc-text">1、注册LeanCloud</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2%E3%80%81%E5%88%9B%E5%BB%BA%E5%BA%94%E7%94%A8"><span class="toc-text">2、创建应用</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3%E3%80%81%E8%8E%B7%E5%8F%96%E5%BA%94%E7%94%A8%E5%87%AD%E8%AF%81"><span class="toc-text">3、获取应用凭证</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%8C%E3%80%81%E5%88%9B%E5%BB%BA%E6%9C%8D%E5%8A%A1%E7%AB%AF"><span class="toc-text">二、创建服务端</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1%E3%80%81%E5%88%9B%E5%BB%BA%E6%9C%8D%E5%8A%A1%E7%AB%AF%E4%BB%93%E5%BA%93"><span class="toc-text">1、创建服务端仓库</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2%E3%80%81%E9%85%8D%E7%BD%AE%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F"><span class="toc-text">2、配置环境变量</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%89%E3%80%81hexo%E7%AB%99%E7%82%B9%E9%85%8D%E7%BD%AE"><span class="toc-text">三、hexo站点配置</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9B%9B%E3%80%81%E6%B3%A8%E5%86%8C%E7%AE%A1%E7%90%86%E5%91%98"><span class="toc-text">四、注册管理员</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%94%E3%80%81%E8%AF%84%E8%AE%BA%E9%80%9A%E7%9F%A5"><span class="toc-text">五、评论通知</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1%E3%80%81%E5%BE%AE%E4%BF%A1%E9%80%9A%E7%9F%A5"><span class="toc-text">1、微信通知</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2%E3%80%81%E9%82%AE%E4%BB%B6%E9%80%9A%E7%9F%A5"><span class="toc-text">2、邮件通知</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%85%AD%E3%80%81%E5%AE%A2%E5%88%B6%E5%8C%96"><span class="toc-text">六、客制化</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1%E3%80%81%E8%87%AA%E5%AE%9A%E4%B9%89%E8%A1%A8%E6%83%85"><span class="toc-text">1、自定义表情</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2%E3%80%81%E8%87%AA%E5%AE%9A%E4%B9%89%E6%96%87%E7%AB%A0%E5%8F%8D%E5%BA%94"><span class="toc-text">2、自定义文章反应</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3%E3%80%81%E8%AF%84%E8%AE%BA%E6%A1%86%E9%BB%98%E8%AE%A4%E6%96%87%E5%AD%97"><span class="toc-text">3、评论框默认文字</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%83%E3%80%81%E8%87%AA%E5%AE%9A%E4%B9%89%E9%85%8D%E8%89%B2"><span class="toc-text">七、自定义配色</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%85%AB%E3%80%81%E5%85%B3%E4%BA%8E%E9%AD%94%E6%B3%95"><span class="toc-text">八、关于魔法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B9%9D%E3%80%81%E5%8F%82%E8%80%83"><span class="toc-text">九、参考</span></a></li></ol></div></div></div>
+
+
+
+
+</div>
+
+
+    </aside>
+    <div class='l_main'>
+      
+
+      
+
+
+<div class="bread-nav fs12"><div id="breadcrumb"><a class="cap breadcrumb" href="/">主页</a><span class="sep"></span><a class="cap breadcrumb" href="/">文章</a></div><div id="post-meta">发布于&nbsp;<time datetime="2022-10-02T05:40:34.000Z">2022-10-02</time></div></div>
+
+<article class='content md post'>
+<h1 class="article-title"><span>hexo博客引入Waline评论模块</span></h1>
+<h2 id="waline">Waline</h2>
+<p>一款简洁、安全的评论系统。完全的 Markdown 支持，同时包含表情、数学公式、HTML 嵌入。支持账号注册，保持身份，同时支持匿名回复。最主要的是部署简单，并且可以免费部署在 Vercel 上。</p>
+<span id="more"></span>
+<h2 id="一、配置数据库">一、配置数据库</h2>
+<p><a target="_blank" rel="noopener" href="https://waline.js.org">Waline</a>是一位大佬在 Valine 的基础之上开发的，跟Valine一样支持LeanCloud作为数据存储。</p>
+<h3 id="1、注册leancloud">1、注册LeanCloud</h3>
+<p>LeanCloud分国内版和国际版，因为国内版需要绑定已经备案的域名，多一事不如少一事的原则，我们点<a target="_blank" rel="noopener" href="https://console.leancloud.app/register">这里</a>注册一个LeanCloud<strong>国际版</strong>账号。</p>
+<p><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://img.skyreeves.cn/hexo/image-20221002140107102.png" alt=""></p>
+<h3 id="2、创建应用">2、创建应用</h3>
+<p>之后在应用里点击<strong>创建应用</strong></p>
+<p><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://img.skyreeves.cn/hexo/%E6%88%AA%E5%B1%8F2022-10-02-14.13.31.png" alt=""></p>
+<p>应用名称随意填</p>
+<p>应用计价方式选择<strong>开发版</strong>，点击<strong>创建</strong>。</p>
+<p><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://img.skyreeves.cn/hexo/%E6%88%AA%E5%B1%8F2022-10-02-14.18.00.png" alt=""></p>
+<h3 id="3、获取应用凭证">3、获取应用凭证</h3>
+<p>然后点应用右下角的 ⚙ 进入设置菜单</p>
+<p><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://img.skyreeves.cn/hexo/%E6%88%AA%E5%B1%8F2022-10-02-14.20.55.png" alt=""></p>
+<p>点击左侧边栏的<strong>应用凭证</strong>获取<strong>AppID</strong>、<strong>AppKey</strong>以及<strong>MasterKey</strong></p>
+<p>这三个值在之后的服务端配置环境变量中使用</p>
+<p><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://img.skyreeves.cn/hexo/%E6%88%AA%E5%B1%8F2022-10-02-14.22.50.png" alt=""></p>
+<h2 id="二、创建服务端">二、创建服务端</h2>
+<p>我们选择既简单访问又快还能白嫖的Vercel</p>
+<h3 id="1、创建服务端仓库">1、创建服务端仓库</h3>
+<p>点击<a target="_blank" rel="noopener" href="https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fwalinejs%2Fwaline%2Ftree%2Fmain%2Fexample">这里</a>选择用Github快速连接</p>
+<p>然后在Create Git Repository放块里选择<strong>Github</strong>创建一个仓库</p>
+<p><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://img.skyreeves.cn/hexo/%E6%88%AA%E5%B1%8F2022-10-02-14.49.06.png" alt=""></p>
+<p>当你的屏幕放起彩带烟花，表明已经构建完成</p>
+<h3 id="2、配置环境变量">2、配置环境变量</h3>
+<p>点击右上角的<strong>Continue to Dashboard</strong></p>
+<p><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://img.skyreeves.cn/hexo/%E6%88%AA%E5%B1%8F2022-10-02-14.53.14.png" alt=""></p>
+<p>选择<strong>Settings</strong> - <strong>Environment Variable</strong></p>
+<p><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://img.skyreeves.cn/hexo/%E6%88%AA%E5%B1%8F2022-10-02-14.55.23.png" alt=""></p>
+<p>需要配置的环境变量与第一步里获取的应用凭证对应：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">Environment Variable</th>
+<th style="text-align:center">Lean Cloud</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">LEAN_ID</td>
+<td style="text-align:center">AppID</td>
+</tr>
+<tr>
+<td style="text-align:center">LEAN_KEY</td>
+<td style="text-align:center">AppKey</td>
+</tr>
+<tr>
+<td style="text-align:center">LEAN_MASTER_KEY</td>
+<td style="text-align:center">MasterKey</td>
+</tr>
+<tr>
+<td style="text-align:center">LEAN_SERVER</td>
+<td style="text-align:center">已备案的域名</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>LeanCloud国际版只需配置前三项，国内版需要额外配置第四项LEAN_SERVER</p>
+</blockquote>
+<p><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://img.skyreeves.cn/hexo/%E6%88%AA%E5%B1%8F2022-10-02-15.16.36.png" alt=""></p>
+<p>然后点顶部的<strong>Deployments</strong>在刚才创建的服务上选择<strong>Redeploy</strong>重新部署</p>
+<p><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://img.skyreeves.cn/hexo/%E6%88%AA%E5%B1%8F2022-10-02-15.17.25.png" alt=""></p>
+<p>等部署好之后记下<strong>DOMAINS</strong>的地址</p>
+<p>在hexo配置文件中要用</p>
+<p><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://img.skyreeves.cn/hexo/%E6%88%AA%E5%B1%8F2022-10-02-15.28.05.png" alt=""></p>
+<h2 id="三、hexo站点配置">三、hexo站点配置</h2>
+<p>我使用的是<a target="_blank" rel="noopener" href="https://github.com/xaoxuu/hexo-theme-stellar">Stellar</a>主题</p>
+<p>需要编辑主题的配置文件 <code>theme/stellar/_config.yml</code> 下的 <code>comments.service</code> 和 <code>comments.waline.serverURL</code> .</p>
+<p>可以在博客的根目录里创建一个 <code>_config.stellar.yml</code> ,将所有对 <code>theme/stellar/_config.yml</code> 的更改写在里面，这样即便更新主题后也不用重新写配置文件。</p>
+<figure class="highlight yaml"><figcaption><span>blog/_config.stellar.yml</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">comments:</span></span><br><span class="line">  <span class="attr">service:</span> <span class="string">waline</span></span><br><span class="line">  <span class="attr">waline:</span></span><br><span class="line">  	<span class="attr">serverURL:</span> <span class="string">上一步获得的DOMAINS地址</span></span><br></pre></td></tr></table></figure>
+<p>之后重新部署hexo即可</p>
+<h2 id="四、注册管理员">四、注册管理员</h2>
+<p>Waline支持评论管理，默认第一个注册的用户为管理员</p>
+<p>可以直接访问上面获取的<strong>DOMAINS</strong>地址</p>
+<p>也可以打开你的站点，在评论板块点<strong>登录</strong></p>
+<p><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://img.skyreeves.cn/hexo/%E6%88%AA%E5%B1%8F2022-10-02-15.53.31.png" alt=""></p>
+<p>此时就可以注册啦，也可以用微博、Github、Twitter、Facebook快速连接</p>
+<h2 id="五、评论通知">五、评论通知</h2>
+<p>当网站有用户发布评论或者用户回复评论时，Waline 支持对博主和回复评论作者进行通知。</p>
+<h3 id="1、微信通知">1、微信通知</h3>
+<details class="tag-plugin folding" child="codeblock"><summary><span>因为每天只能白嫖5次提醒于是弃用了</span></summary><div class="body"><p>点<a target="_blank" rel="noopener" href="https://sct.ftqq.com/login">这里</a>申请 <code>Server</code> 酱提供的Token，需要回到Vercel，去配置以下几个环境变量：</p><table><thead><tr><th>环境变量</th><th>值</th></tr></thead><tbody><tr><td>SC_KEY</td><td>Server 酱提供的 Token</td></tr><tr><td>AUTHOR_EMAIL</td><td>你的邮箱，用来区分发布的评论是否是博主本身发布的。如果是博主发布的则不进行提醒通知</td></tr><tr><td>SITE_NAME</td><td>网站名称，用于在消息中显示</td></tr><tr><td>SITE_URL</td><td>网站地址，用于在消息中显示</td></tr></tbody></table></div></details>
+<h3 id="2、邮件通知">2、邮件通知</h3>
+<p>邮件通知的优势是无提醒次数的限制，并且如果访客在评论时填写了邮箱，那么访客也会在第一时间收到消息提醒，避免垃圾邮件也避免影响自己正常的邮件，建议注册一个新的邮箱专门用于发送提醒邮件。</p>
+<p>在Vercel的里新增环境变量如下( <code>#</code> 为选填项)：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">环境变量</th>
+<th style="text-align:left">值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">SITE_URL</td>
+<td style="text-align:left">你站点的链接。</td>
+</tr>
+<tr>
+<td style="text-align:left">AUTHOR_EMAIL</td>
+<td style="text-align:left">你的邮箱，用来接收新评论通知。同时如果是你自己发布的评论则不会收到提醒通知。</td>
+</tr>
+<tr>
+<td style="text-align:left">SITE_NAME</td>
+<td style="text-align:left">你站点的名称</td>
+</tr>
+<tr>
+<td style="text-align:left">MAIL_SUBJECT</td>
+<td style="text-align:left"><code>#</code>自定义评论回复邮件标题</td>
+</tr>
+<tr>
+<td style="text-align:left">MAIL_TEMPLATE</td>
+<td style="text-align:left"><code>#</code>自定义评论回复邮件内容</td>
+</tr>
+<tr>
+<td style="text-align:left">MAIL_SUBJECT_ADMIN</td>
+<td style="text-align:left"><code>#</code>自定义新评论通知邮件标题</td>
+</tr>
+<tr>
+<td style="text-align:left">MAIL_TEMPLATE_ADMIN</td>
+<td style="text-align:left"><code>#</code>自定义新评论通知邮件内容</td>
+</tr>
+<tr>
+<td style="text-align:left">SMTP_SERVICE</td>
+<td style="text-align:left">SMTP 邮件发送服务提供商，点<a target="_blank" rel="noopener" href="https://github.com/nodemailer/nodemailer/blob/master/lib/well-known/services.json">这里</a>查看所以支持的服务商。</td>
+</tr>
+<tr>
+<td style="text-align:left">SMTP_SECURE</td>
+<td style="text-align:left">是否使用 SSL 连接 SMTP，上面的服务商清单里看，如果有这一项则填写 <code>true</code> ，没有的就不用配置这一项</td>
+</tr>
+<tr>
+<td style="text-align:left">SMTP_USER</td>
+<td style="text-align:left">SMTP 邮件发送服务的用户名，一般为登录邮箱</td>
+</tr>
+<tr>
+<td style="text-align:left">SMTP_PASS</td>
+<td style="text-align:left">SMTP 邮件发送服务的密码，一般为邮箱登录密码，部分邮箱(例如 163)是单独的 SMTP 密码。</td>
+</tr>
+<tr>
+<td style="text-align:left">SENDER_EMAIL</td>
+<td style="text-align:left"><code>#</code>自定义发送邮件的邮箱地址，与 <code>SMTP_USER</code> 一致</td>
+</tr>
+<tr>
+<td style="text-align:left">SENDER_NAME</td>
+<td style="text-align:left"><code>#</code> 收到提醒时显示的发件人名称</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>1、其中 <code>MAIL_SUBJECT</code> 、 <code>MAIL_TEMPLATE</code> 、 <code>MAIL_SUBJECT_ADMIN</code> 、 <code>MAIL_TEMPLATE_ADMIN</code> 这几项可参考 <a target="_blank" rel="noopener" href="https://sarakale.top/blog/posts/537344b2#%E9%82%AE%E4%BB%B6%E6%A8%A1%E6%9D%BF">SaraKale’s blog</a> 的邮件模板。因为Vercel的环境变量最大仅支持4kb，如果你的环境变量写得很长超出了限制怎么办，那么这几个环境变量可以不配置，直接将它们写进代码里：在 <code>Github</code> 仓的根目录下找到 <code>index.js</code>，修改其内容为：</p>
+<details class="tag-plugin folding" child="codeblock"><summary><span>这里以官方默认的邮件模板为例</span></summary><div class="body"><blockquote><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> <span class="title class_">Application</span> = <span class="built_in">require</span>(<span class="string">&#x27;@waline/vercel&#x27;</span>);</span><br><span class="line"></span><br><span class="line"><span class="variable language_">module</span>.<span class="property">exports</span> = <span class="title class_">Application</span>(&#123;</span><br><span class="line">  <span class="attr">mailSubject</span>: <span class="string">&#x27;&#123;&#123;parent.nick&#125;&#125;，您在博客「&#123;&#123;site.name&#125;&#125;」上的评论收到了回复&#x27;</span>,</span><br><span class="line">  <span class="attr">mailTemplate</span>: <span class="string">`</span></span><br><span class="line"><span class="string">    &lt;div style=&quot;border-top:2px solid #12ADDB;box-shadow:0 1px 3px #AAAAAA;line-height:180%;padding:0 15px 12px;margin:50px auto;font-size:12px;&quot;&gt;</span></span><br><span class="line"><span class="string">      &lt;h2 style=&quot;border-bottom:1px solid #DDD;font-size:14px;font-weight:normal;padding:13px 0 10px 8px;&quot;&gt;        </span></span><br><span class="line"><span class="string">        您在博客&lt;a style=&quot;text-decoration:none;color: #12ADDB;&quot; href=&quot;&#123;&#123;site.url&#125;&#125;&quot; target=&quot;_blank&quot;&gt;&#123;&#123;site.name&#125;&#125;&lt;/a&gt;上的评论有了新的回复</span></span><br><span class="line"><span class="string">      &lt;/h2&gt;</span></span><br><span class="line"><span class="string">      &lt;div style=&quot;padding:0 12px 0 12px;margin-top:18px&quot;&gt;</span></span><br><span class="line"><span class="string">		&lt;p&gt;&#123;&#123;parent.nick&#125;&#125;，您曾发表评论：&lt;/p&gt;</span></span><br><span class="line"><span class="string">        &lt;div style=&quot;background-color: #f5f5f5;padding: 10px 15px;margin:18px 0;word-wrap:break-word;&quot;&gt;&#123;&#123;parent.comment | safe&#125;&#125;&lt;/div&gt;</span></span><br><span class="line"><span class="string">        &lt;p&gt;&lt;strong&gt;&#123;&#123;self.nick&#125;&#125;&lt;/strong&gt; 回复说：&lt;/p&gt;</span></span><br><span class="line"><span class="string">        &lt;div style=&quot;background-color: #f5f5f5;padding: 10px 15px;margin:18px 0;word-wrap:break-word;&quot;&gt;&#123;&#123;self.comment | safe&#125;&#125;&lt;/div&gt;</span></span><br><span class="line"><span class="string">        &lt;p&gt;您可以点击&lt;a style=&quot;text-decoration:none; color:#12addb&quot; href=&quot;&#123;&#123;site.postUrl&#125;&#125;&quot; target=&quot;_blank&quot;&gt;前往原文查看完整的回复內容&lt;/a&gt;，欢迎再次光临&lt;a style=&quot;text-decoration:none; color:#12addb&quot; href=&quot;&#123;&#123;site.url&#125;&#125;&quot; target=&quot;_blank&quot;&gt;&#123;&#123;site.name&#125;&#125;&lt;/a&gt;。&lt;/p&gt;</span></span><br><span class="line"><span class="string">        &lt;br/&gt;</span></span><br><span class="line"><span class="string">      &lt;/div&gt;</span></span><br><span class="line"><span class="string">	  &lt;div style=&quot;border-top:1px solid #DDD; padding:13px 0 0 8px;&quot;&gt;</span></span><br><span class="line"><span class="string">		该邮件为系统自动发送的邮件，请勿直接回复。</span></span><br><span class="line"><span class="string">	  &lt;/div&gt;</span></span><br><span class="line"><span class="string">	  &lt;br/&gt;</span></span><br><span class="line"><span class="string">    &lt;/div&gt;`</span>,</span><br><span class="line">  <span class="attr">mailSubjectAdmin</span>: <span class="string">&#x27;您的博客「&#123;&#123;site.name&#125;&#125;」收到了新评论&#x27;</span>,</span><br><span class="line">  <span class="attr">mailTemplateAdmin</span>: <span class="string">`</span></span><br><span class="line"><span class="string">    &lt;div style=&quot;border-top:2px solid #12ADDB;box-shadow:0 1px 3px #AAAAAA;line-height:180%;padding:0 15px 12px;margin:50px auto;font-size:12px;&quot;&gt;</span></span><br><span class="line"><span class="string">      &lt;h2 style=&quot;border-bottom:1px solid #DDD;font-size:14px;font-weight:normal;padding:13px 0 10px 8px;&quot;&gt;        </span></span><br><span class="line"><span class="string">        有人在&lt;a style=&quot;text-decoration:none;color: #12ADDB;&quot; href=&quot;&#123;&#123;site.url&#125;&#125;&quot; target=&quot;_blank&quot;&gt;&#123;&#123;site.name&#125;&#125;&lt;/a&gt;发表了新的评论</span></span><br><span class="line"><span class="string">      &lt;/h2&gt;</span></span><br><span class="line"><span class="string">      &lt;div style=&quot;padding:0 12px 0 12px;margin-top:18px&quot;&gt;</span></span><br><span class="line"><span class="string">		&lt;p&gt;&lt;strong&gt;&#123;&#123;self.nick&#125;&#125;&lt;/strong&gt; 评论说：&lt;/p&gt;</span></span><br><span class="line"><span class="string">		&lt;div style=&quot;background-color: #f5f5f5;padding: 10px 15px;margin:18px 0;word-wrap:break-word;&quot;&gt;&#123;&#123;self.comment | safe&#125;&#125;&lt;/div&gt;</span></span><br><span class="line"><span class="string">        &lt;p&gt;您可以点击&lt;a style=&quot;text-decoration:none; color:#12addb&quot; href=&quot;&#123;&#123;site.postUrl&#125;&#125;&quot; target=&quot;_blank&quot;&gt;前往原文查看完整的评论内容。&lt;/a&gt;&lt;/p&gt;</span></span><br><span class="line"><span class="string">        &lt;br/&gt;</span></span><br><span class="line"><span class="string">      &lt;/div&gt;</span></span><br><span class="line"><span class="string">	  &lt;div style=&quot;border-top:1px solid #DDD; padding:13px 0 0 8px;&quot;&gt;</span></span><br><span class="line"><span class="string">		该邮件为系统自动发送的邮件，请勿直接回复。</span></span><br><span class="line"><span class="string">	  &lt;/div&gt;</span></span><br><span class="line"><span class="string">	  &lt;br/&gt;</span></span><br><span class="line"><span class="string">    &lt;/div&gt;`</span></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></blockquote></div></details> 
+<p>2、<code>SMTP_SERVICE</code> 则填写服务商名称就行，比我使用的163的邮箱来发送消息提醒，而在支持的服务商清单里是有 <code>163</code> 的，所以我这一项的值写 <code>163</code> 就行。如果你使用的邮箱没有在支持的清单里，则需要配置 <code>SMTP_HOST</code> 、和 <code>SMTP_PORT</code> 。</p>
+</blockquote>
+<div class="tag-plugin note" color="error"><div class="body"><p>注意：任何环境变量的变动，都需要重新部署后才会生效。其次，如果设置了多种提醒方式，仅会有一种生效！</p></div></div>
+<p>Waline还支持其他通知方式，见<a target="_blank" rel="noopener" href="https://waline.js.org/guide/server/notification.html">详情</a></p>
+<h2 id="六、客制化">六、客制化</h2>
+<h3 id="1、自定义表情">1、自定义表情</h3>
+<p><a target="_blank" rel="noopener" href="https://github.com/xaoxuu/hexo-theme-stellar">Stellar</a>主题的配置文件里默认是将表情注释掉的，在 <code>_config.stellar.yml</code> 里的 <code>comments.waline</code> 下补充一个 <code>emoji</code> 项，下面写入emoji的地址即可，例如：</p>
+<figure class="highlight yaml"><figcaption><span>blog/_config.stellar.yml</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">comments:</span></span><br><span class="line">  <span class="attr">service:</span> <span class="string">waline</span></span><br><span class="line">  <span class="attr">waline:</span></span><br><span class="line">  	<span class="attr">serverURL:</span> <span class="string">上一步获得的DOMAINS地址</span></span><br><span class="line">  	<span class="attr">emoji:</span></span><br><span class="line">     <span class="bullet">-</span> <span class="string">https://xxx/blobs</span></span><br><span class="line">     <span class="bullet">-</span> <span class="string">https://xxx/qq</span> </span><br></pre></td></tr></table></figure>
+<p>官方有<a target="_blank" rel="noopener" href="https://waline.js.org/guide/client/emoji.html">表情预设</a>，如果嫌加载慢的话也可以上传到自己的图床，改一下上面引用的地址即可。如果需要创建自己的预设可以参考<a target="_blank" rel="noopener" href="https://waline.js.org/guide/client/emoji.html#%E5%88%9B%E5%BB%BA%E8%87%AA%E5%B7%B1%E7%9A%84%E9%A2%84%E8%AE%BE">这里</a>。</p>
+<h3 id="2、自定义文章反应">2、自定义文章反应</h3>
+<p>文章反应是类似于点赞的互动，在 <code>blog/config.stellar.yml</code> 里的 <code>comment.waline.reaction</code> 下键入你自定义的反应表情图片地址即可。默认的反应标题为“你认为这篇文章怎么样？”，可在 <code>comment.waline.locale</code> 自定义，其中 <code>reactionTitle:</code> 为反应标题。如果需要给每一个反应表情加入文字描述，只需新增 <code>reaction0</code> 、<code>reaction1</code> 、<code>reaction2</code> ……例如：</p>
+<figure class="highlight yaml"><figcaption><span>blog/_config.stellar.yml</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">comments:</span></span><br><span class="line">  <span class="attr">waline:</span></span><br><span class="line">    <span class="attr">serverURL:</span> <span class="string">上一步获得的DOMAINS地址</span></span><br><span class="line">    <span class="attr">locale:</span></span><br><span class="line">      <span class="comment">#自定义反应标题。如果像我一样不想要反应标题，可以在这一项里留空。</span></span><br><span class="line">      <span class="attr">reactionTitle:</span> </span><br><span class="line">      <span class="comment">#反应表情的文章描述</span></span><br><span class="line">      <span class="attr">reaction0:</span> <span class="string">爱你哟</span></span><br><span class="line">      <span class="attr">reaction1:</span> <span class="string">oh~~</span></span><br><span class="line">      <span class="attr">reaction2:</span> <span class="string">嘚瑟~</span></span><br><span class="line">      <span class="attr">reaction3:</span> <span class="string">无语</span></span><br><span class="line">    <span class="comment">#反应表情组</span></span><br><span class="line">    <span class="attr">reaction:</span> </span><br><span class="line">      <span class="bullet">-</span> <span class="string">https://unpkg.com/@waline/emojis@1.1.0/weibo/weibo_heart_eyes.png</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">https://unpkg.com/@waline/emojis@1.1.0/weibo/weibo_dog_joy.png</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">https://unpkg.com/@waline/emojis@1.1.0/weibo/weibo_dog_consider.png</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">https://unpkg.com/@waline/emojis@1.1.0/weibo/weibo_sob.png</span></span><br></pre></td></tr></table></figure>
+<p>Waline最多支持9个反应，可以小于9个但不能多。每个页面的反应计数是独立的，互不干扰。</p>
+<h3 id="3、评论框默认文字">3、评论框默认文字</h3>
+<p>先感谢<a target="_blank" rel="noopener" href="https://www.shifeiti.com">@是非题</a>大佬，这项自定义我找半天没都没找到</p>
+<p><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://img.skyreeves.cn/hexo/%E6%88%AA%E5%B1%8F2022-11-10-12.25.50.png" alt=""></p>
+<p>如图所示，我在评论框里写了一句提醒“评论时填写邮箱，或者注册并登录后评论，即可在第一时间收到消息提醒。”这句话默认是“欢迎评论”，而我们要自定义它的话是在 <code>_config.stellar.yml</code> 里的 <code>comments.waline.locale.placeholder</code> 下写入你想放的内容即可。</p>
+<p>以下是我 <code>blog/_config.stellar.yml</code> 里关于评论板块的完整代码以供参考：</p>
+<figure class="highlight yaml"><figcaption><span>blog/_config.stellar.yml</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">comments:</span></span><br><span class="line">  <span class="attr">service:</span> <span class="string">waline</span></span><br><span class="line">  <span class="attr">waline:</span></span><br><span class="line">    <span class="attr">serverURL:</span> <span class="string">https://waline.skyreeves.cn</span></span><br><span class="line">    <span class="attr">locale:</span></span><br><span class="line">      <span class="attr">placeholder:</span> </span><br><span class="line">       <span class="string">评论时填写邮箱，或者注册并登录后评论，即可在第一时间收到消息提醒。</span> </span><br><span class="line">      <span class="attr">reactionTitle:</span>  </span><br><span class="line">    <span class="attr">emoji:</span></span><br><span class="line">     <span class="bullet">-</span> <span class="string">https://xxx/blobs</span></span><br><span class="line">     <span class="bullet">-</span> <span class="string">https://xxx/qq</span></span><br><span class="line">    <span class="attr">meta:</span></span><br><span class="line">     <span class="bullet">-</span> <span class="string">nick</span></span><br><span class="line">     <span class="bullet">-</span> <span class="string">mail</span></span><br><span class="line">     <span class="bullet">-</span> <span class="string">link</span></span><br><span class="line">    <span class="attr">reaction:</span></span><br><span class="line">     <span class="bullet">-</span> <span class="string">https://xxx/1.png</span></span><br><span class="line">     <span class="bullet">-</span> <span class="string">https://xxx/2.png</span></span><br><span class="line">     <span class="bullet">-</span> <span class="string">https://xxx/3.png</span></span><br></pre></td></tr></table></figure>
+<h2 id="七、自定义配色">七、自定义配色</h2>
+<p>配色从客制化里独立出来是因为控制它们的文件不同，<a target="_blank" rel="noopener" href="https://github.com/xaoxuu/hexo-theme-stellar">Stellar</a>主题关于Waline的自定义配色文件路径如下：</p>
+<p><code>blog/themes/stellar/source/css/_plugins/comments/waline.styl </code></p>
+<p>根据所需更改色值即可</p>
+<blockquote>
+<p>推荐使用visual studio编辑文件，可以安装一个 <code>stylus</code> 扩展，它能直接显示色值所指的颜色，在编辑的时候更直观</p>
+</blockquote>
+<h2 id="八、关于魔法">八、关于魔法</h2>
+<p>如果不使用魔法，托管在Vercel上的Waline版块在国内是加载不出来的，为了避免魔法部介入调查，我们可以将Vercel伪装成麻瓜。详情请查看<a target="_blank" rel="noopener" href="https://www.skyreeves.cn/post/8cd79de0.html">评论板块加载失败的问题</a></p>
+<h2 id="九、参考">九、参考</h2>
+<p><a target="_blank" rel="noopener" href="https://waline.js.org/guide/get-started.html">Waline快速上手</a></p>
+
+
+<div class="article-footer reveal fs14"><section id="license"><div class="header"><span>许可协议</span></div><div class="body"><p>本文采用<a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">署名-非商业性使用-相同方式共享 4.0 国际</a>许可协议，转载请注明出处。</p>
+</div></section></div>
+
+</article>
+
+<div class="related-wrap reveal" id="read-next"><section class="body"><div class="item" id="prev"><div class="note">较新文章</div><a href="/post/eefa4f8b.html">跳蛛饲养入门问答篇</a></div><div class="item" id="next"><div class="note">较早文章</div><a href="/post/4d89caeb.html">hexo博客绑定域名与安装SSL证书</a></div></section></div>
+
+
+
+
+
+
+  <div class='related-wrap md reveal' id="comments">
+    <div class='cmt-title cap theme'>
+      快来参与讨论吧
+    </div>
+    <div class='cmt-body waline'>
+      
+
+<div id="waline_container" class="waline_thread"><svg class="loading" style="vertical-align: middle;fill: currentColor;overflow: hidden;" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="2709"><path d="M832 512c0-176-144-320-320-320V128c211.2 0 384 172.8 384 384h-64zM192 512c0 176 144 320 320 320v64C300.8 896 128 723.2 128 512h64z" p-id="2710"></path></svg></div>
+
+    </div>
+  </div>
+
+
+
+      
+<footer class="page-footer reveal fs12"><hr><div class="text"><center>©2022 <a target="_blank" rel="noopener" href="https://beian.miit.gov.cn/#/Integrated/index">渝ICP备2022011696号-1</a> | Build By SkyReeves | Powered By Hexo <a target="_blank" rel="noopener" href="https://github.com/xaoxuu/hexo-theme-stellar">Stellar</a></center>
+<center>本站由 <a target="_blank" rel="noopener" href="https://www.upyun.com/?utm_source=lianmeng&utm_medium=referral"><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://img.skyreeves.cn/sites/又拍云.svg" width="5.5%" align="absmiddle" ></a> 提供CDN加速 | <span id="span"></span><script type="text/javascript">function runtime(){X = new Date("9/27/2022 18:00:00");Y = new Date();T = (Y.getTime()-X.getTime());M = 24*60*60*1000;a = T/M;A = Math.floor(a);b = (a-A)*24;B = Math.floor(b);c = (b-B)*60;C = Math.floor((b-B)*60);D = Math.floor((c-C)*60);span.innerHTML = "🛰️已在宇宙深处飘了"+A+"天"+B+"小时"+C+"分"+D+"秒"}setInterval(runtime, 1000);</script></center>
+</div></footer>
+
+      <div class='float-panel mobile-only blur' style='display:none'>
+  <button type='button' class='sidebar-toggle mobile' onclick='sidebar.toggle()'>
+    <svg class="icon" style="width: 1em; height: 1em;vertical-align: middle;fill: currentColor;overflow: hidden;" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="15301"><path d="M566.407 808.3c26.9-0.1 49.3-20.8 51.6-47.6-1.9-27.7-23.9-49.7-51.6-51.6h-412.6c-28.2-1.4-52.6 19.5-55.5 47.6 2.3 26.8 24.6 47.5 51.6 47.6h416.5v4z m309.3-249.9c26.9-0.1 49.3-20.8 51.6-47.6-2.2-26.8-24.6-47.5-51.6-47.6h-721.9c-27.7-2.8-52.5 17.4-55.3 45.1-0.1 0.8-0.1 1.7-0.2 2.5 0.9 27.2 23.6 48.5 50.7 47.6H875.707z m-103.1-245.9c26.9-0.1 49.3-20.8 51.6-47.6-0.4-28.3-23.2-51.1-51.5-51.6h-618.9c-29.5-1.1-54.3 21.9-55.5 51.4v0.2c1.4 27.8 25.2 49.2 53 47.8 0.8 0 1.7-0.1 2.5-0.2h618.8z" p-id="15302"></path><path d="M566.407 808.3c26.9-0.1 49.3-20.8 51.6-47.6-1.9-27.7-23.9-49.7-51.6-51.6h-412.6c-28.2-1.4-52.6 19.5-55.5 47.6 1.9 27.7 23.9 49.7 51.6 51.6h416.5z m309.3-249.9c26.9-0.1 49.3-20.8 51.6-47.6-2.2-26.8-24.6-47.5-51.6-47.6h-721.9c-27.7-2.8-52.5 17.4-55.3 45.1-0.1 0.8-0.1 1.7-0.2 2.5 0.9 27.2 23.6 48.5 50.7 47.6H875.707z m-103.1-245.9c26.9-0.1 49.3-20.8 51.6-47.6-0.4-28.3-23.2-51.1-51.5-51.6h-618.9c-29.5-1.1-54.3 21.9-55.5 51.4v0.2c1.4 27.8 25.2 49.2 53 47.8 0.8 0 1.7-0.1 2.5-0.2h618.8z" p-id="15303"></path></svg>
+  </button>
+</div>
+
+    </div>
+  </div>
+  <div class='scripts'>
+    <script type="text/javascript">
+  stellar = {
+    // 懒加载 css https://github.com/filamentgroup/loadCSS
+    loadCSS: (href, before, media, attributes) => {
+      var doc = window.document;
+      var ss = doc.createElement("link");
+      var ref;
+      if (before) {
+        ref = before;
+      } else {
+        var refs = (doc.body || doc.getElementsByTagName("head")[0]).childNodes;
+        ref = refs[refs.length - 1];
+      }
+      var sheets = doc.styleSheets;
+      if (attributes) {
+        for (var attributeName in attributes) {
+          if (attributes.hasOwnProperty(attributeName)) {
+            ss.setAttribute(attributeName, attributes[attributeName]);
+          }
+        }
+      }
+      ss.rel = "stylesheet";
+      ss.href = href;
+      ss.media = "only x";
+      function ready(cb) {
+        if (doc.body) {
+          return cb();
+        }
+        setTimeout(function () {
+          ready(cb);
+        });
+      }
+      ready(function () {
+        ref.parentNode.insertBefore(ss, before ? ref : ref.nextSibling);
+      });
+      var onloadcssdefined = function (cb) {
+        var resolvedHref = ss.href;
+        var i = sheets.length;
+        while (i--) {
+          if (sheets[i].href === resolvedHref) {
+            return cb();
+          }
+        }
+        setTimeout(function () {
+          onloadcssdefined(cb);
+        });
+      };
+      function loadCB() {
+        if (ss.addEventListener) {
+          ss.removeEventListener("load", loadCB);
+        }
+        ss.media = media || "all";
+      }
+      if (ss.addEventListener) {
+        ss.addEventListener("load", loadCB);
+      }
+      ss.onloadcssdefined = onloadcssdefined;
+      onloadcssdefined(loadCB);
+      return ss;
+    },
+
+    // 从 butterfly 和 volantis 获得灵感
+    loadScript: (src, opt) => new Promise((resolve, reject) => {
+      var script = document.createElement('script');
+      script.src = src;
+      if (opt) {
+        for (let key of Object.keys(opt)) {
+          script[key] = opt[key]
+        }
+      } else {
+        // 默认异步，如果需要同步，第二个参数传入 {} 即可
+        script.async = true
+      }
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    }),
+
+    // https://github.com/jerryc127/hexo-theme-butterfly
+    jQuery: (fn) => {
+      if (typeof jQuery === 'undefined') {
+        stellar.loadScript(stellar.plugins.jQuery).then(fn)
+      } else {
+        fn()
+      }
+    }
+  };
+  stellar.version = '1.16.0';
+  stellar.github = 'https://github.com/xaoxuu/hexo-theme-stellar/tree/1.16.0';
+  stellar.config = {
+    date_suffix: {
+      just: '刚刚',
+      min: '分钟前',
+      hour: '小时前',
+      day: '天前',
+      month: '个月前',
+    },
+  };
+
+  // required plugins (only load if needs)
+  stellar.plugins = {
+    jQuery: 'https://fastly.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js'
+  };
+
+  // stellar js
+  stellar.plugins.stellar = Object.assign({"sites":"/js/plugins/sites.js","friends":"/js/plugins/friends.js","ghinfo":"/js/plugins/ghinfo.js","timeline":"/js/plugins/timeline.js","linkcard":"/js/plugins/linkcard.js","fcircle":"/js/plugins/fcircle.js"});
+
+  stellar.plugins.marked = Object.assign("https://cdn.bootcdn.net/ajax/libs/marked/4.0.18/marked.min.js");
+  // optional plugins
+  if ('true' == 'true') {
+    stellar.plugins.lazyload = Object.assign({"enable":true,"js":"https://fastly.jsdelivr.net/npm/vanilla-lazyload@17.3.1/dist/lazyload.min.js","transition":"blur"});
+  }
+  if ('true' == 'true') {
+    stellar.plugins.swiper = Object.assign({"enable":true,"css":"https://unpkg.com/swiper@6/swiper-bundle.min.css","js":"https://unpkg.com/swiper@6/swiper-bundle.min.js"});
+  }
+  if ('' == 'true') {
+    stellar.plugins.scrollreveal = Object.assign({"enable":null,"js":"https://fastly.jsdelivr.net/npm/scrollreveal@4.0.9/dist/scrollreveal.min.js","distance":"8px","duration":500,"interval":100,"scale":1});
+  }
+  if ('true' == 'true') {
+    stellar.plugins.preload = Object.assign({"enable":true,"service":"flying_pages","instant_page":"https://fastly.jsdelivr.net/gh/volantis-x/cdn-volantis@4.1.2/js/instant_page.js","flying_pages":"https://fastly.jsdelivr.net/gh/gijo-varghese/flying-pages@2.1.2/flying-pages.min.js"});
+  }
+  if ('true' == 'true') {
+    stellar.plugins.fancybox = Object.assign({"enable":true,"js":"https://fastly.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.umd.js","css":"https://fastly.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.css","selector":".swiper-slide img"});
+  }
+  if ('false' == 'true') {
+    stellar.plugins.heti = Object.assign({"enable":false,"css":"https://unpkg.com/heti/umd/heti.min.css","js":"https://unpkg.com/heti/umd/heti-addon.min.js"});
+  }
+</script>
+
+<!-- required -->
+
+  
+<script src="/js/main.js" async></script>
+
+
+
+<!-- optional -->
+
+  <script>
+  function load_comment(){
+    if(!document.getElementById("waline_container"))return;
+    stellar.loadCSS('https://unpkg.com/@waline/client@v2/dist/waline.css');
+    stellar.loadScript('https://unpkg.com/@waline/client@v2/dist/waline.js', {defer:true}).then(function () {
+      const el = document.getElementById("waline_container");
+      var path = el.getAttribute('comment_id');
+      if (!path) {
+        path = decodeURI(window.location.pathname);
+      }
+      Waline.init(Object.assign({"js":"https://unpkg.com/@waline/client@v2/dist/waline.js","css":"https://unpkg.com/@waline/client@v2/dist/waline.css","serverURL":"https://waline.skyreeves.cn","commentCount":true,"pageview":false,"locale":{"placeholder":"评论时填写邮箱，或者注册并登录后评论，即可在第一时间收到消息提醒。","reactionTitle":null},"emoji":["https://img.skyreeves.cn/emojis/blobs","https://img.skyreeves.cn/emojis/wsm","https://img.skyreeves.cn/emojis/bmoji"],"meta":["nick","mail","link"],"reaction":["https://img.skyreeves.cn/emojis/blobs/ablobcatheart.png","https://img.skyreeves.cn/emojis/blobs/ablobcatattentionreverse.png","https://img.skyreeves.cn/emojis/blobs/ablobcatrainbow.png","https://img.skyreeves.cn/emojis/blobs/blobcatsaitama.png","https://img.skyreeves.cn/emojis/blobs/blobcatflip.png"]}, {
+        el: '#waline_container',
+        path: path,
+      }));
+    });
+  }
+  window.addEventListener('DOMContentLoaded', (event) => {
+    console.log('DOM fully loaded and parsed');
+    load_comment();
+  });
+
+</script>
+
+
+
+
+<!-- inject -->
+
+
+  </div>
+  <!--动态线条背景-->
+  <script type="text/javascript"
+    color="220,220,220" opacity='0.7' zIndex="-2" count="200" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js">
+  </script>
+</body>
+</html>
