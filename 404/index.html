@@ -3,7 +3,7 @@
 
 <head>
   <meta name="generator" content="Hexo 6.3.0">
-  <meta name="hexo-theme" content="https://github.com/xaoxuu/hexo-theme-stellar/tree/1.16.0">
+  <meta name="hexo-theme" content="https://github.com/xaoxuu/hexo-theme-stellar/tree/1.17.2">
   <meta charset="utf-8">
   
 
@@ -31,7 +31,7 @@
 <meta property="og:description" content="Skyreeves">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2022-11-20T06:11:52.000Z">
-<meta property="article:modified_time" content="2022-12-02T17:56:10.542Z">
+<meta property="article:modified_time" content="2022-12-02T20:12:26.956Z">
 <meta property="article:author" content="SkyReeves">
 <meta name="twitter:card" content="summary">
   
@@ -91,13 +91,15 @@
 
 
 <div class="widgets">
-<div class="widget-wrap" id="markdown"><div class="widget-header cap theme dis-select"><span class="name">你好呀，巡天者🛸</span></div><div class="widget-body fs14"><p>这是一个位于宇宙深处的空间站🛰️没来由地诞生，没来由地成长，也许在缓缓前行，也许会被遗忘</p>
-</div></div>
+<widget class="widget-wrapper markdown"><div class="widget-header cap theme dis-select"><span class="name">你好呀，巡天者🛸</span></div><div class="widget-body fs14"><p>这是一个位于宇宙深处的空间站🛰️没来由地诞生，没来由地成长，也许在缓缓前行，也许会被遗忘</p>
+</div></widget>
 
 
 
-<div class="widget-wrap" id="recent"><div class="widget-header cap theme dis-select"><span class="name">最近更新</span></div><div class="widget-body related-posts fs14"><a class="item title" href="/post/5fad3cf5.html"><span class="title">M1 Macbook Ps2022 可使用的coolorus插件</span></a><a class="item title" href="/post/53f02396.html"><span class="title">Mac使用hexo+github搭建个人博客</span></a><a class="item title" href="/post/5c387244.html"><span class="title">Mac安装Homebrew</span></a><a class="item title" href="/post/9b8cc433.html"><span class="title">Stellar主题自定义侧边栏教程「萌新向」</span></a><a class="item title" href="/post/4a17b156.html"><span class="title">Hello World</span></a></div></div>
+<widget class="widget-wrapper recent"><div class="widget-header cap theme dis-select"><span class="name">最近更新</span></div><div class="widget-body related-posts fs14"><a class="item title" href="/post/5fad3cf5.html"><span class="title">M1 Macbook Ps2022 可使用的coolorus插件</span></a><a class="item title" href="/post/53f02396.html"><span class="title">Mac使用hexo+github搭建个人博客</span></a><a class="item title" href="/post/5c387244.html"><span class="title">Mac安装Homebrew</span></a><a class="item title" href="/post/9b8cc433.html"><span class="title">Stellar主题自定义侧边栏教程「萌新向」</span></a><a class="item title" href="/post/4a17b156.html"><span class="title">Hello World</span></a></div></widget>
 
+
+<widget class="widget-wrapper search"><div class="widget-body"><div class="search-wrapper" id="search"><form class="search-form"><input type="text" class="search-input" id="search-input" placeholder="站内搜索"></form><div id="search-result"></div><div class="search-no-result">没有找到内容！</div></div></div></widget>
 </div>
 
 
@@ -112,9 +114,9 @@
 
       
 
-<article class="content md page"></article>
+<article class="md-text content page"></article>
 
-  <div class='related-wrap md reveal' id="comments">
+  <div class='related-wrap md-text reveal' id="comments">
     <div class='cmt-title cap theme'>
       快来参与讨论吧
     </div>
@@ -234,8 +236,8 @@
       }
     }
   };
-  stellar.version = '1.16.0';
-  stellar.github = 'https://github.com/xaoxuu/hexo-theme-stellar/tree/1.16.0';
+  stellar.version = '1.17.2';
+  stellar.github = 'https://github.com/xaoxuu/hexo-theme-stellar/tree/1.17.2';
   stellar.config = {
     date_suffix: {
       just: '刚刚',
@@ -251,8 +253,17 @@
     jQuery: 'https://fastly.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js'
   };
 
+  if ('local_search') {
+    stellar.search = {};
+    stellar.search.service = 'local_search';
+    if (stellar.search.service == 'local_search') {
+      let service_obj = Object.assign({}, {"field":"all","path":"/search.json","content":true,"codeblock":true,"sort":"-date"});
+      stellar.search[stellar.search.service] = service_obj;
+    }
+  }
+
   // stellar js
-  stellar.plugins.stellar = Object.assign({"sites":"/js/plugins/sites.js","friends":"/js/plugins/friends.js","ghinfo":"/js/plugins/ghinfo.js","timeline":"/js/plugins/timeline.js","linkcard":"/js/plugins/linkcard.js","fcircle":"/js/plugins/fcircle.js"});
+  stellar.plugins.stellar = Object.assign({"sites":"/js/plugins/sites.js","friends":"/js/plugins/friends.js","ghinfo":"/js/plugins/ghinfo.js","timeline":"/js/plugins/timeline.js","linkcard":"/js/plugins/linkcard.js","fcircle":"/js/plugins/fcircle.js","weibo":"/js/plugins/weibo.js"});
 
   stellar.plugins.marked = Object.assign("https://cdn.bootcdn.net/ajax/libs/marked/4.0.18/marked.min.js");
   // optional plugins

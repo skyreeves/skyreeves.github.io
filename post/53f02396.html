@@ -3,7 +3,7 @@
 
 <head>
   <meta name="generator" content="Hexo 6.3.0">
-  <meta name="hexo-theme" content="https://github.com/xaoxuu/hexo-theme-stellar/tree/1.16.0">
+  <meta name="hexo-theme" content="https://github.com/xaoxuu/hexo-theme-stellar/tree/1.17.2">
   <meta charset="utf-8">
   
 
@@ -51,7 +51,7 @@
 <meta property="og:image" content="https://img.xiebruce.top/2018/11/05/e963e9febf62a25f3d3dda3454086900.png">
 <meta property="og:image" content="https://img.xiebruce.top/2018/11/06/1d0b2593a8365bf0b454296a8c99ad68.png">
 <meta property="article:published_time" content="2022-09-27T17:58:15.000Z">
-<meta property="article:modified_time" content="2022-12-02T17:56:10.546Z">
+<meta property="article:modified_time" content="2022-12-02T20:12:26.956Z">
 <meta property="article:author" content="SkyReeves">
 <meta property="article:tag" content="hexo">
 <meta property="article:tag" content="Mac">
@@ -117,9 +117,11 @@
 
 <div class="widgets">
 
-<div class="widget-wrap single" id="toc"><div class="widget-header cap dis-select"><span class="name">Mac使用hexo+github搭建个人博客</span></div><div class="widget-body fs14"><div class="doc-tree active"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%80%E3%80%81%E4%BB%80%E4%B9%88%E6%98%AFhexo%EF%BC%9F"><span class="toc-text">一、什么是hexo？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%8C%E3%80%81%E5%AE%89%E8%A3%85hexo"><span class="toc-text">二、安装hexo</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1%E3%80%81%E5%AE%89%E8%A3%85%E5%89%8D%E6%8F%90(%E5%B7%B2%E5%AE%89%E8%A3%85%E8%AF%B7%E8%B7%B3%E8%BF%87)"><span class="toc-text">1、安装前提(已安装请跳过)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2%E3%80%81%E5%AE%89%E8%A3%85hexo"><span class="toc-text">2、安装hexo</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%89%E3%80%81%E4%BD%BF%E7%94%A8hexo%E5%BB%BA%E7%AB%99"><span class="toc-text">三、使用hexo建站</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9B%9B%E3%80%81%E9%85%8D%E7%BD%AEgithub"><span class="toc-text">四、配置github</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1%E3%80%81%E6%B3%A8%E5%86%8Cgithub"><span class="toc-text">1、注册github</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2%E3%80%81%E5%88%9B%E5%BB%BA%E4%BB%93%E5%BA%93"><span class="toc-text">2、创建仓库</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3%E3%80%81%E5%9C%A8github%E4%B8%8A%E6%B7%BB%E5%8A%A0%E5%85%AC%E9%92%A5(%E6%B7%BB%E5%8A%A0%E8%BF%87%E7%9A%84%E8%AF%B7%E8%B7%B3%E8%BF%87)"><span class="toc-text">3、在github上添加公钥(添加过的请跳过)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4%E3%80%81%E4%BF%AE%E6%94%B9%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E5%B9%B6%E9%83%A8%E7%BD%B2"><span class="toc-text">4、修改配置文件并部署</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%94%E3%80%81%E6%9B%B4%E6%8D%A2%E4%B8%BB%E9%A2%98"><span class="toc-text">五、更换主题</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1%E3%80%81%E6%8C%91%E9%80%89%E4%B8%BB%E9%A2%98"><span class="toc-text">1、挑选主题</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2%E3%80%81%E4%B8%8B%E8%BD%BD%E4%B8%BB%E9%A2%98"><span class="toc-text">2、下载主题</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3%E3%80%81%E5%9C%A8%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E4%B8%AD%E6%8C%87%E5%AE%9A%E6%96%B0%E4%B8%BB%E9%A2%98"><span class="toc-text">3、在配置文件中指定新主题</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4%E3%80%81%E6%B8%85%E7%A9%BA%E7%BC%93%E5%AD%98%E5%B9%B6%E5%8F%91%E5%B8%83%E6%96%B0%E4%B8%BB%E9%A2%98"><span class="toc-text">4、清空缓存并发布新主题</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%85%AD%E3%80%81%E5%BC%80%E5%A7%8B%E5%86%99%E5%8D%9A%E5%AE%A2"><span class="toc-text">六、开始写博客</span></a></li></ol></div></div></div>
+<widget class="widget-wrapper toc single" id="toc"><div class="widget-header cap dis-select"><span class="name">Mac使用hexo+github搭建个人博客</span></div><div class="widget-body fs14"><div class="doc-tree active"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%80%E3%80%81%E4%BB%80%E4%B9%88%E6%98%AFhexo%EF%BC%9F"><span class="toc-text">一、什么是hexo？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%8C%E3%80%81%E5%AE%89%E8%A3%85hexo"><span class="toc-text">二、安装hexo</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1%E3%80%81%E5%AE%89%E8%A3%85%E5%89%8D%E6%8F%90(%E5%B7%B2%E5%AE%89%E8%A3%85%E8%AF%B7%E8%B7%B3%E8%BF%87)"><span class="toc-text">1、安装前提(已安装请跳过)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2%E3%80%81%E5%AE%89%E8%A3%85hexo"><span class="toc-text">2、安装hexo</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%89%E3%80%81%E4%BD%BF%E7%94%A8hexo%E5%BB%BA%E7%AB%99"><span class="toc-text">三、使用hexo建站</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9B%9B%E3%80%81%E9%85%8D%E7%BD%AEgithub"><span class="toc-text">四、配置github</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1%E3%80%81%E6%B3%A8%E5%86%8Cgithub"><span class="toc-text">1、注册github</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2%E3%80%81%E5%88%9B%E5%BB%BA%E4%BB%93%E5%BA%93"><span class="toc-text">2、创建仓库</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3%E3%80%81%E5%9C%A8github%E4%B8%8A%E6%B7%BB%E5%8A%A0%E5%85%AC%E9%92%A5(%E6%B7%BB%E5%8A%A0%E8%BF%87%E7%9A%84%E8%AF%B7%E8%B7%B3%E8%BF%87)"><span class="toc-text">3、在github上添加公钥(添加过的请跳过)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4%E3%80%81%E4%BF%AE%E6%94%B9%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E5%B9%B6%E9%83%A8%E7%BD%B2"><span class="toc-text">4、修改配置文件并部署</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%94%E3%80%81%E6%9B%B4%E6%8D%A2%E4%B8%BB%E9%A2%98"><span class="toc-text">五、更换主题</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1%E3%80%81%E6%8C%91%E9%80%89%E4%B8%BB%E9%A2%98"><span class="toc-text">1、挑选主题</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2%E3%80%81%E4%B8%8B%E8%BD%BD%E4%B8%BB%E9%A2%98"><span class="toc-text">2、下载主题</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3%E3%80%81%E5%9C%A8%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E4%B8%AD%E6%8C%87%E5%AE%9A%E6%96%B0%E4%B8%BB%E9%A2%98"><span class="toc-text">3、在配置文件中指定新主题</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4%E3%80%81%E6%B8%85%E7%A9%BA%E7%BC%93%E5%AD%98%E5%B9%B6%E5%8F%91%E5%B8%83%E6%96%B0%E4%B8%BB%E9%A2%98"><span class="toc-text">4、清空缓存并发布新主题</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%85%AD%E3%80%81%E5%BC%80%E5%A7%8B%E5%86%99%E5%8D%9A%E5%AE%A2"><span class="toc-text">六、开始写博客</span></a></li></ol></div></div></widget>
 
 
+
+<widget class="widget-wrapper search"><div class="widget-body"><div class="search-wrapper" id="search"><form class="search-form"><input type="text" class="search-input" id="search-input" placeholder="站内搜索"></form><div id="search-result"></div><div class="search-no-result">没有找到内容！</div></div></div></widget>
 
 
 </div>
@@ -134,7 +136,7 @@
 
 <div class="bread-nav fs12"><div id="breadcrumb"><a class="cap breadcrumb" href="/">主页</a><span class="sep"></span><a class="cap breadcrumb" href="/">文章</a></div><div id="post-meta">发布于&nbsp;<time datetime="2022-09-27T17:58:15.000Z">2022-09-28</time></div></div>
 
-<article class='content md post'>
+<article class='md-text content post'>
 <h1 class="article-title"><span>Mac使用hexo+github搭建个人博客</span></h1>
 <h2 id="一、什么是hexo？">一、什么是hexo？</h2>
 <p>Hexo 是一个快速、简洁且高效的博客框架，使用 Markdown（或其他渲染引擎）解析文章，在几秒内，即可利用靓丽的主题生成静态网页。</p>
@@ -260,7 +262,7 @@
 <div class="tag-plugin note" color="red"><div class="title"><strong>作者：Bruce Xie 来源：Bruce's Blog</strong></div><div class="body"><p>原文链接：<a target="_blank" rel="noopener" href="https://www.xiebruce.top/595.html">https://www.xiebruce.top/595.html</a></p></div></div>
 
 
-<div class="article-footer reveal fs14"><section id="license"><div class="header"><span>许可协议</span></div><div class="body"><p>本文采用<a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">署名-非商业性使用-相同方式共享 4.0 国际</a>许可协议，转载请注明出处。</p>
+<div class="article-footer reveal fs14"><section id="license"><div class="header"><span>许可协议</span></div><div class="body"><p>本文采用 <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">署名-非商业性使用-相同方式共享 4.0 国际</a> 许可协议，转载请注明出处。</p>
 </div></section></div>
 
 </article>
@@ -272,7 +274,7 @@
 
 
 
-  <div class='related-wrap md reveal' id="comments">
+  <div class='related-wrap md-text reveal' id="comments">
     <div class='cmt-title cap theme'>
       快来参与讨论吧
     </div>
@@ -392,8 +394,8 @@
       }
     }
   };
-  stellar.version = '1.16.0';
-  stellar.github = 'https://github.com/xaoxuu/hexo-theme-stellar/tree/1.16.0';
+  stellar.version = '1.17.2';
+  stellar.github = 'https://github.com/xaoxuu/hexo-theme-stellar/tree/1.17.2';
   stellar.config = {
     date_suffix: {
       just: '刚刚',
@@ -409,8 +411,17 @@
     jQuery: 'https://fastly.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js'
   };
 
+  if ('local_search') {
+    stellar.search = {};
+    stellar.search.service = 'local_search';
+    if (stellar.search.service == 'local_search') {
+      let service_obj = Object.assign({}, {"field":"all","path":"/search.json","content":true,"codeblock":true,"sort":"-date"});
+      stellar.search[stellar.search.service] = service_obj;
+    }
+  }
+
   // stellar js
-  stellar.plugins.stellar = Object.assign({"sites":"/js/plugins/sites.js","friends":"/js/plugins/friends.js","ghinfo":"/js/plugins/ghinfo.js","timeline":"/js/plugins/timeline.js","linkcard":"/js/plugins/linkcard.js","fcircle":"/js/plugins/fcircle.js"});
+  stellar.plugins.stellar = Object.assign({"sites":"/js/plugins/sites.js","friends":"/js/plugins/friends.js","ghinfo":"/js/plugins/ghinfo.js","timeline":"/js/plugins/timeline.js","linkcard":"/js/plugins/linkcard.js","fcircle":"/js/plugins/fcircle.js","weibo":"/js/plugins/weibo.js"});
 
   stellar.plugins.marked = Object.assign("https://cdn.bootcdn.net/ajax/libs/marked/4.0.18/marked.min.js");
   // optional plugins

@@ -3,7 +3,7 @@
 
 <head>
   <meta name="generator" content="Hexo 6.3.0">
-  <meta name="hexo-theme" content="https://github.com/xaoxuu/hexo-theme-stellar/tree/1.16.0">
+  <meta name="hexo-theme" content="https://github.com/xaoxuu/hexo-theme-stellar/tree/1.17.2">
   <meta charset="utf-8">
   
 
@@ -78,8 +78,8 @@
 <meta property="og:image" content="https://img.skyreeves.cn/sites/yyds.png">
 <meta property="og:image" content="https://img.skyreeves.cn/sites/%E6%88%AA%E5%B1%8F2022-10-09-21.35.19.png">
 <meta property="og:image" content="https://img.skyreeves.cn/sites/zimuku.png">
-<meta property="article:published_time" content="2022-12-02T17:56:10.550Z">
-<meta property="article:modified_time" content="2022-12-02T17:56:10.550Z">
+<meta property="article:published_time" content="2022-12-02T20:12:26.956Z">
+<meta property="article:modified_time" content="2022-12-02T20:12:26.956Z">
 <meta property="article:author" content="SkyReeves">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://img.skyreeves.cn/sites/%E6%88%AA%E5%B1%8F2022-11-03-20.11.24.png">
@@ -142,11 +142,11 @@
 
 
 <div class="widgets">
-<div class="widget-wrap" id="markdown"><div class="widget-header cap theme dis-select"><span class="name">⠀↓ 无处不在的blobcat</span></div><div class="widget-body fs14"><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://img.skyreeves.cn/emojis/blobs/blobcatalt.png" width="10%" >
-</div></div>
+<widget class="widget-wrapper markdown"><div class="widget-header cap theme dis-select"><span class="name">⠀↓ 无处不在的blobcat</span></div><div class="widget-body fs14"><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://img.skyreeves.cn/emojis/blobs/blobcatalt.png" width="10%" >
+</div></widget>
 
 
-<div class="widget-wrap multi" id="toc"><div class="widget-header cap dis-select"><span class="name">Hexo笔记</span></div><div class="widget-body fs14"><div class="doc-tree"><a class="doc-tree-link" href="/notes/%E7%AB%99%E7%82%B9%E7%BE%8E%E5%8C%96/index.html"><span class="toc-text">站点美化</span></a></div></div><div class="widget-header cap dis-select"><span class="name">游戏</span></div><div class="widget-body fs14"><div class="doc-tree"><a class="doc-tree-link" href="/notes/Gamer/index.html"><span class="toc-text">博主游玩推荐</span></a></div></div></div>
+<widget class="widget-wrapper toc multi" id="toc"><div class="widget-header cap dis-select"><span class="name">Hexo笔记</span></div><div class="widget-body fs14"><div class="doc-tree"><a class="doc-tree-link" href="/notes/%E7%AB%99%E7%82%B9%E7%BE%8E%E5%8C%96/index.html"><span class="toc-text">站点美化</span></a></div></div><div class="widget-header cap dis-select"><span class="name">游戏</span></div><div class="widget-body fs14"><div class="doc-tree"><a class="doc-tree-link" href="/notes/Gamer/index.html"><span class="toc-text">博主游玩推荐</span></a></div></div></widget>
 </div>
 
 
@@ -160,7 +160,7 @@
   
 
 
-  <article class='content md wiki'>
+  <article class='md-text content wiki'>
   <h1 class="article-title"><span>常用的站点</span></h1>
   <div class="tag-plugin toc" display="mobile" style="display:none"><details class="toc" open><summary>TOC</summary><div class="body fs14 multi"><section><div class="header">Hexo笔记</div><ul class="toc"><li><a class="list-link" href="undefined"><span>站点美化</span></a></li></ul></section><section><div class="header">游戏</div><ul class="toc"><li><a class="list-link" href="undefined"><span>博主游玩推荐</span></a></li></ul></section></div></details></div>
 <h3 id="geeks">Geeks</h3>
@@ -290,8 +290,8 @@
       }
     }
   };
-  stellar.version = '1.16.0';
-  stellar.github = 'https://github.com/xaoxuu/hexo-theme-stellar/tree/1.16.0';
+  stellar.version = '1.17.2';
+  stellar.github = 'https://github.com/xaoxuu/hexo-theme-stellar/tree/1.17.2';
   stellar.config = {
     date_suffix: {
       just: '刚刚',
@@ -307,8 +307,17 @@
     jQuery: 'https://fastly.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js'
   };
 
+  if ('local_search') {
+    stellar.search = {};
+    stellar.search.service = 'local_search';
+    if (stellar.search.service == 'local_search') {
+      let service_obj = Object.assign({}, {"field":"all","path":"/search.json","content":true,"codeblock":true,"sort":"-date"});
+      stellar.search[stellar.search.service] = service_obj;
+    }
+  }
+
   // stellar js
-  stellar.plugins.stellar = Object.assign({"sites":"/js/plugins/sites.js","friends":"/js/plugins/friends.js","ghinfo":"/js/plugins/ghinfo.js","timeline":"/js/plugins/timeline.js","linkcard":"/js/plugins/linkcard.js","fcircle":"/js/plugins/fcircle.js"});
+  stellar.plugins.stellar = Object.assign({"sites":"/js/plugins/sites.js","friends":"/js/plugins/friends.js","ghinfo":"/js/plugins/ghinfo.js","timeline":"/js/plugins/timeline.js","linkcard":"/js/plugins/linkcard.js","fcircle":"/js/plugins/fcircle.js","weibo":"/js/plugins/weibo.js"});
 
   stellar.plugins.marked = Object.assign("https://cdn.bootcdn.net/ajax/libs/marked/4.0.18/marked.min.js");
   // optional plugins
