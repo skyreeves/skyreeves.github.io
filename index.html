@@ -3,7 +3,7 @@
 
 <head>
   <meta name="generator" content="Hexo 6.3.0">
-  <meta name="hexo-theme" content="https://github.com/xaoxuu/hexo-theme-stellar/tree/1.18.5">
+  <meta name="hexo-theme" content="https://github.com/xaoxuu/hexo-theme-stellar/tree/1.19.0">
   <meta charset="utf-8">
   
 
@@ -32,6 +32,8 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="article:author" content="SkyReeves">
 <meta name="twitter:card" content="summary">
+  
+  
   
   
 
@@ -115,7 +117,6 @@
   
 
 <div class="nav-wrap"><nav class="sub post cap"><a class="active" href="/">近期发布</a><a href="/categories">分类</a><a href="/tags">标签</a><a href="/archives">归档</a></nav></div>
-
   <div class="post-list post"><a class="post-card post " href="/post/8e3c3b34.html">
 <article class="md-text"><h2 class="post-title">骑车使我快乐</h2><div class="excerpt"><p>大学时在学生社团认识了我老弟，跟我同年同月同日甚至是同时生，长得如我一般帅气，身材跟我一样健硕，我甚至怀疑他是我失散18年的双胞胎弟弟，除了比我高以外。
 那个时候他喜欢跑酷，我喜欢健身。我跟他学跑酷的跳跃动作，他向我学托马斯。一直到大三末尾，大家把全部精力用在学习和作品上再无暇到社团活动时，我还是不会跑酷，而他也没学成托马斯，你说巧不巧。
@@ -255,6 +256,9 @@ Coolorus是一个Photoshop的色环插件，它将在PS软件中增加一个实�
     // 从 butterfly 和 volantis 获得灵感
     loadScript: (src, opt) => new Promise((resolve, reject) => {
       var script = document.createElement('script');
+      if (src.startsWith('/')){
+        src = stellar.config.root + src.substring(1);
+      }
       script.src = src;
       if (opt) {
         for (let key of Object.keys(opt)) {
@@ -283,8 +287,8 @@ Coolorus是一个Photoshop的色环插件，它将在PS软件中增加一个实�
       }
     }
   };
-  stellar.version = '1.18.5';
-  stellar.github = 'https://github.com/xaoxuu/hexo-theme-stellar/tree/1.18.5';
+  stellar.version = '1.19.0';
+  stellar.github = 'https://github.com/xaoxuu/hexo-theme-stellar/tree/1.19.0';
   stellar.config = {
     date_suffix: {
       just: '刚刚',
@@ -293,6 +297,7 @@ Coolorus是一个Photoshop的色环插件，它将在PS软件中增加一个实�
       day: '天前',
       month: '个月前',
     },
+    root : '/',
   };
 
   // required plugins (only load if needs)
@@ -332,6 +337,9 @@ Coolorus是一个Photoshop的色环插件，它将在PS软件中增加一个实�
   if ('false' == 'true') {
     stellar.plugins.heti = Object.assign({"enable":false,"css":"https://unpkg.com/heti@0.9.2/umd/heti.min.css","js":"https://unpkg.com/heti@0.9.2/umd/heti-addon.min.js"});
   }
+  if ('true' == 'true') {
+    stellar.plugins.copycode = Object.assign({"enable":true,"js":"/js/plugins/copycode.js","default_text":"Copy","success_text":"Copied"});
+  }
 </script>
 
 <!-- required -->
@@ -351,7 +359,7 @@ Coolorus是一个Photoshop的色环插件，它将在PS软件中增加一个实�
   </div>
   <!--动态线条背景-->
   <script type="text/javascript"
-    color="220,220,220" opacity='0.7' zIndex="-2" count="200" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js">
+   color="220,220,220" opacity='0.7' zIndex="-2" count="200" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js">
   </script>
 </body>
 </html>

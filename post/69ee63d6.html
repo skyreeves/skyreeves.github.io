@@ -3,7 +3,7 @@
 
 <head>
   <meta name="generator" content="Hexo 6.3.0">
-  <meta name="hexo-theme" content="https://github.com/xaoxuu/hexo-theme-stellar/tree/1.18.5">
+  <meta name="hexo-theme" content="https://github.com/xaoxuu/hexo-theme-stellar/tree/1.19.0">
   <meta charset="utf-8">
   
 
@@ -71,6 +71,8 @@
 <meta name="twitter:image" content="https://gcore.jsdelivr.net/gh/norevi/waline-blobcatemojis@1.0/blobs/blobcatt.png">
   
   
+  
+  <meta name="keywords" content="hexo,Waline,Vercel">
 
   <!-- feed -->
   
@@ -146,6 +148,7 @@
       
 
 
+
 <div class="bread-nav fs12"><div id="breadcrumb"><a class="cap breadcrumb" href="/">主页</a><span class="sep"></span><a class="cap breadcrumb" href="/">文章</a></div><div id="post-meta">发布于&nbsp;<time datetime="2022-10-02T05:40:34.000Z">2022-10-02</time></div></div>
 
 <article class='md-text content post'>
@@ -158,31 +161,31 @@
 <p><a target="_blank" rel="noopener" href="https://waline.js.org">Waline</a>是一位大佬在 Valine 的基础之上开发的，跟Valine一样支持LeanCloud作为数据存储。</p>
 <h3 id="1、注册leancloud">1、注册LeanCloud</h3>
 <p>LeanCloud分国内版和国际版，因为国内版需要绑定已经备案的域名，多一事不如少一事的原则<span class="tag-plugin emoji"><img no-lazy="" class="inline lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://gcore.jsdelivr.net/gh/norevi/waline-blobcatemojis@1.0/blobs/blobcatthink.png"/></span>，我们点<a target="_blank" rel="noopener" href="https://console.leancloud.app/register">这里</a>注册一个LeanCloud<strong>国际版</strong>账号。</p>
-<p><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://img.skyreeves.cn/hexo/image-20221002140107102.png" alt=""></p>
+<div class="tag-plugin image"><div class="image-bg"><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://img.skyreeves.cn/hexo/image-20221002140107102.png"/></div></div>
 <h3 id="2、创建应用">2、创建应用</h3>
 <p>之后在应用里点击<strong>创建应用</strong><span class="tag-plugin emoji"><img no-lazy="" class="inline lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://gcore.jsdelivr.net/gh/norevi/waline-blobcatemojis@1.0/blobs/ablobcatreachrev.png"/></span></p>
-<p><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://img.skyreeves.cn/hexo/%E6%88%AA%E5%B1%8F2022-10-02-14.13.31.png" alt=""></p>
+<div class="tag-plugin image"><div class="image-bg"><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://img.skyreeves.cn/hexo/%E6%88%AA%E5%B1%8F2022-10-02-14.13.31.png"/></div></div>
 <p>应用名称随意填<span class="tag-plugin emoji"><img no-lazy="" class="inline lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://gcore.jsdelivr.net/gh/norevi/waline-blobcatemojis@1.0/blobs/blobcatmelt.png"/></span></p>
 <p>应用计价方式选择<strong>开发版</strong>，点击<strong>创建</strong>。</p>
-<p><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://img.skyreeves.cn/hexo/%E6%88%AA%E5%B1%8F2022-10-02-14.18.00.png" alt=""></p>
+<div class="tag-plugin image"><div class="image-bg"><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://img.skyreeves.cn/hexo/%E6%88%AA%E5%B1%8F2022-10-02-14.18.00.png"/></div></div>
 <h3 id="3、获取应用凭证">3、获取应用凭证</h3>
 <p>然后点应用右下角的 ⚙ 进入设置菜单<span class="tag-plugin emoji"><img no-lazy="" class="inline lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://gcore.jsdelivr.net/gh/norevi/waline-blobcatemojis@1.0/blobs/blobcatcoffee.png"/></span></p>
-<p><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://img.skyreeves.cn/hexo/%E6%88%AA%E5%B1%8F2022-10-02-14.20.55.png" alt=""></p>
+<div class="tag-plugin image"><div class="image-bg"><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://img.skyreeves.cn/hexo/%E6%88%AA%E5%B1%8F2022-10-02-14.20.55.png"/></div></div>
 <p>点击左侧边栏的<strong>应用凭证</strong>获取<strong>AppID</strong>、<strong>AppKey</strong>以及<strong>MasterKey</strong></p>
 <p>这三个值在之后的服务端配置环境变量中使用<span class="tag-plugin emoji"><img no-lazy="" class="inline lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://gcore.jsdelivr.net/gh/norevi/waline-blobcatemojis@1.0/blobs/blobcatread.png"/></span></p>
-<p><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://img.skyreeves.cn/hexo/%E6%88%AA%E5%B1%8F2022-10-02-14.22.50.png" alt=""></p>
+<div class="tag-plugin image"><div class="image-bg"><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://img.skyreeves.cn/hexo/%E6%88%AA%E5%B1%8F2022-10-02-14.22.50.png"/></div></div>
 <h2 id="二、创建服务端">二、创建服务端</h2>
 <p>我们选择既简单访问又快还能白嫖的Vercel<span class="tag-plugin emoji"><img no-lazy="" class="inline lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://gcore.jsdelivr.net/gh/norevi/waline-blobcatemojis@1.0/blobs/blobcatcoffee.png"/></span></p>
 <h3 id="1、创建服务端仓库">1、创建服务端仓库</h3>
 <p>点击<a target="_blank" rel="noopener" href="https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fwalinejs%2Fwaline%2Ftree%2Fmain%2Fexample">这里</a>选择用Github快速连接</p>
 <p>然后在Create Git Repository放块里选择<strong>Github</strong>创建一个仓库</p>
-<p><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://img.skyreeves.cn/hexo/%E6%88%AA%E5%B1%8F2022-10-02-14.49.06.png" alt=""></p>
+<div class="tag-plugin image"><div class="image-bg"><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://img.skyreeves.cn/hexo/%E6%88%AA%E5%B1%8F2022-10-02-14.49.06.png"/></div></div>
 <p>当你的屏幕放起彩带烟花，表明已经构建完成<span class="tag-plugin emoji"><img no-lazy="" class="inline lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://gcore.jsdelivr.net/gh/norevi/waline-blobcatemojis@1.0/blobs/blobcatalt.png"/></span></p>
 <h3 id="2、配置环境变量">2、配置环境变量</h3>
 <p>点击右上角的<strong>Continue to Dashboard</strong></p>
-<p><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://img.skyreeves.cn/hexo/%E6%88%AA%E5%B1%8F2022-10-02-14.53.14.png" alt=""></p>
+<div class="tag-plugin image"><div class="image-bg"><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://img.skyreeves.cn/hexo/%E6%88%AA%E5%B1%8F2022-10-02-14.53.14.png"/></div></div>
 <p>选择<strong>Settings</strong> - <strong>Environment Variable</strong></p>
-<p><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://img.skyreeves.cn/hexo/%E6%88%AA%E5%B1%8F2022-10-02-14.55.23.png" alt=""></p>
+<div class="tag-plugin image"><div class="image-bg"><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://img.skyreeves.cn/hexo/%E6%88%AA%E5%B1%8F2022-10-02-14.55.23.png"/></div></div>
 <p>需要配置的环境变量与第一步里获取的应用凭证对应：<span class="tag-plugin emoji"><img no-lazy="" class="inline lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://gcore.jsdelivr.net/gh/norevi/waline-blobcatemojis@1.0/blobs/blobcatread.png"/></span></p>
 <table>
 <thead>
@@ -213,12 +216,12 @@
 <blockquote>
 <p>LeanCloud国际版只需配置前三项，国内版需要额外配置第四项LEAN_SERVER</p>
 </blockquote>
-<p><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://img.skyreeves.cn/hexo/%E6%88%AA%E5%B1%8F2022-10-02-15.16.36.png" alt=""></p>
+<div class="tag-plugin image"><div class="image-bg"><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://img.skyreeves.cn/hexo/%E6%88%AA%E5%B1%8F2022-10-02-15.16.36.png"/></div></div>
 <p>然后点顶部的<strong>Deployments</strong>在刚才创建的服务上选择<strong>Redeploy</strong>重新部署</p>
-<p><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://img.skyreeves.cn/hexo/%E6%88%AA%E5%B1%8F2022-10-02-15.17.25.png" alt=""></p>
+<div class="tag-plugin image"><div class="image-bg"><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://img.skyreeves.cn/hexo/%E6%88%AA%E5%B1%8F2022-10-02-15.17.25.png"/></div></div>
 <p>等部署好之后记下<strong>DOMAINS</strong>的地址</p>
 <p>在hexo配置文件中要用</p>
-<p><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://img.skyreeves.cn/hexo/%E6%88%AA%E5%B1%8F2022-10-02-15.28.05.png" alt=""></p>
+<div class="tag-plugin image"><div class="image-bg"><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://img.skyreeves.cn/hexo/%E6%88%AA%E5%B1%8F2022-10-02-15.28.05.png"/></div></div>
 <h2 id="三、hexo站点配置">三、hexo站点配置</h2>
 <p>我使用的是<a target="_blank" rel="noopener" href="https://github.com/xaoxuu/hexo-theme-stellar">Stellar</a>主题</p>
 <p>需要编辑主题的配置文件 <code>theme/stellar/_config.yml</code> 下的 <code>comments.service</code> 和 <code>comments.waline.serverURL</code> .</p>
@@ -229,7 +232,7 @@
 <p>Waline支持评论管理，默认第一个注册的用户为管理员<span class="tag-plugin emoji"><img no-lazy="" class="inline lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://gcore.jsdelivr.net/gh/norevi/waline-blobcatemojis@1.0/blobs/blobcatpolice.png"/></span></p>
 <p>可以直接访问上面获取的<strong>DOMAINS</strong>地址</p>
 <p>也可以打开你的站点，在评论板块点<strong>登录</strong></p>
-<p><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://img.skyreeves.cn/hexo/%E6%88%AA%E5%B1%8F2022-10-02-15.53.31.png" alt=""></p>
+<div class="tag-plugin image"><div class="image-bg"><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://img.skyreeves.cn/hexo/%E6%88%AA%E5%B1%8F2022-10-02-15.53.31.png"/></div></div>
 <p>此时就可以注册啦，也可以用微博、Github、Twitter、Facebook快速连接</p>
 <h2 id="五、评论通知">五、评论通知</h2>
 <p>当网站有用户发布评论或者用户回复评论时，Waline 支持对博主和回复评论作者进行通知。<span class="tag-plugin emoji"><img no-lazy="" class="inline lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://gcore.jsdelivr.net/gh/norevi/waline-blobcatemojis@1.0/blobs/blobcatphoto.png"/></span></p>
@@ -318,7 +321,7 @@
 <p>Waline最多支持9个反应，可以小于9个但不能多。每个页面的反应计数是独立的，互不干扰。<span class="tag-plugin emoji"><img no-lazy="" class="inline lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://gcore.jsdelivr.net/gh/norevi/waline-blobcatemojis@1.0/blobs/blobcatnomblobcat.png"/></span></p>
 <h3 id="3、评论框默认文字">3、评论框默认文字</h3>
 <p>先感谢<a target="_blank" rel="noopener" href="https://www.shifeiti.com">@是非题</a>大佬，这项自定义我找半天没都没找到<span class="tag-plugin emoji"><img no-lazy="" class="inline lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://gcore.jsdelivr.net/gh/norevi/waline-blobcatemojis@1.0/blobs/blobcatfacepalm.png"/></span></p>
-<p><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://img.skyreeves.cn/hexo/%E6%88%AA%E5%B1%8F2022-11-10-12.25.50.png" alt=""></p>
+<div class="tag-plugin image"><div class="image-bg"><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://img.skyreeves.cn/hexo/截屏2022-11-10-12.25.50.png"/></div></div>
 <p>如图所示，我在评论框里写了一句提醒“评论时填写邮箱，或者注册并登录后评论，即可在第一时间收到消息提醒。”这句话默认是“欢迎评论”，而我们要自定义它的话是在 <code>_config.stellar.yml</code> 里的 <code>comments.waline.locale.placeholder</code> 下写入你想放的内容即可。</p>
 <p>以下是我 <code>blog/_config.stellar.yml</code> 里关于评论板块的完整代码以供参考：<span class="tag-plugin emoji"><img no-lazy="" class="inline lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://gcore.jsdelivr.net/gh/norevi/waline-blobcatemojis@1.0/blobs/blobcatfingerguns.png"/></span></p>
 <figure class="highlight yaml"><figcaption><span>blog/_config.stellar.yml</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">comments:</span></span><br><span class="line">  <span class="attr">service:</span> <span class="string">waline</span></span><br><span class="line">  <span class="attr">waline:</span></span><br><span class="line">    <span class="attr">serverURL:</span> <span class="string">https://waline.skyreeves.cn</span></span><br><span class="line">    <span class="attr">locale:</span></span><br><span class="line">      <span class="attr">placeholder:</span> </span><br><span class="line">       <span class="string">评论时填写邮箱，或者注册并登录后评论，即可在第一时间收到消息提醒。</span> </span><br><span class="line">      <span class="attr">reactionTitle:</span>  </span><br><span class="line">    <span class="attr">emoji:</span></span><br><span class="line">     <span class="bullet">-</span> <span class="string">https://xxx/blobs</span></span><br><span class="line">     <span class="bullet">-</span> <span class="string">https://xxx/qq</span></span><br><span class="line">    <span class="attr">meta:</span></span><br><span class="line">     <span class="bullet">-</span> <span class="string">nick</span></span><br><span class="line">     <span class="bullet">-</span> <span class="string">mail</span></span><br><span class="line">     <span class="bullet">-</span> <span class="string">link</span></span><br><span class="line">    <span class="attr">reaction:</span></span><br><span class="line">     <span class="bullet">-</span> <span class="string">https://xxx/1.png</span></span><br><span class="line">     <span class="bullet">-</span> <span class="string">https://xxx/2.png</span></span><br><span class="line">     <span class="bullet">-</span> <span class="string">https://xxx/3.png</span></span><br></pre></td></tr></table></figure>
@@ -333,6 +336,7 @@
 <p>如果不使用魔法，托管在Vercel上的Waline版块在国内是加载不出来的，为了避免魔法部介入调查，我们可以将Vercel伪装成麻瓜。详情请查看<a href="https://skyreeves.cn/post/8cd79de0.html">评论板块加载失败的问题</a><span class="tag-plugin emoji"><img no-lazy="" class="inline lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://gcore.jsdelivr.net/gh/norevi/waline-blobcatemojis@1.0/blobs/blobcatcaged.png"/></span></p>
 <h2 id="九、参考">九、参考</h2>
 <p><a target="_blank" rel="noopener" href="https://waline.js.org/guide/get-started.html">Waline快速上手</a></p>
+
 
 
 <div class="article-footer reveal fs14"><section id="license"><div class="header"><span>许可协议</span></div><div class="body"><p>本文采用 <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">署名-非商业性使用-相同方式共享 4.0 国际</a> 许可协议，转载请注明出处。</p>
@@ -439,6 +443,9 @@
     // 从 butterfly 和 volantis 获得灵感
     loadScript: (src, opt) => new Promise((resolve, reject) => {
       var script = document.createElement('script');
+      if (src.startsWith('/')){
+        src = stellar.config.root + src.substring(1);
+      }
       script.src = src;
       if (opt) {
         for (let key of Object.keys(opt)) {
@@ -467,8 +474,8 @@
       }
     }
   };
-  stellar.version = '1.18.5';
-  stellar.github = 'https://github.com/xaoxuu/hexo-theme-stellar/tree/1.18.5';
+  stellar.version = '1.19.0';
+  stellar.github = 'https://github.com/xaoxuu/hexo-theme-stellar/tree/1.19.0';
   stellar.config = {
     date_suffix: {
       just: '刚刚',
@@ -477,6 +484,7 @@
       day: '天前',
       month: '个月前',
     },
+    root : '/',
   };
 
   // required plugins (only load if needs)
@@ -516,6 +524,9 @@
   if ('false' == 'true') {
     stellar.plugins.heti = Object.assign({"enable":false,"css":"https://unpkg.com/heti@0.9.2/umd/heti.min.css","js":"https://unpkg.com/heti@0.9.2/umd/heti-addon.min.js"});
   }
+  if ('true' == 'true') {
+    stellar.plugins.copycode = Object.assign({"enable":true,"js":"/js/plugins/copycode.js","default_text":"Copy","success_text":"Copied"});
+  }
 </script>
 
 <!-- required -->
@@ -540,6 +551,7 @@
       Waline.init(Object.assign({"js":"https://unpkg.com/@waline/client@v2/dist/waline.js","css":"https://unpkg.com/@waline/client@v2/dist/waline.css","serverURL":"https://waline.skyreeves.cn","commentCount":true,"pageview":false,"locale":{"placeholder":"评论时填写邮箱，或者注册并登录后评论，即可在第一时间收到消息提醒。","reactionTitle":null},"emoji":["https://img.skyreeves.cn/emojis/blobs","https://img.skyreeves.cn/emojis/wsm","https://img.skyreeves.cn/emojis/bmoji"],"meta":["nick","mail","link"],"reaction":["https://img.skyreeves.cn/emojis/blobs/ablobcatheart.png","https://img.skyreeves.cn/emojis/blobs/ablobcatattentionreverse.png","https://img.skyreeves.cn/emojis/blobs/ablobcatrainbow.png","https://img.skyreeves.cn/emojis/blobs/blobcatsaitama.png","https://img.skyreeves.cn/emojis/blobs/blobcatflip.png"]}, {
         el: '#waline_container',
         path: path,
+        
       }));
     });
   }
@@ -559,7 +571,7 @@
   </div>
   <!--动态线条背景-->
   <script type="text/javascript"
-    color="220,220,220" opacity='0.7' zIndex="-2" count="200" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js">
+   color="220,220,220" opacity='0.7' zIndex="-2" count="200" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js">
   </script>
 </body>
 </html>

@@ -3,7 +3,7 @@
 
 <head>
   <meta name="generator" content="Hexo 6.3.0">
-  <meta name="hexo-theme" content="https://github.com/xaoxuu/hexo-theme-stellar/tree/1.18.5">
+  <meta name="hexo-theme" content="https://github.com/xaoxuu/hexo-theme-stellar/tree/1.19.0">
   <meta charset="utf-8">
   
 
@@ -30,10 +30,12 @@
 <meta property="og:site_name" content="SkyReeves">
 <meta property="og:description" content="本站主题自定义： 便笺页面保持头像与标题常驻 logo.ejs 第42行，沿用1.11.0版本的设置： themes&#x2F;stellar&#x2F;layout&#x2F;_partial&#x2F;sidebar&#x2F;logo.ejs1let main &#x3D; proj.title || proj.wiki || page.wiki || page.title; Waline配色 themes&#x2F;stellar&#x2F;source&#x2F;css&#x2F;_p">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2023-01-07T04:09:45.042Z">
-<meta property="article:modified_time" content="2023-01-07T04:09:45.042Z">
+<meta property="article:published_time" content="2023-10-26T04:59:47.900Z">
+<meta property="article:modified_time" content="2023-10-26T04:59:47.900Z">
 <meta property="article:author" content="SkyReeves">
 <meta name="twitter:card" content="summary">
+  
+  
   
   
 
@@ -109,6 +111,7 @@
 
   
   
+  
 
 
   <article class='md-text content wiki'>
@@ -133,6 +136,7 @@
 </ul>
 <h3 id="添加背景代码雨效果">添加背景代码雨效果</h3>
 <details class="tag-plugin folding" child="codeblock"><summary><span>本站未使用</span></summary><div class="body"><p>新建 <code>DigitalRain.js</code>，写入以下代码：</p><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable language_">window</span>.<span class="property">onload</span> = <span class="keyword">function</span>(<span class="params"></span>)&#123;</span><br><span class="line">    <span class="comment">//获取画布对象</span></span><br><span class="line">    <span class="keyword">var</span> canvas = <span class="variable language_">document</span>.<span class="title function_">getElementById</span>(<span class="string">&quot;canvas&quot;</span>);</span><br><span class="line">    <span class="comment">//获取画布的上下文</span></span><br><span class="line">    <span class="keyword">var</span> context =canvas.<span class="title function_">getContext</span>(<span class="string">&quot;2d&quot;</span>);</span><br><span class="line">    <span class="keyword">var</span> s = <span class="variable language_">window</span>.<span class="property">screen</span>;</span><br><span class="line">    <span class="keyword">var</span> W = canvas.<span class="property">width</span> = s.<span class="property">width</span>;</span><br><span class="line">    <span class="keyword">var</span> H = canvas.<span class="property">height</span>;</span><br><span class="line">    <span class="comment">//获取浏览器屏幕的宽度和高度</span></span><br><span class="line">    <span class="comment">//var W = window.innerWidth;</span></span><br><span class="line">    <span class="comment">//var H = window.innerHeight;</span></span><br><span class="line">    <span class="comment">//设置canvas的宽度和高度</span></span><br><span class="line">    canvas.<span class="property">width</span> = W;</span><br><span class="line">    canvas.<span class="property">height</span> = H;</span><br><span class="line">    <span class="comment">//每个文字的字体大小</span></span><br><span class="line">    <span class="keyword">var</span> fontSize = <span class="number">12</span>;</span><br><span class="line">    <span class="comment">//计算列</span></span><br><span class="line">    <span class="keyword">var</span> colunms = <span class="title class_">Math</span>.<span class="title function_">floor</span>(W /fontSize);  </span><br><span class="line">    <span class="comment">//记录每列文字的y轴坐标</span></span><br><span class="line">    <span class="keyword">var</span> drops = [];</span><br><span class="line">    <span class="comment">//给每一个文字初始化一个起始点的位置</span></span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>;i&lt;colunms;i++)&#123;</span><br><span class="line">        drops.<span class="title function_">push</span>(<span class="number">0</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//运动的文字</span></span><br><span class="line">    <span class="keyword">var</span> str =<span class="string">&quot;WELCOME TO WWW.ITRHX.COM&quot;</span>;</span><br><span class="line">    <span class="comment">//4:fillText(str,x,y);原理就是去更改y的坐标位置</span></span><br><span class="line">    <span class="comment">//绘画的函数</span></span><br><span class="line">    <span class="keyword">function</span> <span class="title function_">draw</span>(<span class="params"></span>)&#123;</span><br><span class="line">        context.<span class="property">fillStyle</span> = <span class="string">&quot;rgba(238,238,238,.08)&quot;</span>;<span class="comment">//遮盖层</span></span><br><span class="line">        context.<span class="title function_">fillRect</span>(<span class="number">0</span>,<span class="number">0</span>,W,H);</span><br><span class="line">        <span class="comment">//给字体设置样式</span></span><br><span class="line">        context.<span class="property">font</span> = <span class="string">&quot;600 &quot;</span>+fontSize+<span class="string">&quot;px  Georgia&quot;</span>;</span><br><span class="line">        <span class="comment">//给字体添加颜色</span></span><br><span class="line">        context.<span class="property">fillStyle</span> = [<span class="string">&quot;#33B5E5&quot;</span>, <span class="string">&quot;#0099CC&quot;</span>, <span class="string">&quot;#AA66CC&quot;</span>, <span class="string">&quot;#9933CC&quot;</span>, <span class="string">&quot;#99CC00&quot;</span>, <span class="string">&quot;#669900&quot;</span>, <span class="string">&quot;#FFBB33&quot;</span>, <span class="string">&quot;#FF8800&quot;</span>, <span class="string">&quot;#FF4444&quot;</span>, <span class="string">&quot;#CC0000&quot;</span>][<span class="built_in">parseInt</span>(<span class="title class_">Math</span>.<span class="title function_">random</span>() * <span class="number">10</span>)];<span class="comment">//randColor();可以rgb,hsl, 标准色，十六进制颜色</span></span><br><span class="line">        <span class="comment">//写入画布中</span></span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>;i&lt;colunms;i++)&#123;</span><br><span class="line">            <span class="keyword">var</span> index = <span class="title class_">Math</span>.<span class="title function_">floor</span>(<span class="title class_">Math</span>.<span class="title function_">random</span>() * str.<span class="property">length</span>);</span><br><span class="line">            <span class="keyword">var</span> x = i*fontSize;</span><br><span class="line">            <span class="keyword">var</span> y = drops[i] *fontSize;</span><br><span class="line">            context.<span class="title function_">fillText</span>(str[index],x,y);</span><br><span class="line">            <span class="comment">//如果要改变时间，肯定就是改变每次他的起点</span></span><br><span class="line">            <span class="keyword">if</span>(y &gt;= canvas.<span class="property">height</span> &amp;&amp; <span class="title class_">Math</span>.<span class="title function_">random</span>() &gt; <span class="number">0.99</span>)&#123;</span><br><span class="line">                drops[i] = <span class="number">0</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            drops[i]++;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;;</span><br><span class="line">    <span class="keyword">function</span> <span class="title function_">randColor</span>(<span class="params"></span>)&#123;<span class="comment">//随机颜色</span></span><br><span class="line">        <span class="keyword">var</span> r = <span class="title class_">Math</span>.<span class="title function_">floor</span>(<span class="title class_">Math</span>.<span class="title function_">random</span>() * <span class="number">256</span>);</span><br><span class="line">        <span class="keyword">var</span> g = <span class="title class_">Math</span>.<span class="title function_">floor</span>(<span class="title class_">Math</span>.<span class="title function_">random</span>() * <span class="number">256</span>);</span><br><span class="line">        <span class="keyword">var</span> b = <span class="title class_">Math</span>.<span class="title function_">floor</span>(<span class="title class_">Math</span>.<span class="title function_">random</span>() * <span class="number">256</span>);</span><br><span class="line">        <span class="keyword">return</span> <span class="string">&quot;rgb(&quot;</span>+r+<span class="string">&quot;,&quot;</span>+g+<span class="string">&quot;,&quot;</span>+b+<span class="string">&quot;)&quot;</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="title function_">draw</span>();</span><br><span class="line">    <span class="built_in">setInterval</span>(draw,<span class="number">35</span>);</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure><p>在主题文件的相关css文件中（以 Material X 1.2.1 主题为例，在\themes\material-x-1.2.1\source\less_main.less 文件末尾）添加以下代码：</p><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">canvas</span> &#123;</span><br><span class="line">  <span class="attribute">position</span>: fixed;</span><br><span class="line">  <span class="attribute">right</span>: <span class="number">0px</span>;</span><br><span class="line">  <span class="attribute">bottom</span>: <span class="number">0px</span>;</span><br><span class="line">  <span class="attribute">min-width</span>: <span class="number">100%</span>;</span><br><span class="line">  <span class="attribute">min-height</span>: <span class="number">100%</span>;</span><br><span class="line">  <span class="attribute">height</span>: auto;</span><br><span class="line">  <span class="attribute">width</span>: auto;</span><br><span class="line">  <span class="attribute">z-index</span>: -<span class="number">1</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>然后在主题的 <code>layout.ejs</code> 文件中引入即可：</p><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- 数字雨 --&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">canvas</span> <span class="attr">id</span>=<span class="string">&quot;canvas&quot;</span> <span class="attr">width</span>=<span class="string">&quot;1440&quot;</span> <span class="attr">height</span>=<span class="string">&quot;900&quot;</span> &gt;</span><span class="tag">&lt;/<span class="name">canvas</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">&quot;text/javascript&quot;</span> <span class="attr">src</span>=<span class="string">&quot;/js/DigitalRain.js&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure></div></details>
+  
   
 
 
@@ -223,6 +227,9 @@
     // 从 butterfly 和 volantis 获得灵感
     loadScript: (src, opt) => new Promise((resolve, reject) => {
       var script = document.createElement('script');
+      if (src.startsWith('/')){
+        src = stellar.config.root + src.substring(1);
+      }
       script.src = src;
       if (opt) {
         for (let key of Object.keys(opt)) {
@@ -251,8 +258,8 @@
       }
     }
   };
-  stellar.version = '1.18.5';
-  stellar.github = 'https://github.com/xaoxuu/hexo-theme-stellar/tree/1.18.5';
+  stellar.version = '1.19.0';
+  stellar.github = 'https://github.com/xaoxuu/hexo-theme-stellar/tree/1.19.0';
   stellar.config = {
     date_suffix: {
       just: '刚刚',
@@ -261,6 +268,7 @@
       day: '天前',
       month: '个月前',
     },
+    root : '/',
   };
 
   // required plugins (only load if needs)
@@ -300,6 +308,9 @@
   if ('false' == 'true') {
     stellar.plugins.heti = Object.assign({"enable":false,"css":"https://unpkg.com/heti@0.9.2/umd/heti.min.css","js":"https://unpkg.com/heti@0.9.2/umd/heti-addon.min.js"});
   }
+  if ('true' == 'true') {
+    stellar.plugins.copycode = Object.assign({"enable":true,"js":"/js/plugins/copycode.js","default_text":"Copy","success_text":"Copied"});
+  }
 </script>
 
 <!-- required -->
@@ -324,6 +335,7 @@
       Waline.init(Object.assign({"js":"https://unpkg.com/@waline/client@v2/dist/waline.js","css":"https://unpkg.com/@waline/client@v2/dist/waline.css","serverURL":"https://waline.skyreeves.cn","commentCount":true,"pageview":false,"locale":{"placeholder":"评论时填写邮箱，或者注册并登录后评论，即可在第一时间收到消息提醒。","reactionTitle":null},"emoji":["https://img.skyreeves.cn/emojis/blobs","https://img.skyreeves.cn/emojis/wsm","https://img.skyreeves.cn/emojis/bmoji"],"meta":["nick","mail","link"],"reaction":["https://img.skyreeves.cn/emojis/blobs/ablobcatheart.png","https://img.skyreeves.cn/emojis/blobs/ablobcatattentionreverse.png","https://img.skyreeves.cn/emojis/blobs/ablobcatrainbow.png","https://img.skyreeves.cn/emojis/blobs/blobcatsaitama.png","https://img.skyreeves.cn/emojis/blobs/blobcatflip.png"]}, {
         el: '#waline_container',
         path: path,
+        
       }));
     });
   }
@@ -343,7 +355,7 @@
   </div>
   <!--动态线条背景-->
   <script type="text/javascript"
-    color="220,220,220" opacity='0.7' zIndex="-2" count="200" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js">
+   color="220,220,220" opacity='0.7' zIndex="-2" count="200" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js">
   </script>
 </body>
 </html>
