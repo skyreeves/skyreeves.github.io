@@ -364,14 +364,14 @@
   <script>
   function load_comment(){
     if(!document.getElementById("waline_container"))return;
-    stellar.loadCSS('https://unpkg.com/@waline/client@v2/dist/waline.css');
-    stellar.loadScript('https://unpkg.com/@waline/client@v2/dist/waline.js', {defer:true}).then(function () {
+    stellar.loadCSS('https://unpkg.com/@waline/client@2.14.1/dist/waline.css');
+    stellar.loadScript('https://unpkg.com/@waline/client@2.14.1/dist/waline.js', {defer:true}).then(function () {
       const el = document.getElementById("waline_container");
       var path = el.getAttribute('comment_id');
       if (!path) {
         path = decodeURI(window.location.pathname);
       }
-      Waline.init(Object.assign({"js":"https://unpkg.com/@waline/client@v2/dist/waline.js","css":"https://unpkg.com/@waline/client@v2/dist/waline.css","serverURL":"https://waline.skyreeves.com","commentCount":true,"pageview":false,"locale":{"placeholder":"评论时填写邮箱，或者注册并登录后评论，即可在第一时间收到消息提醒。","reactionTitle":null},"emoji":["https://img.skyreeves.com/emojis/blobs","https://img.skyreeves.com/emojis/wsm","https://img.skyreeves.com/emojis/bmoji"],"meta":["nick","mail","link"],"reaction":["https://img.skyreeves.com/emojis/blobs/ablobcatheart.png","https://img.skyreeves.com/emojis/blobs/ablobcatattentionreverse.png","https://img.skyreeves.com/emojis/blobs/ablobcatrainbow.png","https://img.skyreeves.com/emojis/blobs/blobcatsaitama.png","https://img.skyreeves.com/emojis/blobs/blobcatflip.png"]}, {
+      Waline.init(Object.assign({"js":"https://unpkg.com/@waline/client@2.14.1/dist/waline.js","css":"https://unpkg.com/@waline/client@2.14.1/dist/waline.css","serverURL":"https://waline.skyreeves.com","commentCount":true,"pageview":false,"locale":{"placeholder":"评论时填写邮箱，或者注册并登录后评论，即可在第一时间收到消息提醒。","reactionTitle":null},"emoji":["https://img.skyreeves.com/emojis/blobs","https://img.skyreeves.com/emojis/wsm","https://img.skyreeves.com/emojis/bmoji"],"meta":["nick","mail","link"],"reaction":["https://img.skyreeves.com/emojis/blobs/ablobcatheart.png","https://img.skyreeves.com/emojis/blobs/ablobcatattentionreverse.png","https://img.skyreeves.com/emojis/blobs/ablobcatrainbow.png","https://img.skyreeves.com/emojis/blobs/blobcatsaitama.png","https://img.skyreeves.com/emojis/blobs/blobcatflip.png"]}, {
         el: '#waline_container',
         path: path,
         
