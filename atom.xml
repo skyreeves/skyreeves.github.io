@@ -6,7 +6,7 @@
   <link href="http://skyreeves.com/atom.xml" rel="self"/>
   
   <link href="http://skyreeves.com/"/>
-  <updated>2026-06-17T13:38:35.000Z</updated>
+  <updated>2026-06-19T18:12:32.000Z</updated>
   <id>http://skyreeves.com/</id>
   
   <author>
@@ -15,6 +15,30 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>LeanCloud即将落幕，数据迁移搞不定</title>
+    <link href="http://skyreeves.com/post/aa6a2469.html"/>
+    <id>http://skyreeves.com/post/aa6a2469.html</id>
+    <published>2026-06-19T18:12:32.000Z</published>
+    <updated>2026-06-19T18:12:32.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>一直以来这个小站的论系统都是用的Waline，最早期部署在Vercel，后来因为种种原因改用阿里云函数计算部署，LeanCloud作为数据库。LeanCloud使用简单，配置省事，稳定性很好，就算我一年不打理这个小站，要维护的时候都还是很简单，所以习惯了这套方案。而这两天发现LeanCloud明年就要停止全部服务，数据后续无法继续使用，迫不得已必须提前迁移评论数据库。</p><p>今晚花了一整晚，尝试两套迁移方案：TiDB，以及SQLite+阿里云NAS，结果折腾许久，全部宣告失败。</p><p>先说TiDB方案。我一边搜教程一边搞，光是配置数据库连接、调整参数、适配Waline的数据库格式就耗费大量时间。加上我部署的是阿里云函数计算2.0，VPC网络配置繁琐，数据库权限、外网连通性反复调试，连接参数总是出错，最后没能顺利对接上Waline，这条路只能暂时放弃。</p><p>于是换第二种方案：使用SQLite作为数据库，将文件储存到阿里云NAS，再在函数计算里挂载NAS，虽然NAS不是完全免费的，但就Waline的数据库文件而言，可能一个月就几毛钱，只有一个缺点，如果并发高了可能会出问题，不够就我这个小站基本没有流量，所以这个问题也可以忽略，并且后续也有一些规避冲突的手段。这样就把评论数据存放在NAS里，一次搞定后完全不用维护。<br>过程里踩了一堆坑：</p><ol><li>NAS只能选择NFS协议，苹果笔记本无法直接访问，不能直接上传数据库文件。</li><li>NAS控制台里怎么着都没有文件浏览器，没办法直观查看文件夹，不确定数据库文件有没有生成。</li><li>函数计算2.0好像不能设置最大实例上限。我怕万一出现多个进程同时读写SQLite文件出现问题，后期一定会频繁报错。</li><li>严格按照教程配置环境变量，清除全部LeanCloud旧变量，设置本地挂载路径，VPC和交换机完全匹配NAS。但测试评论时一直提示Not initialized。排查后发现，Waline始终无法在NAS目录自动创建waline.db数据库文件。推测是运行环境权限、部署包兼容性问题。</li><li>为了不想产生多余费用，我没有开启日志服务，缺少日志排查问题，进一步增加了调试难度。就算写入测试文件，也很难判断究竟是挂载异常，还是程序初始化失败。</li></ol><p>忙活了几个小时，两种方案都没能落地。还是LeanCloud好啊，不需要配置复杂网络，不用操心文件权限，开箱即用。眼下暂时找不到稳妥的替代方案。我想什么时候空了再搞一下SQLite和阿里云NAS。</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;一直以来这个小站的论系统都是用的Waline，最早期部署在Vercel，后来因为种种原因改用阿里云函数计算部署，LeanCloud作为数据库。LeanCloud使用简单，配置省事，稳定性很好，就算我一年不打理这个小站，要维护的时候都还是很简单，所以习惯了这套方案。而这两天发</summary>
+      
+    
+    
+    
+    
+    <category term="Waline" scheme="http://skyreeves.com/tags/Waline/"/>
+    
+    <category term="LeanCloud" scheme="http://skyreeves.com/tags/LeanCloud/"/>
+    
+  </entry>
   
   <entry>
     <title>我再也不玩改装车了</title>
@@ -283,9 +307,9 @@
     
     
     
-    <category term="hexo" scheme="http://skyreeves.com/tags/hexo/"/>
-    
     <category term="Waline" scheme="http://skyreeves.com/tags/Waline/"/>
+    
+    <category term="hexo" scheme="http://skyreeves.com/tags/hexo/"/>
     
     <category term="Vercel" scheme="http://skyreeves.com/tags/Vercel/"/>
     
