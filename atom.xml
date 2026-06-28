@@ -6,7 +6,7 @@
   <link href="http://skyreeves.com/atom.xml" rel="self"/>
   
   <link href="http://skyreeves.com/"/>
-  <updated>2026-06-20T18:28:32.000Z</updated>
+  <updated>2026-06-28T12:27:02.000Z</updated>
   <id>http://skyreeves.com/</id>
   
   <author>
@@ -15,6 +15,32 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>入手穿越机了，但是炸了</title>
+    <link href="http://skyreeves.com/post/69188255.html"/>
+    <id>http://skyreeves.com/post/69188255.html</id>
+    <published>2026-06-28T12:27:02.000Z</published>
+    <updated>2026-06-28T12:27:02.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>去年跟老婆跑318，带了大疆 Air 3S，是收的二手，有无人机在，一路出了挺多片。</p><p>之所以收二手，是因为之前租器材吃过亏，租期一长，租金直接买二手的还贵。这次直接闲鱼收了个充新的，拍完再卖掉。算下来相当于花200块用了一个月，挺值。</p><p>当时卖掉还有一个原因是在旅途的过程中，感觉无人机拍摄的画面看多了就平平无奇，缺少点冲击力，于是突然想玩穿越机了。</p><p>先在模拟器上练了两个月，后来工作忙就搁置了。前两天心血来潮，买了架1.8寸的小圈圈机。</p><p>真机上手飞了两天，感觉跟模拟器完全是两码事。模拟器里飞机没重力似的，轻飘，好控制。真机有惯性，手感沉很多。</p><p>现在想想，模拟器练太久可能没必要。熟悉基本操作后，早点上真机更好。一直在虚拟环境里练，手感容易练偏。</p><p>第一次飞真机其实挺烂的，小心翼翼。视频发到B站，评论区几个人说看着不像第一次飞真机。当时还有点小得意。</p><p>结果今天出去，刚起飞就炸了。保护圈摔坏。</p><p>得，买配件修好继续练吧。</p><div class="tag-plugin image"><div class="image-bg"><img src="https://img.skyreeves.com/hexo/20260628203215.jpg"/></div></div>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;去年跟老婆跑318，带了大疆 Air 3S，是收的二手，有无人机在，一路出了挺多片。&lt;/p&gt;
+&lt;p&gt;之所以收二手，是因为之前租器材吃过亏，租期一长，租金直接买二手的还贵。这次直接闲鱼收了个充新的，拍完再卖掉。算下来相当于花200块用了一个月，挺值。&lt;/p&gt;
+&lt;p&gt;当时卖掉还</summary>
+      
+    
+    
+    
+    <category term="打胡乱说" scheme="http://skyreeves.com/categories/%E6%89%93%E8%83%A1%E4%B9%B1%E8%AF%B4/"/>
+    
+    
+    <category term="FPV" scheme="http://skyreeves.com/tags/FPV/"/>
+    
+  </entry>
   
   <entry>
     <title>Waline的数据库从LeanCloud迁移到了TiDB</title>
