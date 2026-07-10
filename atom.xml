@@ -77,9 +77,9 @@
     
     
     
-    <category term="Waline" scheme="http://skyreeves.com/tags/Waline/"/>
-    
     <category term="hexo" scheme="http://skyreeves.com/tags/hexo/"/>
+    
+    <category term="Waline" scheme="http://skyreeves.com/tags/Waline/"/>
     
     <category term="TiDB" scheme="http://skyreeves.com/tags/TiDB/"/>
     
@@ -376,9 +376,9 @@
     
     
     
-    <category term="Waline" scheme="http://skyreeves.com/tags/Waline/"/>
-    
     <category term="hexo" scheme="http://skyreeves.com/tags/hexo/"/>
+    
+    <category term="Waline" scheme="http://skyreeves.com/tags/Waline/"/>
     
     <category term="Vercel" scheme="http://skyreeves.com/tags/Vercel/"/>
     
