@@ -519,9 +519,9 @@
     
     
     
-    <category term="Mac" scheme="http://skyreeves.com/tags/Mac/"/>
-    
     <category term="hexo" scheme="http://skyreeves.com/tags/hexo/"/>
+    
+    <category term="Mac" scheme="http://skyreeves.com/tags/Mac/"/>
     
   </entry>
   
@@ -541,9 +541,9 @@
     
     
     
-    <category term="brew" scheme="http://skyreeves.com/tags/brew/"/>
-    
     <category term="Mac" scheme="http://skyreeves.com/tags/Mac/"/>
+    
+    <category term="brew" scheme="http://skyreeves.com/tags/brew/"/>
     
   </entry>
   
