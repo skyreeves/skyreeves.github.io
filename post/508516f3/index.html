@@ -23,12 +23,12 @@
   <title>Waline的数据库从LeanCloud迁移到了TiDB - SkyReeves</title>
 
   
-    <meta name="description" content="书接上回，今天仔细翻阅Waline官方文档，在不断尝试中终于把数据库搞定了，将过程记录下来，供以后翻阅。 一、按照官方文档建立TiDB数据库 1、建库 注册并登陆TiDB后，点击右上角的Creats Resource  在弹出页面中 Plan选择Starter； Instance Name自己取一个，我为了方便就设为Waline； Cloud Provider设置为Alibaba Cloud； R">
+    <meta name="description" content="书接上回，今天仔细翻阅Waline官方文档，在不断尝试中终于把数据库搞定了，将过程记录下来，供以后翻阅。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Waline的数据库从LeanCloud迁移到了TiDB">
 <meta property="og:url" content="http://skyreeves.com/post/508516f3/">
 <meta property="og:site_name" content="SkyReeves">
-<meta property="og:description" content="书接上回，今天仔细翻阅Waline官方文档，在不断尝试中终于把数据库搞定了，将过程记录下来，供以后翻阅。 一、按照官方文档建立TiDB数据库 1、建库 注册并登陆TiDB后，点击右上角的Creats Resource  在弹出页面中 Plan选择Starter； Instance Name自己取一个，我为了方便就设为Waline； Cloud Provider设置为Alibaba Cloud； R">
+<meta property="og:description" content="书接上回，今天仔细翻阅Waline官方文档，在不断尝试中终于把数据库搞定了，将过程记录下来，供以后翻阅。">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://gcore.jsdelivr.net/gh/norevi/waline-blobcatemojis@1.0/blobs/ablobcatattentionreverse.png">
 <meta property="og:image" content="https://img.skyreeves.com/hexo/20260621012237.jpg">
@@ -136,6 +136,7 @@
 <article class='md-text content post'>
 <h1 class="article-title"><span>Waline的数据库从LeanCloud迁移到了TiDB</span></h1>
 <p>书接上回，今天仔细翻阅<a target="_blank" rel="noopener" href="https://waline.js.org/guide/database.html#tidb">Waline官方文档</a>，在不断尝试中终于把数据库搞定了<span class="tag-plugin emoji"><img no-lazy="" class="inline lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://gcore.jsdelivr.net/gh/norevi/waline-blobcatemojis@1.0/blobs/ablobcatattentionreverse.png"/></span>，将过程记录下来，供以后翻阅。</p>
+<span id="more"></span>
 <h2 id="一、按照官方文档建立tidb数据库">一、按照官方文档建立TiDB数据库</h2>
 <h3 id="1、建库">1、建库</h3>
 <p>注册并登陆<a target="_blank" rel="noopener" href="https://tidbcloud.com/">TiDB</a>后，点击右上角的Creats Resource</p>

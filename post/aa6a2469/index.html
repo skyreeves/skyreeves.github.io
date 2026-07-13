@@ -23,12 +23,12 @@
   <title>LeanCloud即将落幕，数据迁移搞不定 - SkyReeves</title>
 
   
-    <meta name="description" content="一直以来这个小站的论系统都是用的Waline，最早期部署在Vercel，后来因为种种原因改用阿里云函数计算部署，LeanCloud作为数据库。LeanCloud使用简单，配置省事，稳定性很好，就算我一年不打理这个小站，要维护的时候都还是很简单，所以习惯了这套方案。而这两天发现LeanCloud明年就要停止全部服务，数据后续无法继续使用，迫不得已必须提前迁移评论数据库。 今晚花了一整晚，尝试两套迁移">
+    <meta name="description" content="一直以来这个小站的论系统都是用的Waline，最早期部署在Vercel，后来因为种种原因改用阿里云函数计算部署，LeanCloud作为数据库。LeanCloud使用简单，配置省事，稳定性很好，就算我一年不打理这个小站，要维护的时候都还是很简单，所以习惯了这套方案。而这两天发现LeanCloud明年就要停止全部服务，数据后续无法继续使用，迫不得已必须提前迁移评论数据库。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="LeanCloud即将落幕，数据迁移搞不定">
 <meta property="og:url" content="http://skyreeves.com/post/aa6a2469/">
 <meta property="og:site_name" content="SkyReeves">
-<meta property="og:description" content="一直以来这个小站的论系统都是用的Waline，最早期部署在Vercel，后来因为种种原因改用阿里云函数计算部署，LeanCloud作为数据库。LeanCloud使用简单，配置省事，稳定性很好，就算我一年不打理这个小站，要维护的时候都还是很简单，所以习惯了这套方案。而这两天发现LeanCloud明年就要停止全部服务，数据后续无法继续使用，迫不得已必须提前迁移评论数据库。 今晚花了一整晚，尝试两套迁移">
+<meta property="og:description" content="一直以来这个小站的论系统都是用的Waline，最早期部署在Vercel，后来因为种种原因改用阿里云函数计算部署，LeanCloud作为数据库。LeanCloud使用简单，配置省事，稳定性很好，就算我一年不打理这个小站，要维护的时候都还是很简单，所以习惯了这套方案。而这两天发现LeanCloud明年就要停止全部服务，数据后续无法继续使用，迫不得已必须提前迁移评论数据库。">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2026-06-19T18:12:32.000Z">
 <meta property="article:modified_time" content="2026-06-19T18:12:32.000Z">
@@ -87,7 +87,7 @@
 
 
 
-<widget class="widget-wrapper recent"><div class="widget-header cap theme dis-select"><span class="name">最近更新</span></div><div class="widget-body related-posts fs14"><a class="item title" href="/post/4f22dd5e/"><span class="title">将静态页面部署切换到了阿里云OSS</span></a><a class="item title" href="/post/69188255/"><span class="title">入手穿越机了，但是炸了</span></a><a class="item title" href="/post/508516f3/"><span class="title">Waline的数据库从LeanCloud迁移到了TiDB</span></a><a class="item title" href="/post/aa6a2469/"><span class="title">LeanCloud即将落幕，数据迁移搞不定</span></a><a class="item title" href="/post/83e95dde/"><span class="title">我再也不玩改装车了</span></a></div></widget>
+<widget class="widget-wrapper recent"><div class="widget-header cap theme dis-select"><span class="name">最近更新</span></div><div class="widget-body related-posts fs14"><a class="item title" href="/post/1b51720f/"><span class="title">昨晚终于去拍星空啦</span></a><a class="item title" href="/post/4f22dd5e/"><span class="title">将静态页面部署切换到了阿里云OSS</span></a><a class="item title" href="/post/69188255/"><span class="title">入手穿越机了，但是炸了</span></a><a class="item title" href="/post/508516f3/"><span class="title">Waline的数据库从LeanCloud迁移到了TiDB</span></a><a class="item title" href="/post/aa6a2469/"><span class="title">LeanCloud即将落幕，数据迁移搞不定</span></a></div></widget>
 
 
 
@@ -109,6 +109,7 @@
 <article class='md-text content post'>
 <h1 class="article-title"><span>LeanCloud即将落幕，数据迁移搞不定</span></h1>
 <p>一直以来这个小站的论系统都是用的Waline，最早期部署在Vercel，后来因为种种原因改用阿里云函数计算部署，LeanCloud作为数据库。LeanCloud使用简单，配置省事，稳定性很好，就算我一年不打理这个小站，要维护的时候都还是很简单，所以习惯了这套方案。而这两天发现LeanCloud明年就要停止全部服务，数据后续无法继续使用，迫不得已必须提前迁移评论数据库。</p>
+<span id="more"></span>
 <p>今晚花了一整晚，尝试两套迁移方案：TiDB，以及SQLite+阿里云NAS，结果折腾许久，全部宣告失败。</p>
 <p>先说TiDB方案。我一边搜教程一边搞，光是配置数据库连接、调整参数、适配Waline的数据库格式就耗费大量时间。加上我部署的是阿里云函数计算2.0，VPC网络配置繁琐，数据库权限、外网连通性反复调试，连接参数总是出错，最后没能顺利对接上Waline，这条路只能暂时放弃。</p>
 <p>于是换第二种方案：使用SQLite作为数据库，将文件储存到阿里云NAS，再在函数计算里挂载NAS，虽然NAS不是完全免费的，但就Waline的数据库文件而言，可能一个月就几毛钱，只有一个缺点，如果并发高了可能会出问题，不够就我这个小站基本没有流量，所以这个问题也可以忽略，并且后续也有一些规避冲突的手段。这样就把评论数据存放在NAS里，一次搞定后完全不用维护。<br>
