@@ -3,11 +3,11 @@
   <title>SkyReeves</title>
   <icon>https://img.skyreeves.com/main/avatar96.gif</icon>
   <subtitle>🏁be a racer | 把生命浪费在美好的事物上</subtitle>
-  <link href="http://skyreeves.com/atom.xml" rel="self"/>
+  <link href="https://skyreeves.com/atom.xml" rel="self"/>
   
-  <link href="http://skyreeves.com/"/>
+  <link href="https://skyreeves.com/"/>
   <updated>2026-07-25T12:55:55.000Z</updated>
-  <id>http://skyreeves.com/</id>
+  <id>https://skyreeves.com/</id>
   
   <author>
     <name>SkyReeves</name>
@@ -18,8 +18,8 @@
   
   <entry>
     <title>200块钱的镜头也能拍摄深空</title>
-    <link href="http://skyreeves.com/post/265ea4d1/"/>
-    <id>http://skyreeves.com/post/265ea4d1/</id>
+    <link href="https://skyreeves.com/post/265ea4d1/"/>
+    <id>https://skyreeves.com/post/265ea4d1/</id>
     <published>2026-07-25T12:55:55.000Z</published>
     <updated>2026-07-25T12:55:55.000Z</updated>
     
@@ -30,17 +30,17 @@
     
     
     
-    <category term="打胡乱说" scheme="http://skyreeves.com/categories/%E6%89%93%E8%83%A1%E4%B9%B1%E8%AF%B4/"/>
+    <category term="打胡乱说" scheme="https://skyreeves.com/categories/%E6%89%93%E8%83%A1%E4%B9%B1%E8%AF%B4/"/>
     
     
-    <category term="追星少年" scheme="http://skyreeves.com/tags/%E8%BF%BD%E6%98%9F%E5%B0%91%E5%B9%B4/"/>
+    <category term="追星少年" scheme="https://skyreeves.com/tags/%E8%BF%BD%E6%98%9F%E5%B0%91%E5%B9%B4/"/>
     
   </entry>
   
   <entry>
     <title>昨晚终于去拍星空啦</title>
-    <link href="http://skyreeves.com/post/1b51720f/"/>
-    <id>http://skyreeves.com/post/1b51720f/</id>
+    <link href="https://skyreeves.com/post/1b51720f/"/>
+    <id>https://skyreeves.com/post/1b51720f/</id>
     <published>2026-07-13T04:22:24.000Z</published>
     <updated>2026-07-13T04:22:24.000Z</updated>
     
@@ -52,17 +52,17 @@
     
     
     
-    <category term="打胡乱说" scheme="http://skyreeves.com/categories/%E6%89%93%E8%83%A1%E4%B9%B1%E8%AF%B4/"/>
+    <category term="打胡乱说" scheme="https://skyreeves.com/categories/%E6%89%93%E8%83%A1%E4%B9%B1%E8%AF%B4/"/>
     
     
-    <category term="追星少年" scheme="http://skyreeves.com/tags/%E8%BF%BD%E6%98%9F%E5%B0%91%E5%B9%B4/"/>
+    <category term="追星少年" scheme="https://skyreeves.com/tags/%E8%BF%BD%E6%98%9F%E5%B0%91%E5%B9%B4/"/>
     
   </entry>
   
   <entry>
     <title>将静态页面部署切换到了阿里云OSS</title>
-    <link href="http://skyreeves.com/post/4f22dd5e/"/>
-    <id>http://skyreeves.com/post/4f22dd5e/</id>
+    <link href="https://skyreeves.com/post/4f22dd5e/"/>
+    <id>https://skyreeves.com/post/4f22dd5e/</id>
     <published>2026-07-08T17:17:44.000Z</published>
     <updated>2026-07-08T17:17:44.000Z</updated>
     
@@ -78,8 +78,8 @@
   
   <entry>
     <title>入手穿越机了，但是炸了</title>
-    <link href="http://skyreeves.com/post/69188255/"/>
-    <id>http://skyreeves.com/post/69188255/</id>
+    <link href="https://skyreeves.com/post/69188255/"/>
+    <id>https://skyreeves.com/post/69188255/</id>
     <published>2026-06-28T12:27:02.000Z</published>
     <updated>2026-06-28T12:27:02.000Z</updated>
     
@@ -92,17 +92,17 @@
     
     
     
-    <category term="打胡乱说" scheme="http://skyreeves.com/categories/%E6%89%93%E8%83%A1%E4%B9%B1%E8%AF%B4/"/>
+    <category term="打胡乱说" scheme="https://skyreeves.com/categories/%E6%89%93%E8%83%A1%E4%B9%B1%E8%AF%B4/"/>
     
     
-    <category term="FPV" scheme="http://skyreeves.com/tags/FPV/"/>
+    <category term="FPV" scheme="https://skyreeves.com/tags/FPV/"/>
     
   </entry>
   
   <entry>
     <title>Waline的数据库从LeanCloud迁移到了TiDB</title>
-    <link href="http://skyreeves.com/post/508516f3/"/>
-    <id>http://skyreeves.com/post/508516f3/</id>
+    <link href="https://skyreeves.com/post/508516f3/"/>
+    <id>https://skyreeves.com/post/508516f3/</id>
     <published>2026-06-20T18:28:32.000Z</published>
     <updated>2026-06-20T18:28:32.000Z</updated>
     
@@ -114,18 +114,18 @@
     
     
     
-    <category term="Waline" scheme="http://skyreeves.com/tags/Waline/"/>
+    <category term="Waline" scheme="https://skyreeves.com/tags/Waline/"/>
     
-    <category term="hexo" scheme="http://skyreeves.com/tags/hexo/"/>
+    <category term="hexo" scheme="https://skyreeves.com/tags/hexo/"/>
     
-    <category term="TiDB" scheme="http://skyreeves.com/tags/TiDB/"/>
+    <category term="TiDB" scheme="https://skyreeves.com/tags/TiDB/"/>
     
   </entry>
   
   <entry>
     <title>LeanCloud即将落幕，数据迁移搞不定</title>
-    <link href="http://skyreeves.com/post/aa6a2469/"/>
-    <id>http://skyreeves.com/post/aa6a2469/</id>
+    <link href="https://skyreeves.com/post/aa6a2469/"/>
+    <id>https://skyreeves.com/post/aa6a2469/</id>
     <published>2026-06-19T18:12:32.000Z</published>
     <updated>2026-06-19T18:12:32.000Z</updated>
     
@@ -137,16 +137,16 @@
     
     
     
-    <category term="Waline" scheme="http://skyreeves.com/tags/Waline/"/>
+    <category term="Waline" scheme="https://skyreeves.com/tags/Waline/"/>
     
-    <category term="LeanCloud" scheme="http://skyreeves.com/tags/LeanCloud/"/>
+    <category term="LeanCloud" scheme="https://skyreeves.com/tags/LeanCloud/"/>
     
   </entry>
   
   <entry>
     <title>我再也不玩改装车了</title>
-    <link href="http://skyreeves.com/post/83e95dde/"/>
-    <id>http://skyreeves.com/post/83e95dde/</id>
+    <link href="https://skyreeves.com/post/83e95dde/"/>
+    <id>https://skyreeves.com/post/83e95dde/</id>
     <published>2026-06-17T13:38:35.000Z</published>
     <updated>2026-06-17T13:38:35.000Z</updated>
     
@@ -159,15 +159,15 @@
     
     
     
-    <category term="打胡乱说" scheme="http://skyreeves.com/categories/%E6%89%93%E8%83%A1%E4%B9%B1%E8%AF%B4/"/>
+    <category term="打胡乱说" scheme="https://skyreeves.com/categories/%E6%89%93%E8%83%A1%E4%B9%B1%E8%AF%B4/"/>
     
     
   </entry>
   
   <entry>
     <title>我支持对虐待动物行为立法</title>
-    <link href="http://skyreeves.com/post/a83d1dd1/"/>
-    <id>http://skyreeves.com/post/a83d1dd1/</id>
+    <link href="https://skyreeves.com/post/a83d1dd1/"/>
+    <id>https://skyreeves.com/post/a83d1dd1/</id>
     <published>2025-03-07T01:29:15.000Z</published>
     <updated>2025-03-07T01:29:15.000Z</updated>
     
@@ -178,17 +178,17 @@
     
     
     
-    <category term="打胡乱说" scheme="http://skyreeves.com/categories/%E6%89%93%E8%83%A1%E4%B9%B1%E8%AF%B4/"/>
+    <category term="打胡乱说" scheme="https://skyreeves.com/categories/%E6%89%93%E8%83%A1%E4%B9%B1%E8%AF%B4/"/>
     
     
-    <category term="保护毛孩子" scheme="http://skyreeves.com/tags/%E4%BF%9D%E6%8A%A4%E6%AF%9B%E5%AD%A9%E5%AD%90/"/>
+    <category term="保护毛孩子" scheme="https://skyreeves.com/tags/%E4%BF%9D%E6%8A%A4%E6%AF%9B%E5%AD%A9%E5%AD%90/"/>
     
   </entry>
   
   <entry>
     <title>摄影是用光的艺术</title>
-    <link href="http://skyreeves.com/post/3e796ddb/"/>
-    <id>http://skyreeves.com/post/3e796ddb/</id>
+    <link href="https://skyreeves.com/post/3e796ddb/"/>
+    <id>https://skyreeves.com/post/3e796ddb/</id>
     <published>2023-12-06T02:47:26.000Z</published>
     <updated>2023-12-06T02:47:26.000Z</updated>
     
@@ -200,15 +200,15 @@
     
     
     
-    <category term="打胡乱说" scheme="http://skyreeves.com/categories/%E6%89%93%E8%83%A1%E4%B9%B1%E8%AF%B4/"/>
+    <category term="打胡乱说" scheme="https://skyreeves.com/categories/%E6%89%93%E8%83%A1%E4%B9%B1%E8%AF%B4/"/>
     
     
   </entry>
   
   <entry>
     <title>总要去趟西藏吧</title>
-    <link href="http://skyreeves.com/post/e6a98279/"/>
-    <id>http://skyreeves.com/post/e6a98279/</id>
+    <link href="https://skyreeves.com/post/e6a98279/"/>
+    <id>https://skyreeves.com/post/e6a98279/</id>
     <published>2023-11-16T02:58:52.000Z</published>
     <updated>2023-11-16T02:58:52.000Z</updated>
     
@@ -221,17 +221,17 @@
     
     
     
-    <category term="世界很大" scheme="http://skyreeves.com/categories/%E4%B8%96%E7%95%8C%E5%BE%88%E5%A4%A7/"/>
+    <category term="世界很大" scheme="https://skyreeves.com/categories/%E4%B8%96%E7%95%8C%E5%BE%88%E5%A4%A7/"/>
     
     
-    <category term="旅行" scheme="http://skyreeves.com/tags/%E6%97%85%E8%A1%8C/"/>
+    <category term="旅行" scheme="https://skyreeves.com/tags/%E6%97%85%E8%A1%8C/"/>
     
   </entry>
   
   <entry>
     <title>没完没了的工作</title>
-    <link href="http://skyreeves.com/post/65553225/"/>
-    <id>http://skyreeves.com/post/65553225/</id>
+    <link href="https://skyreeves.com/post/65553225/"/>
+    <id>https://skyreeves.com/post/65553225/</id>
     <published>2023-11-02T08:19:58.000Z</published>
     <updated>2023-11-02T08:19:58.000Z</updated>
     
@@ -242,15 +242,15 @@
     
     
     
-    <category term="打胡乱说" scheme="http://skyreeves.com/categories/%E6%89%93%E8%83%A1%E4%B9%B1%E8%AF%B4/"/>
+    <category term="打胡乱说" scheme="https://skyreeves.com/categories/%E6%89%93%E8%83%A1%E4%B9%B1%E8%AF%B4/"/>
     
     
   </entry>
   
   <entry>
     <title>骑车使我快乐</title>
-    <link href="http://skyreeves.com/post/8e3c3b34/"/>
-    <id>http://skyreeves.com/post/8e3c3b34/</id>
+    <link href="https://skyreeves.com/post/8e3c3b34/"/>
+    <id>https://skyreeves.com/post/8e3c3b34/</id>
     <published>2022-12-05T04:41:46.000Z</published>
     <updated>2022-12-05T04:41:46.000Z</updated>
     
@@ -261,15 +261,15 @@
     
     
     
-    <category term="打胡乱说" scheme="http://skyreeves.com/categories/%E6%89%93%E8%83%A1%E4%B9%B1%E8%AF%B4/"/>
+    <category term="打胡乱说" scheme="https://skyreeves.com/categories/%E6%89%93%E8%83%A1%E4%B9%B1%E8%AF%B4/"/>
     
     
   </entry>
   
   <entry>
     <title>我的假期批下来了</title>
-    <link href="http://skyreeves.com/post/1e73f129/"/>
-    <id>http://skyreeves.com/post/1e73f129/</id>
+    <link href="https://skyreeves.com/post/1e73f129/"/>
+    <id>https://skyreeves.com/post/1e73f129/</id>
     <published>2022-11-15T12:55:19.000Z</published>
     <updated>2022-11-15T12:55:19.000Z</updated>
     
@@ -283,15 +283,15 @@
     
     
     
-    <category term="打胡乱说" scheme="http://skyreeves.com/categories/%E6%89%93%E8%83%A1%E4%B9%B1%E8%AF%B4/"/>
+    <category term="打胡乱说" scheme="https://skyreeves.com/categories/%E6%89%93%E8%83%A1%E4%B9%B1%E8%AF%B4/"/>
     
     
   </entry>
   
   <entry>
     <title>利用 Github 博客仓分支备份博客源文件</title>
-    <link href="http://skyreeves.com/post/a11d9a20/"/>
-    <id>http://skyreeves.com/post/a11d9a20/</id>
+    <link href="https://skyreeves.com/post/a11d9a20/"/>
+    <id>https://skyreeves.com/post/a11d9a20/</id>
     <published>2022-11-03T01:16:06.000Z</published>
     <updated>2022-11-03T01:16:06.000Z</updated>
     
@@ -303,14 +303,14 @@
     
     
     
-    <category term="Github" scheme="http://skyreeves.com/tags/Github/"/>
+    <category term="Github" scheme="https://skyreeves.com/tags/Github/"/>
     
   </entry>
   
   <entry>
     <title>评论板块加载失败的问题</title>
-    <link href="http://skyreeves.com/post/8cd79de0/"/>
-    <id>http://skyreeves.com/post/8cd79de0/</id>
+    <link href="https://skyreeves.com/post/8cd79de0/"/>
+    <id>https://skyreeves.com/post/8cd79de0/</id>
     <published>2022-10-28T08:59:02.000Z</published>
     <updated>2022-10-28T08:59:02.000Z</updated>
     
@@ -334,16 +334,16 @@
     
     
     
-    <category term="Waline" scheme="http://skyreeves.com/tags/Waline/"/>
+    <category term="Waline" scheme="https://skyreeves.com/tags/Waline/"/>
     
-    <category term="Vercel" scheme="http://skyreeves.com/tags/Vercel/"/>
+    <category term="Vercel" scheme="https://skyreeves.com/tags/Vercel/"/>
     
   </entry>
   
   <entry>
     <title>Stellar主题自定义侧边栏教程「萌新向」</title>
-    <link href="http://skyreeves.com/post/9b8cc433/"/>
-    <id>http://skyreeves.com/post/9b8cc433/</id>
+    <link href="https://skyreeves.com/post/9b8cc433/"/>
+    <id>https://skyreeves.com/post/9b8cc433/</id>
     <published>2022-10-28T06:12:56.000Z</published>
     <updated>2022-10-28T06:12:56.000Z</updated>
     
@@ -362,14 +362,14 @@
     
     
     
-    <category term="Stellar" scheme="http://skyreeves.com/tags/Stellar/"/>
+    <category term="Stellar" scheme="https://skyreeves.com/tags/Stellar/"/>
     
   </entry>
   
   <entry>
     <title>跳蛛饲养入门问答篇</title>
-    <link href="http://skyreeves.com/post/eefa4f8b/"/>
-    <id>http://skyreeves.com/post/eefa4f8b/</id>
+    <link href="https://skyreeves.com/post/eefa4f8b/"/>
+    <id>https://skyreeves.com/post/eefa4f8b/</id>
     <published>2022-10-07T14:38:33.000Z</published>
     <updated>2022-10-07T14:38:33.000Z</updated>
     
@@ -386,14 +386,14 @@
     
     
     
-    <category term="跳蛛" scheme="http://skyreeves.com/tags/%E8%B7%B3%E8%9B%9B/"/>
+    <category term="跳蛛" scheme="https://skyreeves.com/tags/%E8%B7%B3%E8%9B%9B/"/>
     
   </entry>
   
   <entry>
     <title>hexo博客引入Waline评论模块</title>
-    <link href="http://skyreeves.com/post/69ee63d6/"/>
-    <id>http://skyreeves.com/post/69ee63d6/</id>
+    <link href="https://skyreeves.com/post/69ee63d6/"/>
+    <id>https://skyreeves.com/post/69ee63d6/</id>
     <published>2022-10-02T05:40:34.000Z</published>
     <updated>2022-10-02T05:40:34.000Z</updated>
     
@@ -407,18 +407,18 @@
     
     
     
-    <category term="Waline" scheme="http://skyreeves.com/tags/Waline/"/>
+    <category term="Waline" scheme="https://skyreeves.com/tags/Waline/"/>
     
-    <category term="hexo" scheme="http://skyreeves.com/tags/hexo/"/>
+    <category term="hexo" scheme="https://skyreeves.com/tags/hexo/"/>
     
-    <category term="Vercel" scheme="http://skyreeves.com/tags/Vercel/"/>
+    <category term="Vercel" scheme="https://skyreeves.com/tags/Vercel/"/>
     
   </entry>
   
   <entry>
     <title>hexo博客绑定域名与安装SSL证书</title>
-    <link href="http://skyreeves.com/post/4d89caeb/"/>
-    <id>http://skyreeves.com/post/4d89caeb/</id>
+    <link href="https://skyreeves.com/post/4d89caeb/"/>
+    <id>https://skyreeves.com/post/4d89caeb/</id>
     <published>2022-09-28T07:24:06.000Z</published>
     <updated>2022-09-28T07:24:06.000Z</updated>
     
@@ -431,20 +431,20 @@
     
     
     
-    <category term="hexo" scheme="http://skyreeves.com/tags/hexo/"/>
+    <category term="hexo" scheme="https://skyreeves.com/tags/hexo/"/>
     
-    <category term="域名" scheme="http://skyreeves.com/tags/%E5%9F%9F%E5%90%8D/"/>
+    <category term="域名" scheme="https://skyreeves.com/tags/%E5%9F%9F%E5%90%8D/"/>
     
-    <category term="name.com" scheme="http://skyreeves.com/tags/name-com/"/>
+    <category term="name.com" scheme="https://skyreeves.com/tags/name-com/"/>
     
-    <category term="SSL" scheme="http://skyreeves.com/tags/SSL/"/>
+    <category term="SSL" scheme="https://skyreeves.com/tags/SSL/"/>
     
   </entry>
   
   <entry>
     <title>如何利用 Github 搭建自己的免费图床</title>
-    <link href="http://skyreeves.com/post/b9761c15/"/>
-    <id>http://skyreeves.com/post/b9761c15/</id>
+    <link href="https://skyreeves.com/post/b9761c15/"/>
+    <id>https://skyreeves.com/post/b9761c15/</id>
     <published>2022-09-28T06:29:21.000Z</published>
     <updated>2022-09-28T06:29:21.000Z</updated>
     
@@ -458,16 +458,16 @@
     
     
     
-    <category term="Github" scheme="http://skyreeves.com/tags/Github/"/>
+    <category term="Github" scheme="https://skyreeves.com/tags/Github/"/>
     
-    <category term="图床" scheme="http://skyreeves.com/tags/%E5%9B%BE%E5%BA%8A/"/>
+    <category term="图床" scheme="https://skyreeves.com/tags/%E5%9B%BE%E5%BA%8A/"/>
     
   </entry>
   
   <entry>
     <title>M1 Macbook Ps2022 可使用的coolorus插件</title>
-    <link href="http://skyreeves.com/post/5fad3cf5/"/>
-    <id>http://skyreeves.com/post/5fad3cf5/</id>
+    <link href="https://skyreeves.com/post/5fad3cf5/"/>
+    <id>https://skyreeves.com/post/5fad3cf5/</id>
     <published>2022-09-28T04:38:58.000Z</published>
     <updated>2022-09-28T04:38:58.000Z</updated>
     
@@ -480,16 +480,16 @@
     
     
     
-    <category term="coolorus" scheme="http://skyreeves.com/tags/coolorus/"/>
+    <category term="coolorus" scheme="https://skyreeves.com/tags/coolorus/"/>
     
-    <category term="M1" scheme="http://skyreeves.com/tags/M1/"/>
+    <category term="M1" scheme="https://skyreeves.com/tags/M1/"/>
     
   </entry>
   
   <entry>
     <title>ubuntu搭建僵尸毁灭工程专用服务器</title>
-    <link href="http://skyreeves.com/post/45c5bddd/"/>
-    <id>http://skyreeves.com/post/45c5bddd/</id>
+    <link href="https://skyreeves.com/post/45c5bddd/"/>
+    <id>https://skyreeves.com/post/45c5bddd/</id>
     <published>2022-09-28T02:26:06.000Z</published>
     <updated>2022-09-28T02:26:06.000Z</updated>
     
@@ -502,18 +502,18 @@
     
     
     
-    <category term="ubuntu" scheme="http://skyreeves.com/tags/ubuntu/"/>
+    <category term="ubuntu" scheme="https://skyreeves.com/tags/ubuntu/"/>
     
-    <category term="僵尸毁灭工程" scheme="http://skyreeves.com/tags/%E5%83%B5%E5%B0%B8%E6%AF%81%E7%81%AD%E5%B7%A5%E7%A8%8B/"/>
+    <category term="僵尸毁灭工程" scheme="https://skyreeves.com/tags/%E5%83%B5%E5%B0%B8%E6%AF%81%E7%81%AD%E5%B7%A5%E7%A8%8B/"/>
     
-    <category term="project zomboid" scheme="http://skyreeves.com/tags/project-zomboid/"/>
+    <category term="project zomboid" scheme="https://skyreeves.com/tags/project-zomboid/"/>
     
   </entry>
   
   <entry>
     <title>ubuntu搭建饥荒专用服务器</title>
-    <link href="http://skyreeves.com/post/18ff0cb2/"/>
-    <id>http://skyreeves.com/post/18ff0cb2/</id>
+    <link href="https://skyreeves.com/post/18ff0cb2/"/>
+    <id>https://skyreeves.com/post/18ff0cb2/</id>
     <published>2022-09-28T01:54:36.000Z</published>
     <updated>2022-09-28T01:54:36.000Z</updated>
     
@@ -526,18 +526,18 @@
     
     
     
-    <category term="ubuntu" scheme="http://skyreeves.com/tags/ubuntu/"/>
+    <category term="ubuntu" scheme="https://skyreeves.com/tags/ubuntu/"/>
     
-    <category term="饥荒" scheme="http://skyreeves.com/tags/%E9%A5%A5%E8%8D%92/"/>
+    <category term="饥荒" scheme="https://skyreeves.com/tags/%E9%A5%A5%E8%8D%92/"/>
     
-    <category term="don&#39;t starve" scheme="http://skyreeves.com/tags/don-t-starve/"/>
+    <category term="don&#39;t starve" scheme="https://skyreeves.com/tags/don-t-starve/"/>
     
   </entry>
   
   <entry>
     <title>Mac使用hexo+github搭建个人博客</title>
-    <link href="http://skyreeves.com/post/53f02396/"/>
-    <id>http://skyreeves.com/post/53f02396/</id>
+    <link href="https://skyreeves.com/post/53f02396/"/>
+    <id>https://skyreeves.com/post/53f02396/</id>
     <published>2022-09-27T17:58:15.000Z</published>
     <updated>2022-09-27T17:58:15.000Z</updated>
     
@@ -550,16 +550,16 @@
     
     
     
-    <category term="hexo" scheme="http://skyreeves.com/tags/hexo/"/>
+    <category term="hexo" scheme="https://skyreeves.com/tags/hexo/"/>
     
-    <category term="Mac" scheme="http://skyreeves.com/tags/Mac/"/>
+    <category term="Mac" scheme="https://skyreeves.com/tags/Mac/"/>
     
   </entry>
   
   <entry>
     <title>Mac安装Homebrew</title>
-    <link href="http://skyreeves.com/post/5c387244/"/>
-    <id>http://skyreeves.com/post/5c387244/</id>
+    <link href="https://skyreeves.com/post/5c387244/"/>
+    <id>https://skyreeves.com/post/5c387244/</id>
     <published>2022-09-27T15:18:15.000Z</published>
     <updated>2022-09-27T15:18:15.000Z</updated>
     
@@ -572,16 +572,16 @@
     
     
     
-    <category term="Mac" scheme="http://skyreeves.com/tags/Mac/"/>
+    <category term="Mac" scheme="https://skyreeves.com/tags/Mac/"/>
     
-    <category term="brew" scheme="http://skyreeves.com/tags/brew/"/>
+    <category term="brew" scheme="https://skyreeves.com/tags/brew/"/>
     
   </entry>
   
   <entry>
     <title>Hello World</title>
-    <link href="http://skyreeves.com/post/4a17b156/"/>
-    <id>http://skyreeves.com/post/4a17b156/</id>
+    <link href="https://skyreeves.com/post/4a17b156/"/>
+    <id>https://skyreeves.com/post/4a17b156/</id>
     <published>2022-09-27T10:25:45.000Z</published>
     <updated>2022-09-27T10:25:45.000Z</updated>
     
